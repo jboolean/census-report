@@ -1,0 +1,29 @@
+<!--script type="text/javascript"
+  src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script-->
+<script>
+  google.setOnLoadCallback(function() {
+    //initialize!
+    YUI().use('bmp-widget-gchart', 'yui-later', 'jsb-data-util', function(Y) {
+      Y.Data.get({
+        url: 'http://localhost:3000/api/acs?groupby=boro&use_descriptions=1',
+      }).then(function(result) {
+        data = result.results;
+        data.splice(0,1,['Field of Degree', 'Number of People']);
+        var chart = new Y.BFAMFAPhD.Widget.GChart({
+          chartType: 'PieChart',
+          dataTable: result.results,
+          options: {
+            height: 5000
+          },
+        });
+
+        chart.render(Y.one('test-chart-wrapper'));
+      }, function(err) {
+        console.log(err);
+      }); 
+     
+    });
+  });
+</script>
+<div class='test-chart-wrapper'></div>
