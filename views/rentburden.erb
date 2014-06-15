@@ -6,6 +6,19 @@ google.setOnLoadCallback(function() {
       'bmp-button-controller', 'bmp-data-preparer',
       function(Y) {
 
+      // what the 'compare on' switch does
+      var setPartition= function(partitionType, dataModel) {
+        switch (partitionType) {
+        case 'occp_artist_class':
+          dataModel.clearPartition();
+          dataModel.setPartition('occp_artist_class', [1]);
+          break;
+        case 'fod1p':
+          dataModel.clearPartition();
+          dataModel.setPartition('fod1p', [6000,6099], 'between');
+        }
+      }
+
       var dataModel = new Y.BMP.Models.BasicModel({
         // groupby: 'grpip_group3',
         endpoint: '/api/acs/custom/rentburden',
@@ -21,6 +34,8 @@ google.setOnLoadCallback(function() {
       });
       chart.render(Y.one('.main-chart-wrapper').empty());
 
+      setPartition('occp_artist_class', dataModel);
+
       dataModel.load();
 
       Y.all('.btn-group[data-toggle=buttons]').plug(Y.BMP.Plugins.ToggleButtons);
@@ -29,6 +44,14 @@ google.setOnLoadCallback(function() {
         dataSource: dataModel,
         buttonContainer: Y.one('.controls')
       });
+
+      Y.one('.comparison-chooser').delegate('change', function(e) {
+        var button = e.target;
+        var partitionType = button.get('value');
+        setPartition(partitionType, dataModel);
+        dataModel.load();
+
+      }, 'input');
      
     });
 
@@ -45,11 +68,15 @@ google.setOnLoadCallback(function() {
   <div class="controls">
     <div class="comparison-controls">
       <h2>Compare</h2>
-      <div class="comparison-chooser btn-group btn-group-vertical disabled" data-toggle="buttons">
-         <a class="btn btn-default active">Artists as Occupation vs. Non-Artists</a>
-         <a class="btn btn-default disabled">Studied Art vs. Didn't (NOT IMPLEMENTED YET)</a>
+      <div class="comparison-chooser btn-group btn-group-vertical disabled" data-toggle="buttons" >
+         <label class="btn btn-default active">
+          <input type="radio" name="compareon" value="occp_artist_class"> Artists as Occupation vs. Non-Artists
+        </label>
+
+        <label class="btn btn-default">
+          <input type="radio" name="compareon" value="fod1p"> Studied Art vs. Didn't
+        </label>
       </div>
-    </div>
     <div class="filter-controls">
 
       <h2>But show only&hellip;</h2>

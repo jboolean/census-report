@@ -14,7 +14,7 @@ YUI.add('bmp-data-preparer', function(Y) {
     rentBurden: function(response) {
       var rawData = response.results;
       var data = new Array(4);
-      data[0] = ['Rent Burden Class', 'Non-artist', 'Artist'];
+      data[0] = ['Rent Burden Class', 'Artist', 'Non-artist'];
 
       // rows could appear in any order - order them by code because that makes sense
       Y.Array.each(rawData, function(row) {

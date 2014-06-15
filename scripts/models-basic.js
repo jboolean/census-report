@@ -19,9 +19,23 @@ YUI.add('bmp-models-basic', function(Y) {
       this.publish('loaded');
       this.publish('load-failed');
       this._filters = {};
+      this._partitions = {};
     },
 
+
     setFilter: function(column, values, operator) {
+      this._setFilterOrPartition(this._filters, column, values, operator);
+    },
+
+    setPartition: function(column, values, operator) {
+      this._setFilterOrPartition(this._partitions, column, values, operator);
+    },
+
+    clearPartition: function() {
+      this._partitions = {};
+    },
+
+    _setFilterOrPartition: function(filtersHash, column, values, operator) {
       if (Y.Lang.isValue(values) && !Y.Lang.isArray(values)) {
         values = [values];
       }
@@ -35,7 +49,7 @@ YUI.add('bmp-models-basic', function(Y) {
         operator = 'in';
       }
 
-      this._filters[column] = {
+      filtersHash[column] = {
         operator: operator,
         values: values
       };
@@ -51,8 +65,20 @@ YUI.add('bmp-models-basic', function(Y) {
         use_descriptions: true
       };
 
-      Y.Object.each(this._filters, function(filter_params, column) {
-        params['filter_' + filter_params.operator + '_' + column.toLowerCase()] = filter_params.values.join(',');
+      params = Y.merge(params, this._createFilterQueryParams(this._filters));
+      params = Y.merge(params, this._createFilterQueryParams(this._partitions, 'partition'));
+
+      return params;
+    },
+
+    _createFilterQueryParams: function(filters, prefix) {
+      var params = {};
+      if (!prefix) {
+        prefix = 'filter';
+      }
+
+      Y.Object.each(filters, function(filter_params, column) {
+        params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = filter_params.values.join(',');
       }, this);
 
       return params;

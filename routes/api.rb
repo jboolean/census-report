@@ -78,41 +78,58 @@ class BFAMFAPhD < Sinatra::Application
 
   get '/api/acs/custom/rentburden' do
     filters = get_filters_from_query_params
-    whereSql = create_whereSql(filters).chomp
+
+    whereSql = create_whereSql(filters)
+
+    partiton = get_filters_from_query_params('partition')
+    partitionColumns = partiton.map { |filter| filter[:column] }
+
+    if partiton.empty? then halt 400, 'A partiton must be specified' end
+    partitonSql = create_whereSql(partiton)
 
     andWhere = whereSql.empty? ? '' : "AND #{whereSql}"
 
-    sqlQuery = "select  grpip_group3,
-              sum(case when occp_artist_class = 0 then n end) as non_artist,
-              sum(case when occp_artist_class != 0 then n end) as artist
+    sqlQuery = "select grpip_group3,
+              sum(CASE WHEN #{partitonSql} THEN n END) as match,
+              sum(CASE WHEN NOT #{partitonSql} THEN n END) as no_match
             FROM (select 
-              sum(PWGTP) as n, grpip_group3, occp_artist_class from acs_3yr_custom 
+              sum(PWGTP) as n, grpip_group3, #{partitionColumns.join(',')} from acs_3yr_custom 
               where grpip_group3 is not null #{andWhere} 
-              group by grpip_group3, occp_artist_class) grpip_by_artist
+              group by grpip_group3, #{partitionColumns.join(',')}) grpip_by_partition
             group by grpip_group3;";
 
-    pp sqlQuery
-
-    output = []
-    totals = [0, 0]
+    
     sqlResult = settings.db.exec(sqlQuery)
-    sqlResult.each_row do |row|
-      newRow = [row[0]] + [row[1].to_i, row[2].to_i]
-      totals[0] += newRow[1]
-      totals[1] += newRow[2]
-      output << newRow
+
+    asArray = sqlResult.values()
+
+    # totals for every column, the first is 0
+    totals = Array.new(sqlResult.num_fields(), 0)
+
+    # total each column 
+    asArray.each do |row|
+      (1..row.length-1).each do |col|
+        totals[col] += row[col].to_i
+      end
     end
 
-
-    output.map! do |row|
-      percent1 = totals[0] != 0 ? row[1].to_f/totals[0]*100 : 0
-      percent2 = totals[1] != 0 ? row[2].to_f/totals[1]*100 : 0
-      [row[0]] + [percent1, percent2]
+    #calculate percentages for each population
+    asArray.map! do |row|
+      (1..row.length-1).each do |col|
+        colTotal = totals[col]
+        if colTotal == 0
+          row[col] = 0
+        else
+          row[col] = row[col].to_f/colTotal * 100
+        end
+      end
+      row
     end
+
 
     {
-      :results => output,
-      :populationSize => totals,
+      :results => asArray,
+      :populationSize => totals[1..-1],
       :fields => sqlResult.fields, 
       :query => sqlQuery,
       :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
