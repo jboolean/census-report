@@ -30,9 +30,14 @@ YUI.add('bmp-button-controller', function(Y) {
 
       var values = [];
       group.all('input:checked').each(function(button) {
+
         var value = button.get('value');
         if (Y.Lang.isValue(value) && value != -1) {
-          values.push(value);
+
+          Y.Array.each(value.split(','), function(singleValue) {
+            values.push(singleValue);
+          });
+          
         }
       });
 

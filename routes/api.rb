@@ -105,8 +105,8 @@ class BFAMFAPhD < Sinatra::Application
 
 
     output.map! do |row|
-      percent1 = totals[0] != 0 ? row[1].to_f/totals[0] : 0
-      percent2 = totals[1] != 0 ? row[2].to_f/totals[1] : 0
+      percent1 = totals[0] != 0 ? row[1].to_f/totals[0]*100 : 0
+      percent2 = totals[1] != 0 ? row[2].to_f/totals[1]*100 : 0
       [row[0]] + [percent1, percent2]
     end
 
