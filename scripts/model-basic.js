@@ -1,18 +1,18 @@
 /**
  * The module containing the BasicModel
- * @module bmp-models-basic
+ * @module bmp-model-basic
  */
-YUI.add('bmp-models-basic', function(Y) {
+YUI.add('bmp-model-basic', function(Y) {
   var BasicModel =
   /**
    * Basic filtered model for charts whereby you can groupby or filterby things.
    * @class BasicModel
-   * @namespace BMP.Models
+   * @namespace BMP.Model
    * @extends Base
    * @uses 
    * @contructor
    */
-  Y.namespace('BMP.Models').BasicModel =
+  Y.namespace('BMP.Model').BasicModel =
   Y.Base.create('BasicModel', Y.Base, [], {
 
     initializer: function() {

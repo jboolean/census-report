@@ -1,12 +1,12 @@
 # hash from each js filename to array of other js filesnames it depends on
 # css will be included automatically if name matches
 DEPENDENCIES = {
- 'page-rentburden' => ['widget-gchart', 'models-basic', 
+ 'page-rentburden' => ['widget-gchart', 'model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer'],
- 'widget-gchart' => ['models-basic',],
+ 'widget-datasourced-chart' => ['model-basic',],
  'data-util' => [],
- 'models-basic' => ['data-util'],
+ 'model-basic' => ['data-util'],
  'plugin-toggle-buttons' => [],
- 'button-controller' => ['models-basic', 'data-preparer'],
+ 'button-controller' => ['model-basic', 'data-preparer'],
  'data-preparer' => []
 }

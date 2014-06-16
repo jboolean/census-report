@@ -17,15 +17,15 @@ YUI.add('bmp-page-rentburden', function(Y) {
           dataModel.clearPartition();
           dataModel.setPartition('fod1p', [6000,6099], 'between');
         }
-      }
+      };
 
-      var dataModel = new Y.BMP.Models.BasicModel({
+      var dataModel = new Y.BMP.Model.BasicModel({
         // groupby: 'grpip_group3',
         endpoint: '/api/acs/custom/rentburden',
         dataPreparer: Y.BMP.DataPreparers.rentBurden
       });
 
-      var chart = new Y.BFAMFAPhD.Widget.GChart({
+      var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'ColumnChart',
         options: {
           // height: 1000
@@ -58,7 +58,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-gchart', 'bmp-models-basic',
+    'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-plugins-toggle-buttons', 'node-pluginhost',
     'bmp-button-controller', 'bmp-data-preparer'
   ]

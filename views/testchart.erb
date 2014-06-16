@@ -10,7 +10,7 @@
       }).then(function(result) {
         data = result.results;
         data.splice(0,1,['Field of Degree', 'Number of People']);
-        var chart = new Y.BFAMFAPhD.Widget.GChart({
+        var chart = new Y.BMP.Widget.GChart({
           chartType: 'PieChart',
           dataTable: result.results,
           options: {

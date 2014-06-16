@@ -37,7 +37,7 @@ YUI.add('bmp-button-controller', function(Y) {
           Y.Array.each(value.split(','), function(singleValue) {
             values.push(singleValue);
           });
-          
+
         }
       });
 
@@ -57,7 +57,7 @@ YUI.add('bmp-button-controller', function(Y) {
       dataSource: {
         required: true,
         validator: function(val) {
-          return val instanceof Y.BMP.Models.BasicModel;
+          return val instanceof Y.BMP.Model.BasicModel;
         }
       }
     }

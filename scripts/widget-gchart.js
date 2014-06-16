@@ -13,7 +13,7 @@ YUI.add('bmp-widget-gchart', function(Y) {
    * @uses 
    * @contructor
    */
-  Y.namespace('BFAMFAPhD.Widget').GChart =
+  Y.namespace('BMP.Widget').GChart =
   Y.Base.create('GChart', Y.Widget, [], {
     initializer: function(config) {
       this._wrapper = new google.visualization.ChartWrapper(config);
