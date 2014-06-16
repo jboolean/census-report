@@ -1,1 +1,1 @@
-web: rackup config.ru -p $PORT
+web: bundle exec thin start -P $PORT -e $RACK_ENV
