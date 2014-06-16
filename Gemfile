@@ -9,12 +9,12 @@ gem "pg"
 gem "less"
 gem "therubyracer"
 
+gem "thin"
+
 group :development do
   gem "rerun"
-  gem "thin"
+
 end
 group :production do
-	# gem "dm-postgres-adapter"
-  gem 'thin'
   gem 'unicorn'
 end
