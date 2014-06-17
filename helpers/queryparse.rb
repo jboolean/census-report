@@ -1,7 +1,7 @@
 module QueryParse
   VALID_COLS = ['relp', 'agep',  'fod1p', 'occp',  'cit', 'sex', 'schl',  
     'wagp',  'cow', 'ethnicity', 'boro',  'ten', 'grpip', 'pwgtp', 'wgtp', 'grpip_group3', 'occp_artist_class']
-  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3']
+  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex']
 
   def valid_col? (col_name)
     VALID_COLS.include? (col_name.downcase)

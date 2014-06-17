@@ -73,4 +73,4 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
     'bmp-widget-gchart',
     'base'
   ]
-});   
+});

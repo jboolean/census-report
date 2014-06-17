@@ -85,12 +85,7 @@ YUI.add('bmp-model-basic', function(Y) {
     },
 
     load: function() {
-      return Y.Data.get({
-
-        url: this.get('endpoint'),
-        data: this._getQueryParams()
-
-      }, this)
+      return this._loadCached(this.get('endpoint'), this._getQueryParams())
       .then(Y.bind(function(response) {
         var data = response.results;
         // data.splice(0,0,response.fields);
@@ -111,6 +106,25 @@ YUI.add('bmp-model-basic', function(Y) {
       },this));
     },
 
+    _loadCached: function(endpoint, queryParams) {
+      var cacheKey = endpoint + '__' + Y.QueryString.stringify(queryParams);
+      if (Y.Object.hasKey(BasicModel._cache, cacheKey)) {
+        return Y.when(Y.clone(BasicModel._cache[cacheKey]));
+      } else {
+
+        return Y.Data.get({
+          url: endpoint,
+          data: queryParams
+        }, this)
+
+        .then(Y.bind(function(result) {
+          BasicModel._cache[cacheKey] = result;
+          return Y.clone(result);
+        }, this));
+
+      }
+    },
+
     getErrors: function() {
       // I'm a statistician would laugh - let's update this
       var errors = [];
@@ -127,6 +141,9 @@ YUI.add('bmp-model-basic', function(Y) {
     }
 
   }, {
+
+    //TODO: this cache is currently boundless
+    _cache: {},
 
     ATTRS:{
 
@@ -162,9 +179,10 @@ YUI.add('bmp-model-basic', function(Y) {
   });
 }, '1.0', {
   requires:[
-    'querystring-stringify',
+    'array-extras',
     'base',
     'jsb-data-util',
-    'array-extras'
+    'promise',
+    'querystring-stringify'
   ]
 });

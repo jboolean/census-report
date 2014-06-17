@@ -29,35 +29,8 @@ YUI.add('bmp-widget-gchart', function(Y) {
       
       var cb = this.get('contentBox');
 
-      var dataSource = this.get('dataSource');
-
-      cb.all('.error').remove(true);
-
-      var hasErrors = false;
-
-      if (Y.Lang.isValue(dataSource)) {
-
-        if (!dataSource.get('loaded')) {
-          return;
-        }
-
-        var errors = dataSource.getErrors();
-        Y.Array.each(errors, function(errorText) {
-          var errorNode = Y.Node.create('<div class="error alert alert-warning"></div>');
-          errorNode.set('text', errorText);
-          cb.append(errorNode);
-          hasErrors = true;
-        });
-      }
-
       var chartWrapper = cb.one('.inner-chart-wrapper');
-
-      if (!hasErrors) {
-        this._wrapper.draw(chartWrapper.getDOMNode());
-        chartWrapper.show();
-      } else {
-        chartWrapper.hide();
-      }
+      this._wrapper.draw(chartWrapper.getDOMNode());
 
     },
 
@@ -80,15 +53,6 @@ YUI.add('bmp-widget-gchart', function(Y) {
       Y.on('windowresize', function(e) {
         this.syncUI();
       }, this);
-
-      var dataSource = this.get('dataSource');
-      if (Y.Lang.isValue(dataSource)) {
-        dataSource.on('loaded', function() {
-          this.set('dataTable', dataSource.get('data'));
-        }, this);
-      }
-
-
     }
     
 
@@ -103,10 +67,6 @@ YUI.add('bmp-widget-gchart', function(Y) {
       dataTable: {
         required: true,
         validator: Y.Lang.isArray
-      },
-
-      dataSource: {
-        writeOnce: 'initOnly'
       },
 
       options: {

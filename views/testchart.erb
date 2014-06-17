@@ -6,10 +6,10 @@
     //initialize!
     YUI().use('bmp-widget-gchart', 'yui-later', 'jsb-data-util', function(Y) {
       Y.Data.get({
-        url: 'http://localhost:3000/api/acs?groupby=boro&use_descriptions=1',
+        url: 'http://localhost:3000/api/acs?groupby=sex&use_descriptions=1',
       }).then(function(result) {
         data = result.results;
-        data.splice(0,1,['Field of Degree', 'Number of People']);
+        data.splice(0,0,result.fields);
         var chart = new Y.BMP.Widget.GChart({
           chartType: 'PieChart',
           dataTable: result.results,
