@@ -13,6 +13,7 @@ class BFAMFAPhD < Sinatra::Application
     groupbys = [];
 
     use_descriptions = params[:use_descriptions]
+    calculate_percentage = params[:calculate_percentage]
 
     unless params[:groupby].nil?
       groupbys = params[:groupby].split(',')
@@ -61,9 +62,12 @@ class BFAMFAPhD < Sinatra::Application
     arrayResult.each do |row|
       total += row[-1]
     end
-    arrayResult.map! do |row|
-      percent = total != 0 ? row[-1].to_f : 0
-      row[0..-2] + [percent]
+
+    if calculate_percentage && total != 0
+      arrayResult.map! do |row|
+        percent = row[-1].to_f/total * 100
+        row[0..-2] + [percent]
+      end
     end
 
     {
