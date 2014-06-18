@@ -56,3 +56,5 @@ File.open("scripts.manifest", "w") do |f|
   f.puts($jsManifest)
 end
 
+puts "Rollups created"
+

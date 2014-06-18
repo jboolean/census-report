@@ -15,46 +15,13 @@ class BFAMFAPhD < Sinatra::Application
     use_descriptions = params[:use_descriptions]
     calculate_percentage = params[:calculate_percentage]
 
-    unless params[:groupby].nil?
-      groupbys = params[:groupby].split(',')
-      validate_cols(groupbys)
-    end
+    groupbys = get_groupbys_from_query_params
 
     filters = get_filters_from_query_params
 
     # create sql query
-
-    escapedColumns = groupbys.map do |col_name|
-      col_name.downcase!
-      if use_descriptions && has_defs?(col_name)
-        escaped_table = settings.db.quote_ident("defs_#{col_name}")
-        "#{escaped_table}.definition"
-      else
-        settings.db.quote_ident(col_name) 
-      end
-    end
-
-    selectSql = 'SELECT '
-    selectSql << (escapedColumns + ['sum(PWGTP)']).join(',')
-    unless groupbys.empty?
-      groupbySql = 'GROUP BY ' + escapedColumns.join(',')
-    end
-
-    joins = []
-    if use_descriptions
-      groupbys.each do |col_name|
-        if has_defs?(col_name)
-          escaped_col = settings.db.quote_ident(col_name)
-          escaped_table = settings.db.quote_ident("defs_#{col_name}")
-          joins << "INNER JOIN #{escaped_table} ON #{escaped_col} = #{escaped_table}.code"
-        end
-      end
-    end
- 
-    wheres = create_whereSql(filters)
-    whereSql = wheres.empty? ? '' : 'WHERE ' + wheres
-
-    sqlQuery = "#{selectSql} FROM #{TABLE} #{joins.join(' ')} #{whereSql} #{groupbySql};"
+    sqlQuery = create_acs_tally_sql_query(groupbys, filters, use_descriptions)
+    
     result = settings.db.exec(sqlQuery)
     arrayResult = last_col_to_i(result.values)
 

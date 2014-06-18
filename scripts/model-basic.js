@@ -89,7 +89,7 @@ YUI.add('bmp-model-basic', function(Y) {
       .then(Y.bind(function(response) {
         var data = response.results;
         // data.splice(0,0,response.fields);
-        if (Y.Lang.isValue(this.get('dataPreparer'))) {
+        if (Y.Lang.isFunction(this.get('dataPreparer'))) {
           data = this.get('dataPreparer')(response);
         }
 
@@ -126,17 +126,20 @@ YUI.add('bmp-model-basic', function(Y) {
     },
 
     getErrors: function() {
-      // I'm a statistician would laugh - let's update this
       var errors = [];
 
-      var threshold = 1000;
-      var populationLargeEnough =Y.Array.find(this.get('populationSize'), function(n) {
-        return n < threshold;
-      }) === null;
+      if (Y.Lang.isArray(this.get('populationSize'))) {
+        // TODO I'm sure a statistician would laugh - let's update this
+        var threshold = 1000;
+        var populationLargeEnough = Y.Array.find(this.get('populationSize'), function(n) {
+          return n < threshold;
+        }) === null;
 
-      if (!populationLargeEnough) {
-        errors.push('Not enough data');
+        if (!populationLargeEnough) {
+          errors.push('Not enough data');
+        }
       }
+
       return errors;
     }
 

@@ -33,6 +33,12 @@ YUI.add('bmp-data-preparer', function(Y) {
       formatter.format(dataTable, 1);
       formatter.format(dataTable, 2);
       return dataTable;
+    },
+
+    schoolToWorkSankey: function(response){
+      var data = response.results;
+      data.splice(0,0,['Field of Degree', 'Primary Occupation', '# People']);
+      return data;
     }
   };
 }, '1.0', {

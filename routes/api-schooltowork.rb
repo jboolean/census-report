@@ -7,21 +7,22 @@ class BFAMFAPhD < Sinatra::Application
     content_type :json
   end
 
-  get '/api/graphs/sankey/fod-occp' do
-    query = "select defs_fod.description as Field_of_Degree, defs_occp.description as Primary_Occupation, sum(PWGTP) 
-    from acs_filtered
-  inner join defs_fod on FOD1P = defs_fod.code
-  inner join defs_occp on OCCP = defs_occp.code
-    where FOD1P between 6000 and 6099
-  group by defs_occp.description, defs_fod.description;"
-    raw = settings.db.exec(query)
+  get '/api/acs/custom/schooltowork' do
+
+
+    filters = get_filters_from_query_params
+    groupbys = ['fod1p', 'occp']
+
+    sqlQuery = create_acs_tally_sql_query(groupbys, filters, params[:use_descriptions])
+
+    raw = settings.db.exec(sqlQuery)
+
+    #otherization for uncommon occupations
     big = []
     others = {}
     threshold = 100
 
-
     raw.each_row do |row|
-      pp row
       count = row[2].to_i
       fod = row[0]
       occp = row[1]
@@ -42,7 +43,12 @@ class BFAMFAPhD < Sinatra::Application
     others.each do |fod, count| 
       out << [fod, 'Other', count]
     end
-    return out.to_json
+    {
+      :results => out,
+      :fields => ['Field of Degree', 'Occupation', 'Count'], 
+      :query => sqlQuery,
+      :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
+    }.to_json
   end
 
 end

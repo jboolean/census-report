@@ -4,6 +4,7 @@
  */
 YUI.add('bmp-page-rentburden', function(Y) {
   Y.namespace('BMP.Page').RentBurden = {
+
     initializePage: function() {
       
       // what the 'compare on' switch does
@@ -60,6 +61,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
   requires:[
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-plugins-toggle-buttons', 'node-pluginhost',
-    'bmp-button-controller', 'bmp-data-preparer'
+    'bmp-button-controller', 'bmp-data-preparer',
+    'node', 'yui-object'
   ]
 });

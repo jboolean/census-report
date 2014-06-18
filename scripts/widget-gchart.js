@@ -17,6 +17,8 @@ YUI.add('bmp-widget-gchart', function(Y) {
   Y.Base.create('GChart', Y.Widget, [], {
     initializer: function(config) {
       this._wrapper = new google.visualization.ChartWrapper(config);
+      google.visualization.events.addListener(this._wrapper, 'ready', Y.bind(this._bindChartEvents, this));
+      this.publish('select');
     },
 
     renderUI: function() {
@@ -50,13 +52,21 @@ YUI.add('bmp-widget-gchart', function(Y) {
         this.syncUI();
       }, this);
 
-      Y.on('windowresize', function(e) {
-        this.syncUI();
-      }, this);
+      // Y.on('windowresize', function(e) {
+      //   this.syncUI();
+      // }, this);
+      window.onresize = Y.throttle(Y.bind(this.syncUI, this));
+    },
+
+    _bindChartEvents: function() {
+      google.visualization.events.addListener(this._wrapper.getChart(), 'select', function() {
+        this.fire('select', this._wrapper.getSelection());
+      });
     }
     
 
   }, {
+    CSS_PREFIX: 'bmp-gchart',
 
     ATTRS:{
       chartType: {
@@ -80,6 +90,7 @@ YUI.add('bmp-widget-gchart', function(Y) {
     'widget-base',
     'event-resize',
     'event',
-    'base'
+    'base',
+    'yui-throttle'
   ]
 });
