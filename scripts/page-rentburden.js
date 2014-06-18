@@ -6,7 +6,8 @@ YUI.add('bmp-page-rentburden', function(Y) {
   Y.namespace('BMP.Page').RentBurden = {
 
     initializePage: function() {
-      
+      this.renderNav();
+
       // what the 'compare on' switch does
       var setPartition= function(partitionType, dataModel) {
         switch (partitionType) {
@@ -59,6 +60,11 @@ YUI.add('bmp-page-rentburden', function(Y) {
       }, 'input');
       
 
+    },
+
+    renderNav: function() {
+      var nav = new Y.BMP.Widget.DropdownNav();
+      nav.render(Y.one('h1').empty());
     }
   };
 }, '1.0', {
@@ -66,6 +72,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-plugins-toggle-buttons', 'node-pluginhost',
     'bmp-button-controller', 'bmp-data-preparer',
-    'node', 'yui-object'
+    'node', 'bmp-widget-dropdown-nav'
   ]
 });

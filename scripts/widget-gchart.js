@@ -55,7 +55,7 @@ YUI.add('bmp-widget-gchart', function(Y) {
       // Y.on('windowresize', function(e) {
       //   this.syncUI();
       // }, this);
-      window.onresize = Y.throttle(Y.bind(this.syncUI, this));
+      window.onresize = Y.throttle(Y.bind(this.syncUI, this), 500);
     },
 
     _bindChartEvents: function() {

@@ -19,6 +19,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
   Y.namespace('BMP.Page').SchoolToWork = {
     initializePage: function() {
 
+      this.renderNav();
+
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
         // groupby: 'grpip_group3',
         endpoint: '/api/acs/custom/schooltowork'
@@ -77,10 +79,16 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       }, this);
 
       wrapper.empty().append(select);
+    },
+
+    renderNav: function() {
+      var nav = new Y.BMP.Widget.DropdownNav();
+      nav.render(Y.one('h1').empty());
     }
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-datasourced-chart', 'bmp-model-basic', 'bmp-data-preparer', 'node'
+    'bmp-widget-datasourced-chart', 'bmp-model-basic',
+    'bmp-data-preparer', 'node', 'bmp-widget-dropdown-nav'
   ]
 });

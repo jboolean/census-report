@@ -1,0 +1,43 @@
+@import "_base";
+
+.bmp-dropdown-nav {
+
+  &, .dropdown {
+    display: inline-block;
+  }
+
+  .dropdown ul {
+    display:none;
+    position: absolute;
+
+    z-index: 10;
+
+    background-color: @body-bg;
+
+    width: 100%;
+
+    box-shadow: 2px 2px 5px grey;
+    border-radius: 2px 2px 5px 2px;
+    padding: 7px 3px 7px 5px;
+    padding-top: 0.5em;
+
+  }
+  .dropdown.open ul {
+    display: block;
+    position: absolute;
+  }
+
+  .dropdown ul li {
+    list-style: none;
+    margin-bottom: 0.7em;
+    font-size: 60%;
+
+    &.active a {
+      color: darken(@link-color, 10%);
+    }
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+}
