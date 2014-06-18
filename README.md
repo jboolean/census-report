@@ -1,4 +1,4 @@
-webapp-skeleton
+The BMAMFAPhD Census Report
 ===============
 
-If I want to start a simple webapp, here's a good place to start. A basic Sinatra app with well organized folders, less-css, and dependency injection.
+Exploring data on artists in New York City.
