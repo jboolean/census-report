@@ -19,40 +19,49 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       DataSourcedChart.superclass.bindUI.apply(this, arguments);
       
       var dataSource = this.get('dataSource');
-      if (Y.Lang.isValue(dataSource)) {
-        dataSource.on('loaded', function() {
-          this.set('dataTable', dataSource.get('data'));
-        }, this);
-      }
+      dataSource.on('loaded', function() {
+        this.set('dataTable', dataSource.get('data'));
+      }, this);
+      
+      dataSource.on('dataStateChange', function() {
+        this.syncUI();
+      }, this);
+
     },
 
     syncUI: function() {
-      DataSourcedChart.superclass.syncUI.apply(this, arguments);
 
       var cb = this.get('contentBox');
 
       var dataSource = this.get('dataSource');
 
-      if (!dataSource.get('loaded')) {
+      cb.all('.error, .alert').remove(true);
+
+      var dataState = dataSource.get('dataState');
+
+      if (dataState === 'initial') {
         return;
+      } else if (dataState === 'loading') {
+        cb.append(Y.Node.create('<div class="alert alert-info">Loading</div>'));
+      } else {
+        DataSourcedChart.superclass.syncUI.apply(this, arguments);
+
+
+        // don't display if there are fatal errors
+        var hasFatalErrors = false;
+
+        var errors = dataSource.get('errors');
+        Y.Array.each(errors, function(errorText) {
+          var errorNode = Y.Node.create('<div class="error alert alert-warning"></div>');
+          errorNode.set('text', errorText);
+          cb.append(errorNode);
+          hasFatalErrors = true;
+        });
+
+        var chartWrapper = cb.one('.inner-chart-wrapper');
+
+        chartWrapper.toggleView(!hasFatalErrors);
       }
-
-      cb.all('.error').remove(true);
-
-      // don't display if there are fatal errors
-      var hasFatalErrors = false;
-
-      var errors = dataSource.getErrors();
-      Y.Array.each(errors, function(errorText) {
-        var errorNode = Y.Node.create('<div class="error alert alert-warning"></div>');
-        errorNode.set('text', errorText);
-        cb.append(errorNode);
-        hasFatalErrors = true;
-      });
-
-      var chartWrapper = cb.one('.inner-chart-wrapper');
-
-      chartWrapper.toggleView(!hasFatalErrors);
     }
 
   }, {

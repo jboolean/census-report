@@ -85,6 +85,7 @@ YUI.add('bmp-model-basic', function(Y) {
     },
 
     load: function() {
+      this.set('dataState', 'loading');
       return this._loadCached(this.get('endpoint'), this._getQueryParams())
       .then(Y.bind(function(response) {
         var data = response.results;
@@ -96,12 +97,17 @@ YUI.add('bmp-model-basic', function(Y) {
         this.setAttrs({
           data: data,
           populationSize: response.populationSize,
-          loaded: true
+          loaded: true,
+          errors: []
         });
+        this.updateErrors();
+        this.set('dataState', 'loaded');
         this.fire('loaded');
         return response;
       }, this), Y.bind(function(response) {
         console.error('Data load error');
+        this.set('errors', 'Data could not be loaded.');
+        this.set('dataState', 'load-failed');
         this.fire('load-failed');
       },this));
     },
@@ -125,8 +131,8 @@ YUI.add('bmp-model-basic', function(Y) {
       }
     },
 
-    getErrors: function() {
-      var errors = [];
+    updateErrors: function() {
+      var errors = this.get('errors');
 
       if (Y.Lang.isArray(this.get('populationSize'))) {
         // TODO I'm sure a statistician would laugh - let's update this
@@ -140,7 +146,7 @@ YUI.add('bmp-model-basic', function(Y) {
         }
       }
 
-      return errors;
+      this.set('errors', errors);
     }
 
   }, {
@@ -173,8 +179,13 @@ YUI.add('bmp-model-basic', function(Y) {
         value: '/api/acs'
       },
 
-      loaded: {
-        value: false
+      dataState: {
+        value: 'initial'
+        //todo make an enum
+      },
+
+      errors: {
+        value: []
       }
 
       

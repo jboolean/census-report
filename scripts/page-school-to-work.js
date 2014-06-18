@@ -59,7 +59,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       var wrapper = Y.one('.fod1p-filter-wrapper');
       var select = Y.Node.create('<select name="fod1p-filter" class="form-control">');
 
-      select.append(Y.Node.create('<option value="-1">All Fields</option>'));
+      select.append(Y.Node.create('<option value="-1">All Art Fields</option>'));
 
       Y.Object.each(FOD1P_DEFINITONS, function(definiton, code) {
         select.append(Y.Lang.sub('<option value="{code}" selected>{definiton}</option>', {code: code, definiton: definiton}));
@@ -70,7 +70,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         if (value != -1){
           this._dataModel.setFilter('fod1p', value, 'eq');
         } else {
-          this._dataModel.removeFilter('fod1p');
+          // no filter actually means filter to all art majors
+          this._dataModel.setFilter('fod1p', [6000,6099], 'between');
         }
         this._dataModel.load();
       }, this);
