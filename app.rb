@@ -44,6 +44,19 @@ class BFAMFAPhD < Sinatra::Application
   end
 end
 
+#i dunno where to put these things
+class NilClass
+  def nil_or_empty?
+    true
+  end
+end
+
+class String
+  def nil_or_empty?
+    empty?
+  end
+end
+
 # require_relative 'models/init'
 require_relative 'helpers/init'
 require_relative 'routes/init'
