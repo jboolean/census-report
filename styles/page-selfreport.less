@@ -1,14 +1,3 @@
-/*.page-selfreport {
-  form {
-    .form-inline();
-    line-height: 70px;
-    input, select, {
-      .form-control();
-      display: inline-block;
-      width: inherit;
-    }
-  }
-}*/
 @keyframes pulse {
   0%   {
     border-bottom-color: lighten(@brand-warning, 30%);
@@ -95,6 +84,19 @@
     input[name=space_type] {
       @media (min-width: @screen-md-min){
         width: 22em;
+      }
+    }
+
+    input[name=space_type] {
+      @media (min-width: @screen-md-min){
+        width: 22em;
+      }
+    }
+
+    input[name=space_price_amount], input[name=project_year], 
+    input[name=space_size_x], input[name=space_size_y], input[name=space_size_unitless] {
+      @media (min-width: @screen-md-min){
+        width: 5em;
       }
     }
 

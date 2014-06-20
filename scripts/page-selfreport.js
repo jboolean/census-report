@@ -22,6 +22,8 @@ YUI.add('bmp-page-selfreport', function(Y) {
         .on('keyup', this.updateSquaredArea);
 
       Y.all('.selfreport button.submit').after('tap', this.submitForm, null, this);
+
+      this.renderNav();
     },
     
     submitForm: function(e) {
@@ -77,12 +79,18 @@ YUI.add('bmp-page-selfreport', function(Y) {
         squaredNode.set('value', x * y);
       }
     },
+
+    renderNav: function() {
+      var nav = new Y.BMP.Widget.DropdownNav();
+      nav.render(Y.one('h1').empty());
+    }
   };
 }, '1.0', {
   requires:[
     'node-event-delegate',
     'node',
     'event-tap',
-    'jsb-data-util'
+    'jsb-data-util',
+    'bmp-widget-dropdown-nav'
   ]
 });

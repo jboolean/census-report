@@ -4,7 +4,7 @@ DEPENDENCIES = {
  'page-rentburden' => ['widget-datasourced-chart', 'model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
  'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer', 'widget-dropdown-nav'],
- 'page-selfreport' => ['data-util'],
+ 'page-selfreport' => ['data-util', 'widget-dropdown-nav'],
 
  'widget-datasourced-chart' => ['model-basic', 'widget-gchart'],
  'data-util' => [],
