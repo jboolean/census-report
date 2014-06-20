@@ -12,11 +12,17 @@ YUI().add('jsb-data-util', function(Y) {
 
   Y.Data = {
     _go: function(method, config, context) {
+      var contentType = 'application/json';
+
+      if (method === 'POST') {
+        contentType = 'application/x-www-form-urlencoded';
+      }
+
       return new Y.Promise(function(resolve, reject) {
         Y.io(config.url, {
           method: method,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': contentType
           },
           data: Y.QueryString.stringify(config.data),
           on: {

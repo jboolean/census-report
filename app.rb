@@ -33,9 +33,9 @@ class BFAMFAPhD < Sinatra::Application
     scriptsManifest.map! {|s| s.chomp!}
     set :scriptsManifest, scriptsManifest
 
-    stylesManifest = IO.readlines('styles.manifest')
-    stylesManifest.map! {|s| s.chomp!}
-    set :stylesManifest, stylesManifest
+    # stylesManifest = IO.readlines('styles.manifest')
+    # stylesManifest.map! {|s| s.chomp!}
+    # set :stylesManifest, stylesManifest
   end
 
   helpers do

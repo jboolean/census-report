@@ -1,10 +1,7 @@
 class BFAMFAPhD < Sinatra::Application
   # VALID_COLUMNS
   post '/api/selfreport/v1' do
-    sqlQueryFormat = 'INSERT INTO selfreport 
-    (version, project_description, space_type, 
-      space_zip, space_price_amount, space_price_unit, space_size_ft) values
-      (1, $1, $2, $3, $4, $5, $6)'
+    pp params
 
     errors = {}
 
@@ -26,13 +23,20 @@ class BFAMFAPhD < Sinatra::Application
       halt 400, {:errors => 'Form field errors', :fields => errors}.to_json
     end
 
+        sqlQueryFormat = 'INSERT INTO selfreport 
+    (version, created_on, project_description, space_type, 
+      space_zip, space_price_amount, space_price_unit, space_size_ft, project_year) values
+      (1, $1, $2, $3, $4, $5, $6, $7, $8)'
+
     sqlParams = [
+      Time.now,
       params[:project_description], 
       params[:space_type],
       params[:space_zip],
       params[:space_price_amount],
       params[:space_price_time_unit],
-      params[:space_size_ft] ]
+      params[:space_size_ft],
+      params[:project_year] ]
     settings.db.exec_params(sqlQueryFormat, sqlParams)
 
     {:message => 'success'}.to_json  

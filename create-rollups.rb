@@ -49,8 +49,12 @@ $manifest.each do |filename|
   end
 end
 
-File.open("styles.manifest", "w") do |f|
-  f.puts($cssManifest)
+File.open("styles/manifest.less", "w") do |f|
+  f.puts "@import \"global\";\n"
+
+  f.puts($cssManifest.map do |filename| 
+    "/*BEGIN FILE #{filename}*/\n@import \"#{filename}\";"
+  end)
 end
 File.open("scripts.manifest", "w") do |f|
   f.puts($jsManifest)

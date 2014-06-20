@@ -1,0 +1,51 @@
+<script>
+google.setOnLoadCallback(function() {
+
+    //initialize!
+    YUI().use('bmp-page-selfreport', function(Y) {
+      Y.BMP.Page.SelfReport.initializePage();
+    });
+
+  });
+</script>
+
+<div class="page-selfreport container">
+<h1>Explore You</h1>
+
+<section class="selfreport">
+<h2 class="main-description lead">Add yourself to the project</h2>
+<small>All fields are optional</small>
+
+<form>
+  I made 
+  <input type="text" name="project_description" placeholder="a project">
+  while renting a 
+  <input type="text" name="space_type" placeholder="studio / rehearsal space / desk">
+  in 
+  <input type="text" size="5" name="space_zip" maxlength="5" minlength="5" placeholder="zip code">
+  for
+  <!--span class="input-group"-->
+    <!--span class="input-group-addon">$</span-->
+    <input type="number" size="4" name="space_price_amount" placeholder="$">
+  <!--/span-->
+  per
+  <select name="space_price_time_unit" id="">
+    <option value="month">Month</option>
+    <option value="day">Day</option>
+    <option value="hour">Hour</option>
+  </select>
+  in
+  <input type="number" size="4" name="project_year" placeholder="year" maxlength="4">
+  .<br/>
+  The space is about
+  <input type="number" name="space_size_x"> x <input type="number" name="space_size_y">
+  or
+  <input type="number" name="space_size_unitless">
+  <select name="space_size_units" id="">
+    <option value="ft">ft&#x00B2;</option>
+    <option value="m">m&#x00B2;</option>
+  </select>.
+
+  <button type="button" class="submit">Add Yourself</button>
+</form>
+</section>

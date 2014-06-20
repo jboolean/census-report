@@ -64,7 +64,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       select.append(Y.Node.create('<option value="-1">All Art Fields</option>'));
 
       Y.Object.each(FOD1P_DEFINITONS, function(definiton, code) {
-        select.append(Y.Lang.sub('<option value="{code}" selected>{definiton}</option>', {code: code, definiton: definiton}));
+        select.append(Y.Lang.sub('<option value="{code}" selected="selected">{definiton}</option>', {code: code, definiton: definiton}));
       });
 
       select.on('change', function(e) {

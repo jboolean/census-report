@@ -62,7 +62,8 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
       items: {
         value: [
           {url: '/rentburden', title: 'Rent Burden'},
-          {url: '/schooltowork', title: 'Art School & Occupation'}
+          {url: '/schooltowork', title: 'Art School & Occupation'},
+          {url: '/selfreport', title: 'You'}
         ]
       },
 
