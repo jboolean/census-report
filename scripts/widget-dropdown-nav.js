@@ -42,9 +42,23 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
 
     bindUI: function() {
       this.get('contentBox').all('.dropdown-toggle').on('tap', function(e) {
-        e.target.ancestor('.dropdown', true).toggleClass('open');
+        this.toggleOpen();
         e.halt(true);
-      });
+        this._bodyListener = Y.one('body').on('tap', function(e) {
+          if (!e.target.ancestor('.dropdown', true)) {
+            this.toggleOpen(false);
+          }
+        }, null, this);
+      }, null, this);
+    },
+
+    toggleOpen: function(force) {
+      var dropdown = this.get('contentBox').one('.dropdown');
+      dropdown.toggleClass('open', force);
+      var isOpen = dropdown.hasClass('open');
+      if (!isOpen && this._bodyListener) {
+        this._bodyListener.detach();
+      }
     }
     
 
