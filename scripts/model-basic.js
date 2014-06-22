@@ -133,19 +133,27 @@ YUI.add('bmp-model-basic', function(Y) {
 
     updateErrors: function() {
       var errors = this.get('errors');
+      var threshold = 1000;
+
+
+      var populationLargeEnough = true;
+
+      if (Y.Lang.isNumber(this.get('populationSize'))) {
+        populationLargeEnough = this.get('populationSize') >= threshold;
+      }
 
       if (Y.Lang.isArray(this.get('populationSize'))) {
         // TODO I'm sure a statistician would laugh - let's update this
-        var threshold = 1000;
-        var populationLargeEnough = Y.Array.find(this.get('populationSize'), function(n) {
+        populationLargeEnough = Y.Array.find(this.get('populationSize'), function(n) {
           return n < threshold;
         }) === null;
 
-        if (!populationLargeEnough) {
-          errors.push('Not enough data');
-        }
       }
 
+      if (!populationLargeEnough) {
+        errors.push('Not enough data');
+      }
+      
       this.set('errors', errors);
     }
 

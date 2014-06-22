@@ -32,13 +32,23 @@ YUI.add('bmp-widget-animated-number', function(Y) {
     syncUI: function() {
 
       var cb = this.get('contentBox');
+      var bb = this.get('boundingBox');
+
 
       var dataSource = this.get('dataSource');
 
       var dataState = dataSource.get('dataState');
 
-      cb.toggleClass('loading', dataState === 'initial' || dataState === 'loading');
-      cb.toggleClass('load-failed', dataState === 'load-failed');
+      var hasErrors = dataSource.get('errors').length > 0;
+
+      bb.toggleClass('loading', dataState === 'initial' || dataState === 'loading');
+      bb.toggleClass('load-failed', dataState === 'load-failed');
+      bb.toggleClass('has-errors', hasErrors);
+
+      if (dataState === 'load-failed' || hasErrors) {
+        cb.setHTML('&mdash;');
+        return;
+      }
 
       if (dataState === 'loaded') {
         var number = dataSource.get('data')[this.get('dataProperty')];
@@ -75,7 +85,14 @@ YUI.add('bmp-widget-animated-number', function(Y) {
       var msPerFrame = (1000.0 / 30);
 
       var cb = this.get('contentBox');
+
       var numberFormatConfig = this.get('numberFormatConfig');
+
+      if (newNumber === this._lastNumber) {
+        cb.set('text', Y.Number.format(newNumber, numberFormatConfig));
+        return;
+      }
+
 
       var intervalId;
 

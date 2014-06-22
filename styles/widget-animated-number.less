@@ -2,4 +2,18 @@
   & > * {
     .transition(font 1s);
   }
+
+  .transition(color 0.5s);
+
+  &.loading {
+    color: @gray;
+  }
+
+  &.load-failed {
+    color: @brand-danger;
+  }
+
+  &.has-errors {
+    color: @brand-warning;
+  }
 }
