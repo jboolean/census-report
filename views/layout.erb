@@ -2,13 +2,23 @@
 <html>
 <head>
 
+  <!-- <%= settings.environment %> -->
+
+   <% if (settings.environment == :development) %>
   <link rel="stylesheet" href="/styles/manifest.css">
+  <% else %>
+  <link rel="stylesheet" href="/build/manifest.css">
+  <% end %>
 
   <script type="text/javascript" src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1","packages":["corechart","sankey"]}]}'></script>
   
   <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui.js"></script>
-  <% settings.scriptsManifest.each do |filename| %>
+  
+  <% if (settings.environment == :development)
+  settings.scriptsManifest.each do |filename| %>
   <script src="/scripts/<%= filename %>.js"></script>
+  <% end else %>
+  <script src="/build/rollup.js"></script>
   <% end %>
   
   <title>BFABFAPhD Census Report</title>

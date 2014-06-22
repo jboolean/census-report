@@ -16,4 +16,10 @@ class BFAMFAPhD < Sinatra::Application
     end
     send_file path
   end
+
+  # for development built files
+  get '/build/:filename' do
+    send_file File.join('build', params[:filename])
+  end
+
 end
