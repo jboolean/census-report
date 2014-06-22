@@ -45,7 +45,8 @@ YUI.add('bmp-plugins-toggle-buttons', function(Y) {
 
 }, '1.0', {
   requires:[
-    'plugin',
-    'base'
+    'base',
+    'event',
+    'plugin'
   ]
 });

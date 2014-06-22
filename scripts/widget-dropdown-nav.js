@@ -77,6 +77,7 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
     ATTRS:{
       items: {
         value: [
+          {url: '/poverty', title: 'Poverty Rates'},
           {url: '/rentburden', title: 'Rent Burden'},
           {url: '/schooltowork', title: 'Art School & Occupation'},
           {url: '/selfreport', title: 'You'}
@@ -92,7 +93,8 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
   });
 }, '1.0', {
   requires:[
-    'widget-base',
-    'base'
+    'base',
+    'event',
+    'widget-base'
   ]
 });
