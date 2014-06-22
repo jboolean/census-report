@@ -27,7 +27,7 @@ class BFAMFAPhD < Sinatra::Application
     set :db, PG::Connection.new({:host => 'localhost', :port => 5432, :user => 'julianboilen', :dbname => 'bfamfaphd'})
   end
 
-  configure do
+  configure :development do
 
     scriptsManifest = IO.readlines('scripts.manifest')
     scriptsManifest.map! {|s| s.chomp!}
