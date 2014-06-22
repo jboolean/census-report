@@ -30,7 +30,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'ColumnChart',
         options: {
-          height: 300,
+          height: 400,
           animation: {
             duration: 300,
             easing: 'out'
@@ -44,11 +44,9 @@ YUI.add('bmp-page-rentburden', function(Y) {
 
       dataModel.load();
 
-      Y.all('.btn-group[data-toggle=buttons]').plug(Y.BMP.Plugins.ToggleButtons);
-
       new Y.BMP.ButtonController({
         dataSource: dataModel,
-        buttonContainer: Y.one('.controls')
+        buttonContainer: Y.one('.filter-controls')
       });
 
       Y.one('.comparison-chooser').delegate('change', function(e) {

@@ -48,8 +48,6 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       dataModel.load();
 
-      Y.all('[data-toggle=buttons]').plug(Y.BMP.Plugins.ToggleButtons);
-
       new Y.BMP.ButtonController({
         dataSource: dataModel,
         buttonContainer: Y.one('.controls')

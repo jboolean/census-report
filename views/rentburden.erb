@@ -10,10 +10,11 @@ google.setOnLoadCallback(function() {
 </script>
 
 <div class="page-rentburden container">
-<h1>Explore Rent Burden</h1>
-<div class="main-chart-wrapper"></div>
+  <h1>Explore Rent Burden</h1>
 
-  <div class="controls">
+  <div class="chart-and-comparison-controls">
+    <div class="main-chart-wrapper"></div>
+
     <div class="comparison-controls">
       <h2>Compare</h2>
       <div class="comparison-chooser btn-group btn-group-vertical disabled" data-toggle="buttons" >
@@ -25,97 +26,96 @@ google.setOnLoadCallback(function() {
           <input type="radio" name="compareon" value="fod1p"> Degree in Art vs. Other Degree 
         </label>
       </div>
-    <div class="filter-controls">
 
-      <h2>But show only&hellip;</h2>
+    </div>
+  </div>
 
-      <div class="filter filter-gender btn-group btn-group-justified" data-toggle="buttons" data-filter-var="sex">
-        <label class="btn btn-default active">
-          <input type="radio" name="sex" value="-1" checked> Either
-        </label>
+  <h2>But show only&hellip;</h2>
 
-        <label class="btn btn-default">
-          <input type="radio" name="sex" value="1"> Male
-        </label>
+  <div class="filter-controls">
 
-        <label class="btn btn-default">
-          <input type="radio" name="sex" value="2"> Female
-        </label>
-      </div>
+    <div class="filter filter-gender btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
+      <label class="btn btn-default active">
+        <input type="radio" name="sex" value="-1" checked> Either
+      </label>
 
-      <small>People who live in&hellip;</small>
-      <div class="filter filter-boro btn-group btn-group-justified" data-toggle="buttons" data-filter-var="boro">
-        <label class="btn btn-default active">
-          <input type="radio" name="boro" value="-1" checked> All NYC
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="sex" value="1"> Male
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="boro" value="1"> The Bronx
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="sex" value="2"> Female
+      </label>
+    </div>
 
-        <label class="btn btn-default">
-          <input type="radio" name="boro" value="2"> Brooklyn
-        </label>
+    <div class="filter filter-boro btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
+      <label class="btn btn-default active">
+        <input type="radio" name="boro" value="-1" checked> All NYC
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="boro" value="3"> Manhattan
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="boro" value="1"> The Bronx
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="boro" value="4"> Queens
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="boro" value="2"> Brooklyn
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="boro" value="5"> Staten Island
-        </label>
-      </div>
-      
-      <small>Who identify as&hellip;</small>
-      <div class="filter filter-ethnicity btn-group btn-group-justified" data-toggle="buttons" data-filter-var="ethnicity">
-        <label class="btn btn-default active">
-          <input type="radio" name="ethnicity" value="-1" checked> Any
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="boro" value="3"> Manhattan
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="1"> White
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="boro" value="4"> Queens
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="2"> Black
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="boro" value="5"> Staten Island
+      </label>
+    </div>
+    
+    <div class="filter filter-ethnicity btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="ethnicity">
+      <label class="btn btn-default active">
+        <input type="radio" name="ethnicity" value="-1" checked> Any
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="3"> Asian
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="ethnicity" value="1"> White
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="4"> Hispanic
-        </label>
-      </div>
+      <label class="btn btn-default">
+        <input type="radio" name="ethnicity" value="2"> Black
+      </label>
 
-      <small>Who attained&hellip;</small>
-      <div class="filter filter-schl btn-group btn-group-justified" data-toggle="buttons" data-filter-var="SCHL">
-        <label class="btn btn-default active">
-          <input type="radio" name="schl" value="-1" checked> Any
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="ethnicity" value="3"> Asian
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="schl" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"> Less than High School
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="ethnicity" value="4"> Hispanic
+      </label>
+    </div>
 
-        <label class="btn btn-default">
-          <input type="radio" name="schl" value="16"> Completed High School
-        </label>
+    <div class="filter filter-schl btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="SCHL">
+      <label class="btn btn-default active">
+        <input type="radio" name="schl" value="-1" checked> Any
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="schl" value="17,18,19,20"> Some College
-        </label>
+      <label class="btn btn-default">
+        <input type="radio" name="schl" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"> Less than High School
+      </label>
 
-        <label class="btn btn-default">
-          <input type="radio" name="schl" value="21,22,23,24"> BS or higher
-        </label>
-      </div>
+      <label class="btn btn-default">
+        <input type="radio" name="schl" value="16"> Completed High School
+      </label>
 
+      <label class="btn btn-default">
+        <input type="radio" name="schl" value="17,18,19,20"> Some College
+      </label>
+
+      <label class="btn btn-default">
+        <input type="radio" name="schl" value="21,22,23,24"> BS or higher
+      </label>
     </div>
   </div>
 </div>

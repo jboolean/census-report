@@ -1,8 +1,10 @@
 /**
- * The module containing the ToggleButtons
+ * Including this module makes radio buttons in wrapped with [data-toggle=buttons]
+ * look right. Puts the "active" class on the active button so bootstrap con style it.
  * @module bmp-plugins-toggle-buttons
  */
 YUI.add('bmp-plugins-toggle-buttons', function(Y) {
+
   var ToggleButtons =
   /**
    * Turn a button group into a toggling button group without jQuery and bootstrap's crap.
@@ -38,6 +40,9 @@ YUI.add('bmp-plugins-toggle-buttons', function(Y) {
       }
     }
   });
+
+  Y.all('[data-toggle=buttons]').plug(Y.BMP.Plugins.ToggleButtons);
+
 }, '1.0', {
   requires:[
     'plugin',
