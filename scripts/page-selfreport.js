@@ -24,6 +24,18 @@ YUI.add('bmp-page-selfreport', function(Y) {
       Y.all('.selfreport button.submit').after('tap', this.submitForm, null, this);
 
       this.renderNav();
+
+      var reportListWidget = this._reportListWidget = new Y.BMP.Widget.SelfReportList();
+
+      reportListWidget.render(Y.one('.reports'));
+
+      this._loadSelfReportList()
+      .then(function(reports) {
+        reportListWidget.setOriginalReportList(reports);
+      }, function(err) {
+        console.log(err);
+      });
+
     },
     
     submitForm: function(e) {
@@ -47,16 +59,29 @@ YUI.add('bmp-page-selfreport', function(Y) {
         }
       }
 
+      if (Y.Lang.isString(data.space_price_amount)) {
+        if (data.space_price_amount.trim().indexOf('$') === 0) {
+          data.space_price_amount = data.space_price_amount.trim().substr(1);
+        }
+      }
+
       Y.Data.post({
         url: '/api/selfreport/v1',
         data: data
-      })
-      .then(function() {
+      }, this)
+      .then(Y.bind(function() {
         //success
         Y.all('.selfreport .error').removeClass('error');
         Y.one('.selfreport form').getDOMNode().reset();
         e.target.removeClass('disabled');
-      }, function(response) {
+
+        if (Y.Lang.isValue(data.space_price_amount)) {
+          data.space_price_amount = '$' + data.space_price_amount;
+        }
+
+        this._reportListWidget.addReport(data);
+
+      }, this), function(response) {
         //failure
         if (Y.Lang.isObject(response.fields)) {
           Y.Object.each(response.fields, function(message, field) {
@@ -83,14 +108,21 @@ YUI.add('bmp-page-selfreport', function(Y) {
     renderNav: function() {
       var nav = new Y.BMP.Widget.DropdownNav();
       nav.render(Y.one('h1').empty());
+    },
+
+    _loadSelfReportList: function() {
+      return Y.Data.get({
+        url: '/api/selfreport/v1'
+      });
     }
   };
 }, '1.0', {
   requires:[
-    'node-event-delegate',
-    'node',
+    'bmp-widget-selfreport-list',
+    'bmp-widget-dropdown-nav',
     'event-tap',
     'jsb-data-util',
-    'bmp-widget-dropdown-nav'
+    'node',
+    'node-event-delegate'
   ]
 });

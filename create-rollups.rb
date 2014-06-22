@@ -1,4 +1,5 @@
 require_relative 'dependencies'
+require_relative 'preprocessor'
 
 $manifest = []
 
@@ -62,3 +63,7 @@ end
 
 puts "Rollups created"
 
+unless ENV['RACK_ENV'] == 'development'
+  Preprocessor.compile_js($jsManifest)
+  Preprocessor.compile_less(['manifest'])
+end

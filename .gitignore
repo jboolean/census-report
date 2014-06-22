@@ -1,2 +1,3 @@
 *.manifest
+build/*
 .DS_STORE

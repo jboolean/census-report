@@ -1,0 +1,53 @@
+.page-poverty {
+
+  .the-numbers {
+    .make-row();
+
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+    border-bottom: 1px dotted @gray-light;
+
+    font-size: @font-size-base;
+
+    .number-label {
+      font-size: @font-size-small;
+    }
+
+    .comparison {
+      .make-sm-column(2);
+      .make-sm-column-offset(1);
+      .text-center();
+    }
+
+    .user-chosen {
+      .make-sm-column(4);
+      .make-sm-column-offset(1);
+      .text-center();
+    }
+
+    .user-chosen, .comparison {
+      margin-top: 1em;
+    }
+
+    .user-chosen {
+      height: 80px;
+
+      .number {
+        position: relative;
+        top: 5px;
+
+        font-size: calc(@font-size-large * 2);
+      }
+    }
+
+
+
+    .number {
+      display: block;
+      font-weight: bold;
+      font-size: 130%;
+    }
+  }
+
+
+}

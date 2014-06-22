@@ -97,7 +97,7 @@ YUI.add('bmp-model-basic', function(Y) {
         this.setAttrs({
           data: data,
           populationSize: response.populationSize,
-          loaded: true,
+          dataState: 'loaded',
           errors: []
         });
         this.updateErrors();

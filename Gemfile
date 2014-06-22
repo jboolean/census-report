@@ -9,6 +9,8 @@ gem "pg"
 gem "less"
 gem "therubyracer"
 
+gem 'uglifier'
+
 gem "thin"
 
 group :development do

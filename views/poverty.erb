@@ -2,29 +2,54 @@
 google.setOnLoadCallback(function() {
 
     //initialize!
-    YUI().use('bmp-page-rentburden', function(Y) {
-      Y.BMP.Page.RentBurden.initializePage();
+    YUI().use('bmp-page-poverty', function(Y) {
+      Y.BMP.Page.Poverty.initializePage();
     });
 
   });
 </script>
 
-<div class="page-rentburden container">
-<h1>Explore Rent Burden</h1>
-<div class="main-chart-wrapper"></div>
+<div class="page-poverty container">
+
+  <h1>Explore Poverty Rates</h1>
+
+  <div class="the-numbers">
+    <div class="comparison">
+      <span class="number-label">National poverty rate</span>
+      <span class="number">14.9%</span>
+    </div>
+
+    <div class="user-chosen">
+       <span class="number-label">Based on choices below</span>
+      <span class="main-chart-wrapper number"></span>
+    </div>
+
+    <div class="comparison">     
+      <span class="number-label">NYC poverty rate</span>
+      <span class="number">20.8%</span>
+    </div>
+    
+    <div class="clearfix"></div>
+  </div>
+
 
   <div class="controls">
-    <div class="comparison-controls">
+    <div class="artist-filter-controls">
       <h2>Compare</h2>
-      <div class="comparison-chooser btn-group btn-group-vertical disabled" data-toggle="buttons" >
+      <div class="artist-chooser btn-group disabled" data-toggle="buttons" >
          <label class="btn btn-default active">
-          <input type="radio" name="compareon" value="occp_artist_class"> Artists as Occupation vs. Non-Artists
+          <input type="radio" name="define-artist" value="none"> Artists &amp; Non-artists
+        </label>
+
+         <label class="btn btn-default">
+          <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="compareon" value="fod1p"> Degree in Art vs. Other Degree 
+          <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
         </label>
       </div>
+    </div>
     <div class="filter-controls">
 
       <h2>But show only&hellip;</h2>
@@ -118,4 +143,5 @@ google.setOnLoadCallback(function() {
 
     </div>
   </div>
+
 </div>

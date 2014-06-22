@@ -44,7 +44,9 @@ class BFAMFAPhD < Sinatra::Application
 
 
   get '/api/selfreport/v1' do
-    result = settings.db.exec_params('select * from selfreport;')
+
+    # todo: speed this up and paginate
+    result = settings.db.exec_params('select * from selfreport order by random();')
     hashResult = Array.new
     result.each do |tuple|
       hashResult << tuple

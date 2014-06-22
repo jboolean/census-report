@@ -6,7 +6,7 @@ YUI().add('jsb-data-util', function(Y) {
         return null;
       }
       var response = Y.JSON.parse(a.responseText);
-      callback(response);
+      Y.bind(callback, this)(response);
     };
   };
 

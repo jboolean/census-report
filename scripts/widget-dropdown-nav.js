@@ -25,7 +25,9 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
       var cb = this.get('contentBox');
       var node = Y.Node.create(DropdownNav.TEMPLATE);
 
-      node.one('.active-text').set('text', activeItem.title);
+      var activeTitle = Y.Object.getValue(activeItem, ['title']) || 'Menu';
+
+      node.one('.active-text').set('text', activeTitle);
       var ul = node.one('ul');
 
       Y.Array.each(this.get('items'), function(item) {

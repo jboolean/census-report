@@ -37,6 +37,7 @@
       line-height: 1em;
       border: none;
       border-bottom: 1px solid lighten(#000, 70%);
+      border-radius: 0;
 
       padding-left: 5px;
 
@@ -77,25 +78,29 @@
 
     }
 
+    textarea, input[type="text"], input[type="submit"] {
+      -webkit-appearance: none;
+    }
+
     select {
       border-bottom: none;
     }
 
     input[name=space_type] {
-      @media (min-width: @screen-md-min){
+      @media (min-width: @screen-sm-min){
         width: 22em;
       }
     }
 
     input[name=space_type] {
-      @media (min-width: @screen-md-min){
+      @media (min-width: @screen-sm-min){
         width: 22em;
       }
     }
 
     input[name=space_price_amount], input[name=project_year], 
     input[name=space_size_x], input[name=space_size_y], input[name=space_size_unitless] {
-      @media (min-width: @screen-md-min){
+      @media (min-width: @screen-sm-min){
         width: 5em;
       }
     }
