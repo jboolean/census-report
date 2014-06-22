@@ -112,7 +112,6 @@ YUI.add('bmp-widget-animated-number', function(Y) {
           // I don't know why this case happens
         }
         currentNumber += increment;
-        console.log(currentNumber);
         cb.set('text', Y.Number.format(currentNumber, numberFormatConfig));
         currentFrame += 1;
 

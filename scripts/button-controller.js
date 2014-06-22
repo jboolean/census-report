@@ -17,7 +17,7 @@ YUI.add('bmp-button-controller', function(Y) {
 
     initializer: function(config) {
       var buttonContainer = config.buttonContainer;
-      buttonContainer.delegate('change', this._onChange, '.filter input', this);
+      buttonContainer.delegate('change', this._onChange, '[data-filter-var]', this);
     },
 
     _onChange: function(e) {

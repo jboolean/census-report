@@ -34,27 +34,23 @@ google.setOnLoadCallback(function() {
 
 
   <div class="controls">
-    <div class="artist-filter-controls">
-      <h2>Compare</h2>
-      <div class="artist-chooser btn-group disabled" data-toggle="buttons" >
-         <label class="btn btn-default active">
+    <div class="filter-controls">
+      <div class="filter artist-chooser btn-group-vertical disabled" data-toggle="buttons" >
+         <label class="btn btn-primary active">
           <input type="radio" name="define-artist" value="none"> Artists &amp; Non-artists
         </label>
 
-         <label class="btn btn-default">
+         <label class="btn btn-primary">
           <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
         </label>
 
-        <label class="btn btn-default">
+        <label class="btn btn-primary">
           <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
         </label>
       </div>
-    </div>
-    <div class="filter-controls">
 
-      <h2>But show only&hellip;</h2>
 
-      <div class="filter filter-gender btn-group btn-group-justified" data-toggle="buttons" data-filter-var="sex">
+      <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
         <label class="btn btn-default active">
           <input type="radio" name="sex" value="-1" checked> Either
         </label>
@@ -68,8 +64,7 @@ google.setOnLoadCallback(function() {
         </label>
       </div>
 
-      <small>People who live in&hellip;</small>
-      <div class="filter filter-boro btn-group btn-group-justified" data-toggle="buttons" data-filter-var="boro">
+      <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
         <label class="btn btn-default active">
           <input type="radio" name="boro" value="-1" checked> All NYC
         </label>
@@ -95,8 +90,7 @@ google.setOnLoadCallback(function() {
         </label>
       </div>
       
-      <small>Who identify as&hellip;</small>
-      <div class="filter filter-ethnicity btn-group btn-group-justified" data-toggle="buttons" data-filter-var="ethnicity">
+      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-filter-var="ethnicity">
         <label class="btn btn-default active">
           <input type="radio" name="ethnicity" value="-1" checked> Any
         </label>
@@ -118,8 +112,9 @@ google.setOnLoadCallback(function() {
         </label>
       </div>
 
-      <small>Who attained&hellip;</small>
-      <div class="filter filter-schl btn-group btn-group-justified" data-toggle="buttons" data-filter-var="SCHL">
+      <div class="clearfix hidden-xs"></div>
+
+      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="SCHL">
         <label class="btn btn-default active">
           <input type="radio" name="schl" value="-1" checked> Any
         </label>
