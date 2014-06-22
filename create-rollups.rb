@@ -1,5 +1,20 @@
+require 'optparse'
+
 require_relative 'dependencies'
 require_relative 'preprocessor'
+
+
+options = {}
+ 
+optparse = OptionParser.new do|opts|
+  opts.banner = "Usage: --build to create production files"
+
+  options[:build] = false
+  opts.on("-b", "--build", "Build production files") do |v|
+    options[:build] = v
+  end
+end
+optparse.parse!
 
 $manifest = []
 
@@ -63,7 +78,7 @@ end
 
 puts "Rollups created"
 
-unless ENV['RACK_ENV'] == 'development'
+if options[:build]
   Preprocessor.compile_js($jsManifest)
   Preprocessor.compile_less(['manifest'])
 end
