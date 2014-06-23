@@ -5,11 +5,15 @@ DEPENDENCIES = {
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
   'page-poverty' => ['model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
- 'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer', 'widget-dropdown-nav'],
+ 'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer',
+    'widget-dropdown-nav', 'widget-schooltowork-summary'],
  'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],
+ 'page-artistclasses' => ['model-basic', 'widget-dropdown-nav'],
 
  'widget-datasourced-chart' => ['model-basic', 'widget-gchart'],
- 'widget-animated-number' => [],
+ 'widget-animated-number' => ['model-basic'],
+ 'widget-schooltowork-summary' => ['model-basic'],
+ 
  'data-util' => [],
  'model-basic' => ['data-util', 'data-preparer'],
  'plugin-toggle-buttons' => [],

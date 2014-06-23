@@ -22,18 +22,23 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       this.renderNav();
 
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
-        // groupby: 'grpip_group3',
         endpoint: '/api/acs/custom/schooltowork'
-        // groupby: ['fod1p', 'occp']
-        // dataPreparer: Y.BMP.DataPreparers.schoolToWorkSankey
+      });
+
+      var summaryDataModel = this._summaryDataModel = new Y.BMP.Model.BasicModel({
+        endpoint: '/api/acs',
+        groupby: 'occp_group',
+        useDescriptions: false,
+        sort: true
       });
 
       dataModel.setFilter('fod1p', [6000,6099], 'between');
+      summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
 
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'Sankey',
         options: {
-          height: 3500,
+          height: 2500,
           sankey: {
             iterations: 100,
             node: {
@@ -42,6 +47,10 @@ YUI.add('bmp-page-school-to-work', function(Y) {
           }
         },
         dataSource: dataModel
+      });
+
+      var summary = this._summaryWidget = new Y.BMP.Widget.SchoolToWorkSummary({
+        dataSource: summaryDataModel
       });
 
       chart.on('select', function(e) {
@@ -53,7 +62,9 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       this.renderFilter();
 
       dataModel.load();
+      summaryDataModel.load();
       chart.render(Y.one('.main-chart-wrapper').empty());
+      summary.render(Y.one('.summary-wrapper'));
 
     },
 
@@ -71,11 +82,14 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         var value = e.target.get('value');
         if (value != -1){
           this._dataModel.setFilter('fod1p', value, 'eq');
+          this._summaryDataModel.setFilter('fod1p', value, 'eq');
         } else {
           // no filter actually means filter to all art majors
           this._dataModel.setFilter('fod1p', [6000,6099], 'between');
+          this._summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
         }
         this._dataModel.load();
+        this._summaryDataModel.load();
       }, this);
 
       wrapper.empty().append(select);
@@ -89,6 +103,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 }, '1.0', {
   requires:[
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
-    'bmp-data-preparer', 'node', 'bmp-widget-dropdown-nav'
+    'bmp-data-preparer', 'node', 'bmp-widget-dropdown-nav',
+    'bmp-widget-schooltowork-summary'
   ]
 });

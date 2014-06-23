@@ -12,6 +12,8 @@ google.setOnLoadCallback(function() {
 <div class="page-poverty container">
 
   <h1>Explore Poverty Rates</h1>
+  <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in New York City. Filter the data to see poverty rates for different groups.</strong></p>
+
 
   <div class="the-numbers">
     <div class="comparison">
@@ -30,6 +32,11 @@ google.setOnLoadCallback(function() {
     </div>
     
     <div class="clearfix"></div>
+    <cite>U.S. Census Bureau, American Community Survey Microdata 2010-2012</cite>
+  </div>
+
+  <div class="key">
+    <p>*Poverty is defined as making less than $11,702 for one person, $14,657 for a family of two, $17,916 for a family of three, and $23,021 for a family of four in 2011 (not adjusted for inflation).</p>
   </div>
 
 
@@ -52,7 +59,7 @@ google.setOnLoadCallback(function() {
 
       <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
         <label class="btn btn-default active">
-          <input type="radio" name="sex" value="-1" checked> Either
+          <input type="radio" name="sex" value="-1" checked> Both
         </label>
 
         <label class="btn btn-default">
@@ -132,7 +139,11 @@ google.setOnLoadCallback(function() {
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="21,22,23,24"> BS or higher
+          <input type="radio" name="schl" value="21"> Bachelor's Degree
+        </label>
+
+        <label class="btn btn-default">
+          <input type="radio" name="schl" value="22,23,24"> Master's or higher
         </label>
       </div>
 

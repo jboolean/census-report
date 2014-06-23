@@ -1,7 +1,7 @@
 module QueryParse
   VALID_COLS = ['relp', 'agep',  'fod1p', 'occp',  'cit', 'sex', 'schl',  
-    'wagp',  'cow', 'ethnicity', 'boro',  'ten', 'grpip', 'pwgtp', 'wgtp', 'grpip_group3', 'occp_artist_class']
-  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex']
+    'wagp',  'cow', 'ethnicity', 'boro',  'ten', 'grpip', 'pwgtp', 'wgtp', 'grpip_group3', 'occp_artist_class', 'occp_group']
+  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex', 'occp_artist_class', 'occp_group']
 
   def valid_col? (col_name)
     VALID_COLS.include? (col_name.downcase)
@@ -48,7 +48,7 @@ module QueryParse
   end
 
   # this is the big one
-  def create_acs_tally_sql_query(groupbys, filters, use_descriptions)
+  def create_acs_tally_sql_query(groupbys, filters, use_descriptions, sort)
     table = 'acs_3yr_custom'
 
     escapedColumns = groupbys.map do |col_name|
@@ -81,7 +81,9 @@ module QueryParse
     wheres = create_whereSql(filters)
     whereSql = wheres.empty? ? '' : 'WHERE ' + wheres
 
-    "#{selectSql} FROM #{table} #{joins.join(' ')} #{whereSql} #{groupbySql};"
+    sortSql = sort ? 'ORDER BY sum(PWGTP) DESC' : ''
+
+    "#{selectSql} FROM #{table} #{joins.join(' ')} #{whereSql} #{groupbySql} #{sortSql};"
   end
 
   def create_whereSql(filters)

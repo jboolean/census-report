@@ -13,7 +13,7 @@ class BFAMFAPhD < Sinatra::Application
     filters = get_filters_from_query_params
     groupbys = ['fod1p', 'occp']
 
-    sqlQuery = create_acs_tally_sql_query(groupbys, filters, params[:use_descriptions])
+    sqlQuery = create_acs_tally_sql_query(groupbys, filters, params[:use_descriptions] == '1', false)
 
     raw = settings.db.exec(sqlQuery)
 

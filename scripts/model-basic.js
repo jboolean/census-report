@@ -5,7 +5,7 @@
 YUI.add('bmp-model-basic', function(Y) {
   var BasicModel =
   /**
-   * Basic filtered model for charts whereby you can groupby or filterby things.
+   * Basic filtered model for charts where you can groupby or filterby things.
    * @class BasicModel
    * @namespace BMP.Model
    * @extends Base
@@ -62,7 +62,8 @@ YUI.add('bmp-model-basic', function(Y) {
     _getQueryParams: function() {
       params = {
         groupby : this.get('groupby').join(','),
-        use_descriptions: true
+        use_descriptions: this.get('useDescriptions'),
+        sort: this.get('sort')
       };
 
       params = Y.merge(params, this._createFilterQueryParams(this._filters));
@@ -133,7 +134,7 @@ YUI.add('bmp-model-basic', function(Y) {
 
     updateErrors: function() {
       var errors = this.get('errors');
-      var threshold = 1000;
+      var threshold = 2000;
 
 
       var populationLargeEnough = true;
@@ -169,6 +170,16 @@ YUI.add('bmp-model-basic', function(Y) {
         setter: function(val) {
           return Y.Lang.isArray(val) ? val : [val];
         }
+      },
+
+      useDescriptions: {
+        value: true,
+        validator: Y.Lang.isBoolean
+      },
+
+      sort: {
+        value: false,
+        validator: Y.Lang.isBoolean
       },
 
       dataPreparer: {

@@ -12,15 +12,16 @@ class BFAMFAPhD < Sinatra::Application
     #parse http query
     groupbys = [];
 
-    use_descriptions = params[:use_descriptions]
-    calculate_percentage = params[:calculate_percentage]
+    use_descriptions = params[:use_descriptions] == '1'
+    sort = params[:sort] == '1'
+    calculate_percentage = params[:calculate_percentage] == '1'
 
     groupbys = get_groupbys_from_query_params
 
     filters = get_filters_from_query_params
 
     # create sql query
-    sqlQuery = create_acs_tally_sql_query(groupbys, filters, use_descriptions)
+    sqlQuery = create_acs_tally_sql_query(groupbys, filters, use_descriptions, sort)
     
     result = settings.db.exec(sqlQuery)
     arrayResult = last_col_to_i(result.values)

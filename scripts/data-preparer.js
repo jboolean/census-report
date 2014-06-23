@@ -39,6 +39,14 @@ YUI.add('bmp-data-preparer', function(Y) {
       var data = response.results;
       data.splice(0,0,['Field of Degree', 'Primary Occupation', '# People']);
       return data;
+    },
+
+    getHeaderPreparerer: function(headers) {
+      return function(response) {
+        var data = response.results;
+        data.splice(0,0,headers);
+        return data;
+      };
     }
   };
 }, '1.0', {

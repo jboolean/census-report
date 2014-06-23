@@ -59,9 +59,9 @@ YUI.add('bmp-widget-gchart', function(Y) {
     },
 
     _bindChartEvents: function() {
-      google.visualization.events.addListener(this._wrapper.getChart(), 'select', function() {
-        this.fire('select', this._wrapper.getSelection());
-      });
+      google.visualization.events.addListener(this._wrapper.getChart(), 'select', Y.bind(function() {
+        this.fire('select', this._wrapper.getChart().getSelection());
+      }, this));
     }
     
 
