@@ -6,11 +6,14 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
 
   var DEFINITIONS_FOR_SENTENCE = {
     null: 'have no occupation right now',
+    999: 'are not in the labor force',
     1: 'are professional artists',
     2: 'are educators',
     3: 'work in service jobs',
     4: 'work in sales and other office occupations',
-    5: 'work in other blue collar occupations',
+    5: 'work in various blue collar occupations',
+    6:  'are in the military',
+    7:  'work in farming, fishing, and forestry',
     10: 'work in various professional fields',
     11: 'became managers',
     12: 'went on to work in business and finance',

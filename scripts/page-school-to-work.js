@@ -12,8 +12,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     6004: 'Commercial Art And Graphic Design',
     6005: 'Film Video And Photographic Arts',
     6006: 'Art History And Criticism',
-    6007: 'Studio Arts',
-    6099: 'Miscellaneous Fine Arts'
+    6007: 'Studio Arts'
+    // 6099: 'Miscellaneous Fine Arts'
   };
 
   Y.namespace('BMP.Page').SchoolToWork = {
