@@ -38,7 +38,7 @@ YUI.add('bmp-page-poverty', function(Y) {
           sizeA: 100,
 
           valueB: 30,
-          sizeB: 110,
+          sizeB: 120,
 
           duration: 1
         }

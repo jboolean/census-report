@@ -1,6 +1,7 @@
 .page-poverty {
 
   .the-numbers {
+    position: relative;
     .make-row();
 
     padding-bottom: 3em;
@@ -49,6 +50,9 @@
     }
 
     cite {
+      position: absolute;
+      bottom: 5px;
+
       font-size: @font-size-small;
       font-style: italic;
     }
@@ -66,7 +70,11 @@
 
       margin-bottom: @padding-large-vertical;
     }
+  }
 
+  .key {
+    font-size: @font-size-small;
+    margin: 1em 0;
   }
 
 

@@ -34,6 +34,11 @@ YUI.add('bmp-page-rentburden', function(Y) {
           animation: {
             duration: 300,
             easing: 'out'
+          },
+          vAxis: {
+            baseline: 0,
+            minValue: 0,
+            maxValue: 100
           }
         },
         dataSource: dataModel
