@@ -5,7 +5,8 @@
 YUI.add('bmp-widget-schooltowork-summary', function(Y) {
 
   var DEFINITIONS_FOR_SENTENCE = {
-    null: 'have no occupation right now',
+    'other': 'work in a variety of other fields',
+    null: 'have not worked in the last five years',
     999: 'are not in the labor force',
     1: 'are professional artists',
     2: 'are educators',
@@ -34,7 +35,7 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
   Y.namespace('BMP.Widget').SchoolToWorkSummary =
   Y.Base.create('SchoolToWorkSummary', Y.Widget, [], {
 
-    maxToShow: 5,
+    threshold: 2000,
 
     bindUI: function() {
       SchoolToWorkSummary.superclass.bindUI.apply(this, arguments);
@@ -51,13 +52,13 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
 
       if (dataState === 'loaded') {
         var data = dataSource.get('data');
-        this.get('contentBox').set('text', this._generateText(this._convertToPercentages(data)));
+        this.get('contentBox').set('text', this._generateText(this._prepareData(data)));
       }
     },
 
     _generateText: function(data) {
       var sentenceClauses = [];
-      for (var i = 0; i < this.maxToShow && i < data.length; i++) {
+      for (var i = 0; i < data.length; i++) {
         var value = data[i][1];
         if (value < 1) {
           break;
@@ -71,7 +72,7 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
         sentenceClauses.push(clause);
       }
 
-      var out = 'Of people who reported this as their degree field, ';
+      var out = 'Of ' + this.get('displayedFilterText') + ', ';
 
       Y.Array.each(sentenceClauses, function(clause, i, clauses) {
         var lastAndNotOnlyOne = i === clauses.length - 1 && clauses.length > 1;
@@ -79,7 +80,7 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
           out += ' and ';
         }
         out += clause;
-        if (!lastAndNotOnlyOne) {
+        if (i !== clauses.length - 1) {
           out += ', ';
         }
       });
@@ -87,18 +88,39 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
       return out + '.';
     },
 
-    _convertToPercentages: function(data) {
-      var total = Y.Array.reduce(data, 0, function(last, cur) {
+    /**
+     * Convert to percentages and otherize
+     * @method  _prepareData
+     * @param   {Array} data
+     * @private
+     * @return  {Array}
+     */
+    _prepareData: function(data) {
+      var threshold = this.threshold;
+      var partition = Y.Array.partition(data, function(row) {
+        return row[1] >= threshold;
+      });
+
+      var totalOther = Y.Array.reduce(partition.rejects, 0, function(last, cur) {
         return last + cur[1];
       });
 
-      return Y.Array.map(data, function(cur) {
+      var totalListed = Y.Array.reduce(partition.matches, 0, function(last, cur) {
+        return last + cur[1];
+      });
+
+      var total = totalListed + totalOther;
+
+      var percentaged = Y.Array.map(partition.matches, function(cur) {
         if (total === 0) {
           return 0;
         }
         cur[1] = (cur[1]*100.0) / total;
         return cur;
       });
+
+      percentaged.push(['other', (totalOther * 100.0)/total]);
+      return percentaged;
     }
 
   }, {
@@ -116,6 +138,11 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
         validator: function(val) {
           return val instanceof Y.BMP.Model.BasicModel;
         }
+      },
+
+      displayedFilterText: {
+        value: 'people who reported this as their degree field',
+        validator: Y.Lang.isString
       }
       
     }

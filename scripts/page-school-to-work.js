@@ -5,6 +5,7 @@
 YUI.add('bmp-page-school-to-work', function(Y) {
 
   FOD1P_DEFINITONS = {
+    '-1': 'All Art Fields',
     6000: 'Fine Arts',
     6001: 'Drama And Theater Arts',
     6002: 'Music',
@@ -15,6 +16,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     6007: 'Studio Arts'
     // 6099: 'Miscellaneous Fine Arts'
   };
+
+  CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6004, 6005, 6006, 6007];
 
   Y.namespace('BMP.Page').SchoolToWork = {
     initializePage: function() {
@@ -50,7 +53,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       });
 
       var summary = this._summaryWidget = new Y.BMP.Widget.SchoolToWorkSummary({
-        dataSource: summaryDataModel
+        dataSource: summaryDataModel,
+        displayedFilterText: 'all people in NYC with an art degree'
       });
 
       chart.on('select', function(e) {
@@ -72,25 +76,12 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       var wrapper = Y.one('.fod1p-filter-wrapper');
       var select = Y.Node.create('<select name="fod1p-filter" class="form-control">');
 
-      select.append(Y.Node.create('<option value="-1">All Art Fields</option>'));
-
-      Y.Object.each(FOD1P_DEFINITONS, function(definiton, code) {
-        select.append(Y.Lang.sub('<option value="{code}" selected="selected">{definiton}</option>', {code: code, definiton: definiton}));
+      Y.Array.each(CODES_DISPLAY_ORDER, function(code, i) {
+        var definiton = FOD1P_DEFINITONS[code];
+        select.append(Y.Lang.sub('<option value="{code}">{definiton}</option>', {code: code, definiton: definiton}));
       });
 
-      select.on('change', function(e) {
-        var value = e.target.get('value');
-        if (value != -1){
-          this._dataModel.setFilter('fod1p', value, 'eq');
-          this._summaryDataModel.setFilter('fod1p', value, 'eq');
-        } else {
-          // no filter actually means filter to all art majors
-          this._dataModel.setFilter('fod1p', [6000,6099], 'between');
-          this._summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
-        }
-        this._dataModel.load();
-        this._summaryDataModel.load();
-      }, this);
+      select.on('change', this._handleFilterChange, this);
 
       wrapper.empty().append(select);
     },
@@ -98,6 +89,23 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     renderNav: function() {
       var nav = new Y.BMP.Widget.DropdownNav();
       nav.render(Y.one('h1').empty());
+    },
+
+    _handleFilterChange: function(e) {
+      var value = e.target.get('value');
+      if (value != -1){
+        this._summaryWidget.set('displayedFilterText', 'people who reported ' +
+          FOD1P_DEFINITONS[value] + ' as their degree field');
+        this._dataModel.setFilter('fod1p', value, 'eq');
+        this._summaryDataModel.setFilter('fod1p', value, 'eq');
+      } else {
+        // no filter actually means filter to all art majors
+        this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
+        this._dataModel.setFilter('fod1p', [6000,6099], 'between');
+        this._summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
+      }
+      this._dataModel.load();
+      this._summaryDataModel.load();
     }
   };
 }, '1.0', {
