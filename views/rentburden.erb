@@ -8,7 +8,15 @@ google.setOnLoadCallback(function() {
 
   });
 </script>
-
+<div id="defineArtistModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <!-- <iframe src="/artistclasses" style="zoom:0.60" width="99.6%" height="30000" frameborder="0"></iframe> -->
+      </div>
+    </div>
+  </div>
+</div>
 <div class="page-rentburden container">
   <h1>Explore Rent Burden</h1>
   <p class="main-description lead">This shows the <b>rent burdens*</b> of people of artists in comparison to other people living in New York City. Filter the data to see rent burdens for different groups.</p>
@@ -27,6 +35,7 @@ google.setOnLoadCallback(function() {
           <input type="radio" name="compareon" value="fod1p"> Degree in Art vs. Other Degree 
         </label>
       </div>
+      <a class="define-artist" href="/artistclasses">How do we define &ldquo;artist?&rdquo;</a>
 
       <div class="key">
         <dl class="">

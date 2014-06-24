@@ -7,6 +7,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
 
     initializePage: function() {
       this.renderNav();
+      this.renderDefineArtistModal();
 
       // what the 'compare on' switch does
       var setPartition= function(partitionType, dataModel) {
@@ -68,6 +69,10 @@ YUI.add('bmp-page-rentburden', function(Y) {
     renderNav: function() {
       var nav = new Y.BMP.Widget.DropdownNav();
       nav.render(Y.one('h1').empty());
+    },
+
+    renderDefineArtistModal: function() {
+      // Y.one('#defineArtistModal .modal-body').load('/artistclasses', '.container');
     }
   };
 }, '1.0', {
@@ -75,6 +80,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-plugins-toggle-buttons', 'node-pluginhost',
     'bmp-button-controller', 'bmp-data-preparer',
-    'node', 'bmp-widget-dropdown-nav'
+    'node', 'bmp-widget-dropdown-nav', 'node-load'
   ]
 });

@@ -19,4 +19,7 @@ DEPENDENCIES = {
  'plugin-toggle-buttons' => [],
  'button-controller' => ['model-basic', 'data-preparer'],
  'data-preparer' => []
+
+
+ # 'thirdparty/bootstrap/modal' => ['thirdparty/jquery-1.11.1']
 }
