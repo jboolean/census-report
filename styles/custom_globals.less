@@ -1,1 +1,53 @@
-// Overrides
+//////////////
+//Overrides //
+//////////////
+
+// @accent: #6896D2;
+// @accent: rgb(246, 74, 17);
+// @accent: #1f1f1f;
+@accent: #111821;
+@accent-text-color: #fff;
+@secondary-accent: #9F643F;
+@soft: #62616C;
+@inverted-link-color: darken(@accent-text-color, 10%);
+
+.invert {
+  background-color: @accent;
+
+  color: @accent-text-color;
+
+  a {
+    .inverted-link();
+  }
+
+  .btn-default {
+    .button-variant(darken(@accent, 70%), lighten(@accent, 85%), lighten(@accent, 70%));
+  }
+}
+
+.btn {
+  // font-family: "Helvetica Neue", @font-family-sans-serif;
+}
+
+
+
+.inverted-link {
+  // border-bottom: 1px solid #ffffff;
+  color: @inverted-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @accent-text-color;
+    // opacity: 0.6;
+  }
+
+
+}
+
+@font-family-sans-serif: "museo-sans-rounded", "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@brand-primary: @accent;
+@brand-warning: #9F592D;
+@brand-success: #4DAC41;
+
+@body-bg: lighten(@accent, 89%);
+

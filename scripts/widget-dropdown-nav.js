@@ -65,7 +65,7 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
 
   }, {
 
-    TEMPLATE: 'Explore: <div class="dropdown">' +
+    TEMPLATE: 'Exploring: <div class="dropdown">' +
                   '<a class="dropdown-toggle"><span class="active-text">Dropdown text</span>' +
                   '<span class="caret"></span></a>' +
                   '<ul>' +
@@ -94,6 +94,7 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
   requires:[
     'base',
     'event',
-    'widget-base'
+    'widget-base',
+    'array-extras'
   ]
 });

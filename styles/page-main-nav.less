@@ -1,0 +1,102 @@
+nav {
+  // .invert();
+  position: relative;
+
+  @nav-font-size-base: 20px;
+  
+  vertical-align: middle;
+  font-size: 0;
+
+  // border-bottom: 1px solid darken(@accent-text-color, 50%);
+
+  padding: @navbar-padding-vertical 0;
+
+  // margin-bottom: 13px;
+
+  .nav-container {
+    // makes even the body bg inverted
+    margin: 0;
+    padding-bottom: 13px;
+    margin-bottom: 12px;
+  }
+
+  @media(max-width: @screen-xs-max) {
+    padding: (@navbar-padding-vertical / 2) 0;
+  }
+
+  .left, .page-chooser, .right {
+    display: inline-block;
+    line-height: 80%;
+    margin-bottom: @padding-base-vertical;
+  }
+
+  .left {
+    font-size: @nav-font-size-base;
+    margin-right: 10%;
+    margin-top: 5px;
+
+    @media(max-width: @screen-xs-max) {
+      font-size: (@nav-font-size-base * 0.6);
+    }
+  }
+
+  .main-title {
+    font-weight: bolder;
+    margin-right: 0.5em;
+    @media(max-width: @screen-sm-max) {
+      display: inline;
+    }
+  }
+  .home-link {
+    // display: block;
+    font-size: (@nav-font-size-base * 0.5);
+    font-weight: lighter;
+
+    .icon {
+      padding-right: 4px;
+    }
+
+    @media(max-width: @screen-sm-max) {
+      display: inline;
+      .icon {
+        display: none;
+      }
+      font-size: 70%;
+    }
+  }
+  
+  .page-chooser {
+    font-size: @nav-font-size-base;
+    position: relative;
+    margin-top: @padding-base-vertical;
+
+    @media(min-width: @screen-md-min) {
+      font-size: (@nav-font-size-base * 1.2);
+      & > * {
+        display: table; // vertical centering?
+        // I'll take what works
+      }
+    }
+    // top: -11px; //uggg vertical centering
+    @media(max-width: @screen-xs-max) {
+      font-size: (@font-size-h2 * 0.53);
+    }
+  }
+
+  .right {
+    font-size: (@nav-font-size-base * 0.8);
+    font-weight: lighter;
+
+    position: absolute;
+    right: 0;
+
+    top: calc(50% - 11px);
+
+    @media(max-width: @screen-sm-max) {
+      display: none;
+    }
+
+    
+  }
+
+}

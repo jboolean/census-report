@@ -9,13 +9,13 @@ google.setOnLoadCallback(function() {
   });
 </script>
 
-<div class="page-poverty container">
+<div class="page-poverty">
+  <div class="invert"><div class="container"><div class="the-numbers">
+  
+    <!-- <h1>Explore Poverty Rates</h1> -->
+    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in New York City. Filter the data to see poverty rates for different groups.</strong></p>
 
-  <h1>Explore Poverty Rates</h1>
-  <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in New York City. Filter the data to see poverty rates for different groups.</strong></p>
 
-
-  <div class="the-numbers">
     <div class="comparison">
       <span class="number-label">National poverty rate</span>
       <span class="number">14.9%</span>
@@ -33,8 +33,9 @@ google.setOnLoadCallback(function() {
     
     <div class="clearfix"></div>
     <cite>U.S. Census Bureau, American Community Survey Microdata 2010-2012</cite>
-  </div>
+  </div></div></div> <!-- darn bootstrap, it takes 3 wrappers for this thing-->
 
+  <div class="bottom-section container">
   <div class="key">
     <p>*Poverty is defined as making less than $11,702 for one person, $14,657 for a family of two, $17,916 for a family of three, and $23,021 for a family of four in 2011 (not adjusted for inflation).</p>
   </div>
@@ -42,18 +43,20 @@ google.setOnLoadCallback(function() {
 
   <div class="controls">
     <div class="filter-controls">
-      <div class="filter artist-chooser btn-group-vertical disabled" data-toggle="buttons" >
-         <label class="btn btn-primary active">
-          <input type="radio" name="define-artist" value="none"> Artists &amp; Non-artists
-        </label>
+      <div class="filter">
+        <div class=" artist-chooser btn-group-vertical disabled" data-toggle="buttons" >
+           <label class="btn btn-primary active">
+            <input type="radio" name="define-artist" value="none"> Artists &amp; Non-artists
+          </label>
 
-         <label class="btn btn-primary">
-          <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
-        </label>
+           <label class="btn btn-primary">
+            <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
+          </label>
 
-        <label class="btn btn-primary">
-          <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
-        </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
+          </label>
+        </div>
         <a class="define-artist" href="/artistclasses">How do we define &ldquo;artist?&rdquo;</a>
       </div>
 
@@ -72,6 +75,8 @@ google.setOnLoadCallback(function() {
           <input type="radio" name="sex" value="2"> Female
         </label>
       </div>
+
+      <div class="clearfix hidden-md hidden-lg"></div>
 
       <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
         <label class="btn btn-default active">

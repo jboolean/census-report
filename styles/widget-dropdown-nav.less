@@ -11,7 +11,7 @@
     position: absolute;
 
     z-index: 10;
-
+    
     background-color: @body-bg;
 
     width: 100%;
@@ -21,8 +21,8 @@
     border-radius: 2px 2px 5px 2px;
     padding: 7px 3px 7px 5px;
     padding-top: 0.5em;
-
   }
+
   .dropdown.open ul {
     display: block;
     position: absolute;
@@ -41,4 +41,23 @@
   .dropdown-toggle {
     cursor: pointer;
   }
+
 }
+
+.invert {
+  .bmp-dropdown-nav {
+    .dropdown ul {
+      .invert();
+      background-color: lighten(@accent, 5%);
+
+      li.active a {
+        color: @accent-text-color;
+      }
+      
+    }
+    a {
+      .inverted-link();
+    }
+
+  }
+  }

@@ -13,6 +13,9 @@
   <script type="text/javascript" src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1","packages":["corechart","sankey"]}]}'></script>
   
   <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui.js"></script>
+
+  <script type="text/javascript" src="//use.typekit.net/<%=settings.typekitId%>.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
   <% if (settings.environment == :development)
   settings.scriptsManifest.each do |filename| %>
@@ -45,6 +48,7 @@
   </script>
 
   <!-- begin content -->
+  <%= erb :mainnav %>
   <%= yield %>
   <!-- end content -->
 </body>
