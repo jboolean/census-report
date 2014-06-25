@@ -8,7 +8,7 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
     'other': 'work in a variety of other fields',
     null: 'have not worked in the last five years',
     999: 'are not in the labor force',
-    1: 'are professional artists',
+    1: 'make a living as artists',
     2: 'are educators',
     3: 'work in service jobs',
     4: 'work in sales and other office occupations',
@@ -52,7 +52,7 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
 
       if (dataState === 'loaded') {
         var data = dataSource.get('data');
-        this.get('contentBox').set('text', this._generateText(this._prepareData(data)));
+        this.get('contentBox').setHTML(this._generateText(this._prepareData(data)));
       }
     },
 
@@ -69,6 +69,9 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
         });
 
         var clause = percentStr + ' ' + DEFINITIONS_FOR_SENTENCE[data[i][0]];
+        if ((Number)(data[i][0]) === 1) { // highlight artists
+          clause = '<strong>' + clause + '</strong>';
+        }
         sentenceClauses.push(clause);
       }
 
