@@ -27,3 +27,4 @@ Yes, there is room for improvement to this basic dependency manager I hacked tog
 
 ### Deploying to production
 To run in production run `ruby create-rollups.rb --build` to generate compressed production files. Your produciton server must have RACK_ENV = production.
+I *highly* recommend creating a pre-commit hook for this, and you'll never have to live in fear of deploying inconsistent code again.
