@@ -22,7 +22,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
   Y.namespace('BMP.Page').SchoolToWork = {
     initializePage: function() {
 
-      this.renderNav();
+      // this.renderNav();
 
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
         endpoint: '/api/acs/custom/schooltowork'

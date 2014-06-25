@@ -1,11 +1,12 @@
 .page-poverty {
 
   .the-numbers {
+    // .invert();
+
     position: relative;
     .make-row();
 
     padding-bottom: 3em;
-    margin-bottom: 2em;
     border-bottom: 1px dotted @gray-light;
 
     font-size: @font-size-base;
@@ -51,6 +52,7 @@
 
     cite {
       position: absolute;
+      padding-left: @panel-body-padding;
       bottom: 5px;
 
       font-size: @font-size-small;
@@ -59,6 +61,7 @@
   }
 
   .controls {
+    margin-top: 2em;
     .filter-controls {
       .make-row();
     }
@@ -69,6 +72,14 @@
       .make-md-column(3);
 
       margin-bottom: @padding-large-vertical;
+    }
+
+    .artist-chooser {
+      width: 100%;
+    }
+    .define-artist {
+      margin-top: 7px;
+      display: block;
     }
   }
 

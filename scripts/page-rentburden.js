@@ -6,7 +6,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
   Y.namespace('BMP.Page').RentBurden = {
 
     initializePage: function() {
-      this.renderNav();
+      // this.renderNav();
       this.renderDefineArtistModal();
 
       // what the 'compare on' switch does

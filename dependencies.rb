@@ -1,6 +1,7 @@
 # hash from each js filename to array of other js filesnames it depends on
 # css will be included automatically if name matches
 DEPENDENCIES = {
+ 'page-main-nav' => ['widget-dropdown-nav'],
  'page-rentburden' => ['widget-datasourced-chart', 'model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
   'page-poverty' => ['model-basic', 

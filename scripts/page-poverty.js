@@ -6,7 +6,7 @@ YUI.add('bmp-page-poverty', function(Y) {
   Y.namespace('BMP.Page').Poverty = {
 
     initializePage: function() {
-      this.renderNav();
+      // this.renderNav();
       
       var setArtistFilter = function(partitionType, dataModel) {
         dataModel.removeFilter('occp_artist_class');

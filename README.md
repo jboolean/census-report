@@ -12,7 +12,7 @@ Then,
 `bundle install`
 
 ### To run in devlopment
-`bundle exec rerun --pattern *.{rb,erb} "thin start config.ru"`
+`bundle exec rerun --pattern "**/*.{rb,erb,ru}" 'thin -R config.ru start'`
 
 ### When you add a new javascript file or change their dependencies
 Open the `dependencies.rb` file and edit it.

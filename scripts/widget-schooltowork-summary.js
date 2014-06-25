@@ -16,8 +16,8 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
     6:  'are in the military',
     7:  'work in farming, fishing, and forestry',
     10: 'work in various professional fields',
-    11: 'became managers',
-    12: 'went on to work in business and finance',
+    11: 'are managers',
+    12: 'are working in business and finance',
     13: 'now work in science, technology or engineering',
     14: 'now work in medicine'
   };

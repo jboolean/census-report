@@ -18,20 +18,20 @@ google.setOnLoadCallback(function() {
   </div>
 </div>
 <div class="page-rentburden container">
-  <h1>Explore Rent Burden</h1>
+  <!-- <h1>Explore Rent Burden</h1> -->
   <p class="main-description lead">This shows the <b>rent burdens*</b> of people of artists in comparison to other people living in New York City. Filter the data to see rent burdens for different groups.</p>
 
   <div class="chart-and-comparison-controls">
     <div class="main-chart-wrapper"></div>
 
-    <div class="comparison-controls">
+    <div class="comparison-controls invert">
       <h2>Compare</h2>
-      <div class="comparison-chooser btn-group btn-group-vertical disabled" data-toggle="buttons" >
-         <label class="btn btn-primary active">
+      <div class="comparison-chooser btn-group btn-group-vertical" data-toggle="buttons" >
+         <label class="btn btn-default active">
           <input type="radio" name="compareon" value="occp_artist_class"> Artists as Occupation vs. Non-Artists
         </label>
 
-        <label class="btn btn-primary">
+        <label class="btn btn-default">
           <input type="radio" name="compareon" value="fod1p"> Degree in Art vs. Other Degree 
         </label>
       </div>

@@ -16,6 +16,10 @@ YUI.add('bmp-widget-gchart', function(Y) {
   Y.namespace('BMP.Widget').GChart =
   Y.Base.create('GChart', Y.Widget, [], {
     initializer: function(config) {
+      if (!Y.Lang.isArray(config.colors)) {
+        config.options.colors = ['#2C486E', '#211B11', '#6E5321', '#2E1D1C',
+         '#3C4754', '#111821', '#262254'];
+      }
       this._wrapper = new google.visualization.ChartWrapper(config);
       google.visualization.events.addListener(this._wrapper, 'ready', Y.bind(this._bindChartEvents, this));
       this.publish('select');

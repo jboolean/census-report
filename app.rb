@@ -21,10 +21,14 @@ class BFAMFAPhD < Sinatra::Application
     host = db_parts[5]
     db = db_parts[7]
     set :db, PG::Connection.new(:host =>  host, :dbname => db, :user=> username, :password=> password)
+
+    set :typekitId, 'clf5ohy'
   end
 
   configure :development do
     set :db, PG::Connection.new({:host => 'localhost', :port => 5432, :user => 'julianboilen', :dbname => 'bfamfaphd'})
+
+    set :typekitId, 'jmz8ayw'
   end
 
   configure :development do

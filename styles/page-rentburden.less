@@ -1,4 +1,6 @@
 .page-rentburden {
+
+  margin-top: @padding-large-vertical;
   a {
     cursor: pointer;
   }
@@ -9,13 +11,18 @@
     height: 400px;
   }
 
+  .comparison-chooser.btn-group {
+    display: block;
+  }
+
   .chart-and-comparison-controls {
     margin: 1em;
 
     .make-row();
 
     .comparison-controls {
-      .make-md-column(3);
+      .make-md-column(4);
+      padding-left: 5px;
     }
 
     .key {
@@ -23,7 +30,7 @@
     }
     
     .main-chart-wrapper {
-      .make-md-column(9);
+      .make-md-column(8);
     }
   }
 

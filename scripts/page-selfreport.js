@@ -23,7 +23,7 @@ YUI.add('bmp-page-selfreport', function(Y) {
 
       Y.all('.selfreport button.submit').after('tap', this.submitForm, null, this);
 
-      this.renderNav();
+      // this.renderNav();
 
       var reportListWidget = this._reportListWidget = new Y.BMP.Widget.SelfReportList();
 
