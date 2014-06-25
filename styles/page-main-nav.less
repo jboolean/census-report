@@ -7,11 +7,9 @@ nav {
   vertical-align: middle;
   font-size: 0;
 
-  // border-bottom: 1px solid darken(@accent-text-color, 50%);
 
   padding: @navbar-padding-vertical 0;
 
-  // margin-bottom: 13px;
 
   .nav-container {
     // makes even the body bg inverted
@@ -36,7 +34,7 @@ nav {
     margin-top: 5px;
 
     @media(max-width: @screen-xs-max) {
-      font-size: (@nav-font-size-base * 0.6);
+      font-size: (@nav-font-size-base * 0.73);
     }
   }
 
@@ -46,6 +44,7 @@ nav {
     @media(max-width: @screen-sm-max) {
       display: inline;
     }
+    color: @accent-text-color;
   }
   .home-link {
     // display: block;
@@ -76,10 +75,6 @@ nav {
         display: table; // vertical centering?
         // I'll take what works
       }
-    }
-    // top: -11px; //uggg vertical centering
-    @media(max-width: @screen-xs-max) {
-      font-size: (@font-size-h2 * 0.53);
     }
   }
 
