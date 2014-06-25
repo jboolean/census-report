@@ -79,7 +79,8 @@ YUI.add('bmp-widget-dropdown-nav', function(Y) {
           {url: '/poverty', title: 'Poverty Rates'},
           {url: '/rentburden', title: 'Rent Burden'},
           {url: '/schooltowork', title: 'Art School & Occupation'},
-          {url: '/selfreport', title: 'You'}
+          {url: '/selfreport', title: 'You'},
+          {url: '/artistclasses', title: 'Defining "Artist"'}
         ]
       },
 
