@@ -19,13 +19,15 @@ google.setOnLoadCallback(function() {
 </div>
 <div class="page-rentburden container">
   <!-- <h1>Explore Rent Burden</h1> -->
-  <p class="main-description lead">This shows the <b>rent burdens*</b> of artists in comparison to other people living in New York City. Filter the data to see rent burdens for different groups.</p>
+  <p class="main-description lead">This shows the <b>rent burdens*</b> of artists in comparison to other people living in New York City.</p>
 
   <div class="chart-and-comparison-controls">
-    <div class="main-chart-wrapper"></div>
-
+    <div class="chart-column">
+      <div class="main-chart-wrapper"></div>
+      <cite>U.S. Census Bureau, American Community Survey Microdata 2010-2012</cite>
+    </div>
     <div class="comparison-controls">
-      <h2>Compare</h2>
+      <h3>Compare</h3>
       <div class="comparison-chooser btn-group btn-group-vertical" data-toggle="buttons" >
          <label class="btn btn-primary active">
           <input type="radio" name="compareon" value="occp_artist_class">Art Occupation vs. All People
@@ -43,19 +45,19 @@ google.setOnLoadCallback(function() {
         <dt>*Rent Burdened</dt><dd>Paying between 30% and 50% of household income on rent</dd>
         <dt>Severely Rent Burdened</dt><dd>Paying more than half of household income on rent</dd>
       </dl>
-        <cite>U.S. Census Bureau, American Community Survey Microdata 2010-2012</cite>
+        
       </div>
     </div>
   </div>
 
 
-  <h2>But show only&hellip;</h2>
+  <h3>Filter the data to see rent burdens for different groups.</h3>
 
   <div class="filter-controls">
 
     <div class="filter filter-gender btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
       <label class="btn btn-default active">
-        <input type="radio" name="sex" value="-1" checked> Either
+        <input type="radio" name="sex" value="-1" checked> All People
       </label>
 
       <label class="btn btn-default">
@@ -95,7 +97,7 @@ google.setOnLoadCallback(function() {
     
     <div class="filter filter-ethnicity btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="ethnicity">
       <label class="btn btn-default active">
-        <input type="radio" name="ethnicity" value="-1" checked> Any
+        <input type="radio" name="ethnicity" value="-1" checked> All People
       </label>
 
       <label class="btn btn-default">
@@ -117,7 +119,7 @@ google.setOnLoadCallback(function() {
 
     <div class="filter filter-schl btn-group btn-group-vertical" data-toggle="buttons" data-filter-var="SCHL">
       <label class="btn btn-default active">
-        <input type="radio" name="schl" value="-1" checked> Any
+        <input type="radio" name="schl" value="-1" checked> All People
       </label>
 
       <label class="btn btn-default">

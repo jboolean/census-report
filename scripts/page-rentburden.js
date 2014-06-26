@@ -31,15 +31,14 @@ YUI.add('bmp-page-rentburden', function(Y) {
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'ColumnChart',
         options: {
-          height: 400,
+          height: 300,
           animation: {
             duration: 300,
             easing: 'out'
           },
           vAxis: {
             baseline: 0,
-            minValue: 0,
-            maxValue: 100
+            minValue: 0
           }
         },
         dataSource: dataModel
