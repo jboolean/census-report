@@ -3,9 +3,6 @@ require 'pp'
 require 'json'
 
 class BFAMFAPhD < Sinatra::Application
-  before '/api/*' do
-    content_type :json
-  end
 
   get '/api/acs/custom/schooltowork' do
 
@@ -20,7 +17,8 @@ class BFAMFAPhD < Sinatra::Application
     #otherization for uncommon occupations
     big = []
     others = {}
-    threshold = 100
+    otherOccupations = {}
+    threshold = 2000
 
     raw.each_row do |row|
       count = row[2].to_i
@@ -33,6 +31,11 @@ class BFAMFAPhD < Sinatra::Application
           others[fod] = count;
         else
           others[fod] += count
+        end
+        if otherOccupations[occp].nil?
+          otherOccupations[occp] = count
+        else
+          otherOccupations[occp] += count
         end
       end
     end
@@ -47,7 +50,8 @@ class BFAMFAPhD < Sinatra::Application
       :results => out,
       :fields => ['Field of Degree', 'Occupation', 'Count'], 
       :query => sqlQuery,
-      :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
+      :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD',
+      :otherOccupations => otherOccupations.keys
     }.to_json
   end
 

@@ -41,7 +41,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'Sankey',
         options: {
-          height: 2500,
+          // height: 2500,
+          height: 1500,
           sankey: {
             iterations: 100,
             node: {
@@ -69,6 +70,15 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       summaryDataModel.load();
       chart.render(Y.one('.main-chart-wrapper').empty());
       summary.render(Y.one('.summary-wrapper'));
+
+      dataModel.after('loaded', function() {
+        var otherList = Y.one('.other-list').empty();
+        Y.Array.each(dataModel.get('rawResponse').otherOccupations, function(occupation) {
+          var li = Y.Node.create('<li>');
+          li.set('text', occupation);
+          otherList.append(li);
+        });
+      });
 
     },
 
@@ -119,6 +129,6 @@ YUI.add('bmp-page-school-to-work', function(Y) {
   requires:[
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-data-preparer', 'node', 'bmp-widget-dropdown-nav',
-    'bmp-widget-schooltowork-summary'
+    'bmp-widget-schooltowork-summary', 'array-extras'
   ]
 });
