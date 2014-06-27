@@ -17,7 +17,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     // 6099: 'Miscellaneous Fine Arts'
   };
 
-  CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6004, 6005, 6006, 6007];
+  CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6005, 6006, 6007, 6004];
 
   Y.namespace('BMP.Page').SchoolToWork = {
     initializePage: function() {
@@ -35,8 +35,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         sort: true
       });
 
-      dataModel.setFilter('fod1p', [6000,6099], 'between');
-      summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
+      dataModel.setFilter('fod1p_artist', 1);
+      summaryDataModel.setFilter('fod1p_artist', 1);
 
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'Sankey',
@@ -93,16 +93,23 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 
     _handleFilterChange: function(e) {
       var value = e.target.get('value');
+
+      this._dataModel.removeFilter('fod1p');
+      this._summaryDataModel.removeFilter('fod1p');
+      
+      this._dataModel.removeFilter('fod1p_artist');
+      this._summaryDataModel.removeFilter('fod1p_artist');
+
       if (value != -1){
         this._summaryWidget.set('displayedFilterText', 'people who reported ' +
           FOD1P_DEFINITONS[value] + ' as their degree field');
         this._dataModel.setFilter('fod1p', value, 'eq');
         this._summaryDataModel.setFilter('fod1p', value, 'eq');
       } else {
-        // no filter actually means filter to all art majors
+        // no filter actually means filter to all "art" majors (non commercial)
         this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
         this._dataModel.setFilter('fod1p', [6000,6099], 'between');
-        this._summaryDataModel.setFilter('fod1p', [6000,6099], 'between');
+        this._summaryDataModel.setFilter('fod1p_artist', 1);
       }
       this._dataModel.load();
       this._summaryDataModel.load();

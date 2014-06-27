@@ -18,7 +18,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
           break;
         case 'fod1p':
           dataModel.clearPartition();
-          dataModel.setPartition('fod1p', [6000,6099], 'between');
+          dataModel.setPartition('fod1p_artist', 1);
         }
       };
 

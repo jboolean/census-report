@@ -10,7 +10,7 @@ YUI.add('bmp-page-poverty', function(Y) {
       
       var setArtistFilter = function(partitionType, dataModel) {
         dataModel.removeFilter('occp_artist_class');
-        dataModel.removeFilter('fod1p');
+        dataModel.removeFilter('fod1p_artist');
         switch (partitionType) {
         case 'occp_artist_class':
           dataModel.clearPartition();
@@ -18,7 +18,7 @@ YUI.add('bmp-page-poverty', function(Y) {
           break;
         case 'fod1p':
           dataModel.clearPartition();
-          dataModel.setFilter('fod1p', [6000,6099], 'between');
+          dataModel.setFilter('fod1p_artist', 1);
         }
       };
 

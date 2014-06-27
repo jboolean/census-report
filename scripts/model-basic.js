@@ -27,6 +27,10 @@ YUI.add('bmp-model-basic', function(Y) {
       this._setFilterOrPartition(this._filters, column, values, operator);
     },
 
+    removeFilter: function(column) {
+      delete this._filters[column];
+    },
+
     setPartition: function(column, values, operator) {
       this._setFilterOrPartition(this._partitions, column, values, operator);
     },
@@ -53,10 +57,6 @@ YUI.add('bmp-model-basic', function(Y) {
         operator: operator,
         values: values
       };
-    },
-
-    removeFilter: function(column) {
-      delete this._filters[column];
     },
 
     _getQueryParams: function() {
