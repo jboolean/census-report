@@ -59,17 +59,24 @@ YUI.add('bmp-page-artistclasses', function(Y) {
         chartType: 'BarChart',
         options: {
           title: 'Approximate Number of People in NYC in Each Creative Occupation',
-          height: 600,
+          height: 650,
           legend: {
             position: 'none'
           },
           chartArea: {
             width: '60%',
-            height: '90%',
+            height: '85%',
             right: 0,
             bottom: 0
           },
-          fontSize: 10
+          vAxis: {
+            textStyle: {
+              fontSize: 10
+            }
+          },
+          titleTextStyle: {
+            bold: false
+          }
         },
         dataTable: STATIC_CHART_DATA.allOccupations
       });
