@@ -16,7 +16,7 @@ YUI.add('bmp-widget-gchart', function(Y) {
   Y.namespace('BMP.Widget').GChart =
   Y.Base.create('GChart', Y.Widget, [], {
     initializer: function(config) {
-      if (!Y.Lang.isArray(config.colors)) {
+      if (!Y.Lang.isArray(config.options.colors)) {
         config.options.colors = ['#2C486E', '#211B11', '#6E5321', '#2E1D1C',
          '#3C4754', '#111821', '#262254'];
       }
@@ -79,8 +79,8 @@ YUI.add('bmp-widget-gchart', function(Y) {
       },
 
       dataTable: {
-        required: true,
-        validator: Y.Lang.isArray
+        required: true
+        // validator: Y.Lang.isArray
       },
 
       options: {
