@@ -5,6 +5,33 @@
 YUI.add('bmp-page-artistclasses', function(Y) {
   Y.namespace('BMP.Page').ArtistClasses = {
 
+    pieChartOptions: {
+      height: 300,
+      legend: {
+        position: 'labeled'
+      }
+    },
+
+    smallPieChartOptions: Y.merge(this.pieChartOptions, {
+      height: 300,
+      legend: {
+        position: 'bottom'
+      },
+      fontSize: 8,
+      // pieSliceText: 'label',
+      pieSliceTextStyle: {
+        fontSize: 7
+      }
+    }),
+
+    getPieChartOptions: function() {
+      if (Y.DOM.winWidth() > 480) {
+        return this.pieChartOptions;
+      } else {
+        return this.smallPieChartOptions;
+      }
+    },
+
     initializePage: function() {
       this._renderOccupationClasses();
       this._renderDegrees();
@@ -21,12 +48,7 @@ YUI.add('bmp-page-artistclasses', function(Y) {
 
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'PieChart',
-        options: {
-          height: 300,
-          legend: {
-            position: 'labeled'
-          }
-        },
+        options: this.getPieChartOptions(),
         dataSource: dataModel
       });
 
@@ -47,10 +69,15 @@ YUI.add('bmp-page-artistclasses', function(Y) {
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'BarChart',
         options: {
-          height: 600,
+          height: 800,
           legend: {
             position: 'bottom'
-          }
+          },
+          chartArea: {
+            width: '60%',
+            right: 0
+          },
+          fontSize: 10
         },
         dataSource: dataModel
       });
@@ -71,12 +98,7 @@ YUI.add('bmp-page-artistclasses', function(Y) {
 
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'PieChart',
-        options: {
-          height: 600,
-          legend: {
-            position: 'left'
-          }
-        },
+        options: this.getPieChartOptions(),
         dataSource: dataModel
       });
 
@@ -92,6 +114,7 @@ YUI.add('bmp-page-artistclasses', function(Y) {
   requires:[
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-data-preparer',
-    'node'
+    'node',
+    'dom-screen'
   ]
 });

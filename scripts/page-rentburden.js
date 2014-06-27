@@ -39,6 +39,9 @@ YUI.add('bmp-page-rentburden', function(Y) {
           vAxis: {
             baseline: 0,
             minValue: 0
+          },
+          legend: {
+            position: 'top'
           }
         },
         dataSource: dataModel
