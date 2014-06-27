@@ -1,0 +1,74 @@
+{
+  "artistClasses": [
+    ["Artist Class", "# Individuals", { "role": "style" }],
+    [
+      "Other Cultural Producers",
+      37565,
+      "#6E5321"
+
+    ],
+    [
+      "Architects and Designers",
+      68208,
+      "#211B11"
+    ],
+    [
+      "Artist",
+      98412,
+      "#2C486E"
+    ]
+  ],
+  "artDegrees": [
+    ["Field of Degree", "Approx. # Individuals"],
+    [
+      "Visual And Performing Arts",
+      9607
+    ],
+    [
+      "Miscellaneous Fine Arts",
+      234
+    ],
+    [
+      "Studio Arts",
+      7055
+    ],
+    [
+      "Film Video And Photographic Arts",
+      18852
+    ],
+    [
+      "Drama And Theater Arts",
+      30581
+    ],
+    [
+      "Music",
+      31777
+    ],
+    [
+      "Fine Arts",
+      53538
+    ],
+    [
+      "Art History And Criticism",
+      16769
+    ]
+  ],
+  "allOccupations": [
+  ["Occupations", "Approx # Individuals", {"role": "style"}],
+  ["Photographers",10857, "#2C486E"],
+  ["Musicians, singers, and related workers", 15171 ,"#2C486E"],
+  ["Actors",  9356 ,"#2C486E"],
+  ["Artists and related workers", 17977 ,"#2C486E"],
+  ["Producers and directors", 20308 ,"#2C486E"],
+  ["Writers and authors", 19635 ,"#2C486E"],
+  ["Entertainers and performers, sports and related workers, all other",  2705 ,"#2C486E"],
+  ["Dancers and choreographers",  2403 ,"#2C486E"],
+  ["Designers", 55776 ,"#211B11"],
+  ["Architects, except naval", 12432 ,"#211B11"],
+  ["Television, video, and motion picture camera operators and editors",  3812 ,"#6E5321"],
+  ["Broadcast and sound engineering technicians and radio operators, and media and communication equipment workers, all other",  4993 ,"#6E5321"],
+  ["Editors", 20203 ,"#6E5321"],
+  ["Miscellaneous media and communication workers",  5555 ,"#6E5321"],
+  ["Archivists, curators, and museum technicians",  3002 ,"#6E5321"]
+]
+}

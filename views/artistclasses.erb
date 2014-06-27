@@ -1,12 +1,13 @@
 <script>
+STATIC_CHART_DATA = <%=@staticdata%>;
 google.setOnLoadCallback(function() {
 
-    //initialize!
-    YUI().use('bmp-page-artistclasses', function(Y) {
-      Y.BMP.Page.ArtistClasses.initializePage();
-    });
-
+  //initialize!
+  YUI().use('bmp-page-artistclasses', function(Y) {
+    Y.BMP.Page.ArtistClasses.initializePage();
   });
+
+});
 </script>
 
 <div class="page-artistclasses container">

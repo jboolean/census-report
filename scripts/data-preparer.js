@@ -9,7 +9,7 @@ YUI.add('bmp-data-preparer', function(Y) {
     2: 'Severely Rent Burdened'
   };
 
-  Y.BMP.DataPreparers = {
+  Y.namespace('BMP').DataPreparers = {
 
     rentBurden: function(response) {
       var rawData = response.results;

@@ -9,7 +9,7 @@ DEPENDENCIES = {
  'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer',
     'widget-dropdown-nav', 'widget-schooltowork-summary'],
  'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],
- 'page-artistclasses' => ['model-basic', 'widget-dropdown-nav'],
+ 'page-artistclasses' => ['widget-dropdown-nav', 'widget-gchart'],
 
  'widget-datasourced-chart' => ['model-basic', 'widget-gchart'],
  'widget-animated-number' => ['model-basic'],

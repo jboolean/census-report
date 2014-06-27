@@ -40,80 +40,60 @@ YUI.add('bmp-page-artistclasses', function(Y) {
     },
 
     _renderOccupationClasses: function() {
-      var dataModel = new Y.BMP.Model.BasicModel({
-        groupby: 'occp_artist_class',
-        endpoint: '/api/acs',
-        dataPreparer: Y.BMP.DataPreparers.getHeaderPreparerer(['Artist Class', '# Individuals'])
-      });
-
-      var chart = new Y.BMP.Widget.DataSourcedChart({
+      var chart = new Y.BMP.Widget.GChart({
         chartType: 'PieChart',
-        options: this.getPieChartOptions(),
-        dataSource: dataModel
+        options: Y.merge(this.getPieChartOptions(),
+        {
+          colors: ['#6E5321', '#211B11', '#2C486E']
+        }),
+        // dataSource: dataModel
+        dataTable: STATIC_CHART_DATA.artistClasses
+        
       });
-
-      dataModel.setFilter('occp_artist_class', [1,2,3], 'in');
 
       chart.render(Y.one('.section.occupation .classes-chart-wrapper').empty());
-
-      dataModel.load();
     },
 
     _renderOccupations: function() {
-      var dataModel = new Y.BMP.Model.BasicModel({
-        groupby: 'occp',
-        endpoint: '/api/acs',
-        dataPreparer: Y.BMP.DataPreparers.getHeaderPreparerer(['Occupation', 'Approx. # Individuals'])
-      });
-
-      var chart = new Y.BMP.Widget.DataSourcedChart({
+      var chart = new Y.BMP.Widget.GChart({
         chartType: 'BarChart',
         options: {
-          height: 800,
+          title: 'Approximate Number of People in NYC in Each Creative Occupation',
+          height: 600,
           legend: {
-            position: 'bottom'
+            position: 'none'
           },
           chartArea: {
             width: '60%',
-            right: 0
+            height: '90%',
+            right: 0,
+            bottom: 0
           },
           fontSize: 10
         },
-        dataSource: dataModel
+        dataTable: STATIC_CHART_DATA.allOccupations
       });
 
-      dataModel.setFilter('occp_artist_class', [1,2,3], 'in');
-
       chart.render(Y.one('.section.occupation .occp-chart-wrapper').empty());
-
-      dataModel.load();
     },
 
     _renderDegrees: function() {
-      var dataModel = new Y.BMP.Model.BasicModel({
-        groupby: 'fod1p',
-        endpoint: '/api/acs',
-        dataPreparer: Y.BMP.DataPreparers.getHeaderPreparerer(['Degree', '# Individuals'])
-      });
 
-      var chart = new Y.BMP.Widget.DataSourcedChart({
+      var chart = new Y.BMP.Widget.GChart({
         chartType: 'PieChart',
         options: this.getPieChartOptions(),
-        dataSource: dataModel
+        dataTable: STATIC_CHART_DATA.artDegrees
       });
-
-      dataModel.setFilter('fod1p', [6000, 6099], 'between');
 
       chart.render(Y.one('.section.degree .chart-wrapper').empty());
 
-      dataModel.load();
     }
 
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'bmp-data-preparer',
+    'bmp-widget-gchart',
     'node',
     'dom-screen'
   ]
