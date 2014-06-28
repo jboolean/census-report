@@ -1,5 +1,9 @@
 YUI.add('bmp-widget-selfreport-list', function(Y) {
 
+  var subAndEscape = function() {
+    return Y.Escape.html(Y.Lang.sub.apply(this, arguments));
+  };
+
   var SelfReportList =
   Y.namespace('BMP.Widget').SelfReportList =
   Y.Base.create('SelfReportListWidget', Y.Widget, [], {
@@ -32,19 +36,26 @@ YUI.add('bmp-widget-selfreport-list', function(Y) {
     },
 
     _renderReport: function(report) {
-      var node = Y.Node.create('<li>');
-      node.setHTML(this._reportToString(report));
-      return node;
+      return this._getReportNode(report);
     },
 
-    _reportToString: function(report) {
+    _getReportNode: function(report) {
       if (report.version && report.version != 1) {
         throw 'unsupported report version';
       }
 
-      var out = 'I made ' + report.project_description;
-      if (Y.Lang.isString(report.space_type)) {
-        out += ' while renting a ' + report.space_type;
+      var out = '';
+
+      if (Y.Lang.isString(report.name)) {
+        out += subAndEscape('My name is {name}, and ', report);
+      }
+
+      out += 'I made ' + Y.Escape.html(report.project_description);
+      
+      if (Y.Lang.isValue(report.space_price_amount) || Y.Lang.isValue(report.space_type)) {
+        out += subAndEscape(' while renting a {space_type}', {
+          space_type: report.space_type || 'space'
+        });
       }
 
       if (Y.Lang.isValue(report.space_price_amount)) {
@@ -52,25 +63,34 @@ YUI.add('bmp-widget-selfreport-list', function(Y) {
         if (report.space_price_amount === '$0.00') {
           out += ' free';
         } else {
-          out += ' ' + report.space_price_amount;
+          out += ' ' + Y.Escape.html(report.space_price_amount);
 
           if (Y.Lang.isValue(report.space_price_unit)) {
-            out += ' per ' + report.space_price_unit;
+            out += ' per ' + Y.Escape.html(report.space_price_unit);
           }
         }
       } //end space price
 
       if (Y.Lang.isValue(report.project_year)) {
-        out += ' in ' + report.project_year;
+        out += subAndEscape(' in {project_year}', report);
       }
 
       out += '.';
 
-      if (Y.Lang.isValue(report.space_size_ft)) {
-        out += ' The space is about ' + report.space_size_ft + 'ft&#x00B2;.';
+      if (Y.Lang.isValue(report.project_url)) {
+        out += ' Find out more about it at ' +
+          Y.Lang.sub('<a href="{project_url}" target="_blank" ' +
+            'class="external">{project_url_domain} ' +
+            '</a>.', {
+            project_url: report.project_url.replace('"', '&quot;'),
+            project_url_domain: Y.Escape.html(report.project_url_domain)
+          });
       }
 
-      return out;
+      var li = Y.Node.create('<li>');
+      li.setHTML(out);
+      li.setAttribute('data-id', report.id);
+      return li;
     }
     
 
@@ -94,6 +114,7 @@ YUI.add('bmp-widget-selfreport-list', function(Y) {
   requires:[
     'widget',
     'node',
-    'base'
+    'base',
+    'escape'
   ]
 });

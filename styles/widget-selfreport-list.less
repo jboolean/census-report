@@ -6,7 +6,10 @@
     position: relative;
 
     font-family: @font-family-sans-serif;
-    font-size: calc(@font-size-large * 1.2);
+    font-size: calc(@font-size-large * 1.0);
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-base;
+    }
     letter-spacing: 2px;
 
     list-style: none;
@@ -58,11 +61,22 @@
       .right-aligned();
     }
 
-    @media (min-width: @screen-md-min) {
+    @media (min-width: @screen-xs-min) {
       li {
         width: 55%;
       }
     }
 
+  }
+
+  a.external {
+    &::after {
+      font-family: "FontAwesome";
+      font-style: normal;
+      font-size: 90%;
+      content: "\f08e";
+      vertical-align: top;
+      text-decoration: none;
+    }
   }
 }

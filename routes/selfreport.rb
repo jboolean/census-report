@@ -1,7 +1,7 @@
 class BFAMFAPhD < Sinatra::Application
+  # URL_PATTERN = Regexp.new(/^(?<protocol>https?:\/\/)?(?<domain>(([a-zA-Z][\w-]*)\.)+[a-z]{2,63})(\/.*)?$/)
   # VALID_COLUMNS
   post '/api/selfreport/v1' do
-    pp params
 
     errors = {}
 
@@ -13,10 +13,13 @@ class BFAMFAPhD < Sinatra::Application
       errors[:space_zip] = 'Not a valid ZIP code'
     end
 
-    unless params[:space_price_amount].nil?
-      unless ['year', 'month', 'day', 'hour', 'minute', 'second'].include?(params[:space_price_time_unit])
-        errors[:space_price_time_unit] = 'Must specify a unit of time like \'day\''
-      end
+    urlMatchResult = URL_PATTERN.match(params[:project_url])
+    if !params[:project_url].nil? && !urlMatchResult
+      errors[:project_url] = 'Not a valid URL'
+    end
+
+    if (urlMatchResult && urlMatchResult[:protocol].nil?)
+      params[:project_url] = 'http://' + params[:project_url]
     end
 
     unless errors.empty?
@@ -25,8 +28,9 @@ class BFAMFAPhD < Sinatra::Application
 
         sqlQueryFormat = 'INSERT INTO selfreport 
     (version, created_on, project_description, space_type, 
-      space_zip, space_price_amount, space_price_unit, space_size_ft, project_year) values
-      (1, $1, $2, $3, $4, $5, $6, $7, $8)'
+      space_zip, space_price_amount, space_price_unit, project_year, name, project_url) values
+      (1, $1, $2, $3, $4, $5, $6, $7, $8, $9) returning *'
+
 
     sqlParams = [
       Time.now,
@@ -35,11 +39,15 @@ class BFAMFAPhD < Sinatra::Application
       params[:space_zip],
       params[:space_price_amount],
       params[:space_price_time_unit],
-      params[:space_size_ft],
-      params[:project_year] ]
-    settings.db.exec_params(sqlQueryFormat, sqlParams)
+      params[:project_year],
+      params[:name],
+      params[:project_url] ]
+    result = settings.db.exec_params(sqlQueryFormat, sqlParams)
 
-    {:message => 'success'}.to_json  
+    hashResult = sql_to_result_hash result
+
+
+    {:message => 'success', :results => hashResult}.to_json  
   end
 
 
@@ -47,10 +55,8 @@ class BFAMFAPhD < Sinatra::Application
 
     # todo: speed this up and paginate
     result = settings.db.exec_params('select * from selfreport order by random();')
-    hashResult = Array.new
-    result.each do |tuple|
-      hashResult << tuple
-    end
-    hashResult.to_json
+    hashResult = sql_to_result_hash result
+
+    {:results => hashResult}.to_json
   end
 end

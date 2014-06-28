@@ -14,9 +14,11 @@ google.setOnLoadCallback(function() {
 
 <section class="selfreport">
 <h1 class="main-description lead">Add yourself to the project</h1>
-<small>All fields are optional</small>
+<small><strong>All fields are optional</strong></small>
 
 <form>
+  My name is
+  <input type="text" name="name" autocapitalize="words">, and
   I made 
   <input type="text" name="project_description" placeholder="a project" autocapitalize="off">
   while renting a 
@@ -24,29 +26,21 @@ google.setOnLoadCallback(function() {
   in 
   <input type="text" size="7" name="space_zip" maxlength="5" minlength="5" placeholder="zip code">
   for
-  <!--span class="input-group"-->
-    <!--span class="input-group-addon">$</span-->
-    <input type="number" size="4" name="space_price_amount" placeholder="$">
-  <!--/span-->
-  per
+  <input type="number" size="4" name="space_price_amount" placeholder="$">
   <select name="space_price_time_unit" id="">
-    <option value="month">Month</option>
-    <option value="day">Day</option>
-    <option value="hour">Hour</option>
+    <option value="month">per month</option>
+    <option value="day">per day</option>
+    <option value="hour">per hour</option>
+    <option value="">one time</option>
   </select>
   in
   <input type="number" size="7" name="project_year" placeholder="year" maxlength="4">
   .<br/>
- <!--  The space is about
-  <input type="number" name="space_size_x"> x <input type="number" name="space_size_y">
-  or
-  <input type="number" name="space_size_unitless">
-  <select name="space_size_units" id="">
-    <option value="ft">ft&#x00B2;</option>
-    <option value="m">m&#x00B2;</option>
-  </select>. -->
+  You can see/hear/read it at
+  <input type="text" name="project_url" placeholder="example.com" autocapitalize="off" autocorrect="off">.
 
   <button type="button" class="submit">Add Yourself</button>
+  <div class="clearfix"></div>
 </form>
 </section>
 

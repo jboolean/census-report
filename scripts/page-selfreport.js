@@ -30,8 +30,8 @@ YUI.add('bmp-page-selfreport', function(Y) {
       reportListWidget.render(Y.one('.reports'));
 
       this._loadSelfReportList()
-      .then(function(reports) {
-        reportListWidget.setOriginalReportList(reports);
+      .then(function(response) {
+        reportListWidget.setOriginalReportList(response.results);
       }, function(err) {
         console.log(err);
       });
@@ -69,17 +69,14 @@ YUI.add('bmp-page-selfreport', function(Y) {
         url: '/api/selfreport/v1',
         data: data
       }, this)
-      .then(Y.bind(function() {
+      .then(Y.bind(function(response) {
+        var report = response.results[0];
         //success
         Y.all('.selfreport .error').removeClass('error');
         Y.one('.selfreport form').getDOMNode().reset();
         e.target.removeClass('disabled');
 
-        if (Y.Lang.isValue(data.space_price_amount)) {
-          data.space_price_amount = '$' + data.space_price_amount;
-        }
-
-        this._reportListWidget.addReport(data);
+        this._reportListWidget.addReport(report);
 
       }, this), function(response) {
         //failure
