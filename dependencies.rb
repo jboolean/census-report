@@ -2,6 +2,8 @@
 # css will be included automatically if name matches
 DEPENDENCIES = {
  'page-main-nav' => ['widget-dropdown-nav'],
+ 'main-footer' => [],
+
  'page-rentburden' => ['widget-datasourced-chart', 'model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
   'page-poverty' => ['model-basic', 
