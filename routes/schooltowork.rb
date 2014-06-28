@@ -44,7 +44,7 @@ class BFAMFAPhD < Sinatra::Application
     # out << raw[0]
     out.concat(big)
     others.each do |fod, count| 
-      out << [fod, 'Other', count]
+      out << [fod, 'Miscellaneous', count]
     end
     {
       :results => out,
