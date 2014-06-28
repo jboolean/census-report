@@ -58,7 +58,7 @@ YUI.add('bmp-page-artistclasses', function(Y) {
       var chart = new Y.BMP.Widget.GChart({
         chartType: 'BarChart',
         options: {
-          title: 'Approximate Number of People in NYC in Each Creative Occupation',
+          title: 'Approximate number of people in NYC in each creative occupation:',
           height: 650,
           legend: {
             position: 'none'
