@@ -1,6 +1,6 @@
 require_relative 'api'
 require_relative 'preprocess'
-require_relative 'api-schooltowork'
+require_relative 'schooltowork'
 require_relative 'selfreport'
 require_relative 'rentburden'
 require_relative 'povertyrate'
