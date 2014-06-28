@@ -41,8 +41,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'Sankey',
         options: {
-          // height: 2500,
-          height: 1500,
+          height: 2500,
+          // height: 1500,
           sankey: {
             iterations: 100,
             node: {
