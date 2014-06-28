@@ -17,6 +17,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    newrelic_rpm (3.9.0.229)
     pg (0.17.1)
     rack (1.5.2)
     rack-protection (1.5.3)
@@ -55,6 +56,7 @@ PLATFORMS
 DEPENDENCIES
   json
   less
+  newrelic_rpm
   pg
   rerun
   sinatra

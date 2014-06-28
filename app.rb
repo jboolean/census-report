@@ -23,6 +23,8 @@ class BFAMFAPhD < Sinatra::Application
     set :db, PG::Connection.new(:host =>  host, :dbname => db, :user=> username, :password=> password)
 
     set :typekitId, 'clf5ohy'
+
+    require 'newrelic_rpm'
   end
 
   configure :development do

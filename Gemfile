@@ -13,6 +13,9 @@ gem 'uglifier'
 
 gem "thin"
 
+gem 'newrelic_rpm'
+
+
 group :development do
   gem "rerun"
 
