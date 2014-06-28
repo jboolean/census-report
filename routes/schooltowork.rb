@@ -18,7 +18,7 @@ class BFAMFAPhD < Sinatra::Application
     big = []
     others = {}
     otherOccupations = {}
-    threshold = 2000
+    threshold = 100
 
     raw.each_row do |row|
       count = row[2].to_i
