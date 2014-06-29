@@ -36,7 +36,6 @@ class BFAMFAPhD < Sinatra::Application
       count = row[2].to_i
       fod = row[0]
       occp = row[1]
-      if occp == "Actors" then pp row end
       if occupationTotals[occp] >= THRESHOLD
         big << [fod, occp, count]
       else

@@ -7,7 +7,6 @@ module SelfReportHelpers
     result.each do |tuple|
       #return the domain as a convenience to the client
       urlMatchResult = URL_PATTERN.match(tuple['project_url'])
-      pp tuple
       if (urlMatchResult)
         tuple['project_url_domain'] = urlMatchResult['domain']
       end
