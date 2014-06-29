@@ -39,15 +39,24 @@ YUI.add('bmp-page-selfreport', function(Y) {
     },
     
     submitForm: function(e) {
+      e.halt();
       var form = e.target.ancestor('form');
+      var endpoint = form.getAttribute('target');
       e.target.addClass('disabled');
       var data = {};
-      form.all('input, select').each(function(node) {
+      form.all('input, select, textarea').each(function(node) {
         var value = node.get('value');
         if (!isNullOrEmpty(value)) {
           data[node.get('name')] = node.get('value');
         }
       });
+
+      // TODO: 2 is number of selects
+      if (Y.Object.size(data) <= form.all('select').size() - 1) {
+        e.target.removeClass('disabled');
+        e.halt();
+        return;
+      }
 
       if (!isNullOrEmpty(data.space_size_unitless) && !isNullOrEmpty(data.space_size_units)) {
         if (data.space_size_units === 'm') {
@@ -66,14 +75,14 @@ YUI.add('bmp-page-selfreport', function(Y) {
       }
 
       Y.Data.post({
-        url: '/api/selfreport/v1',
+        url: endpoint,
         data: data
       }, this)
       .then(Y.bind(function(response) {
         var report = response.results[0];
         //success
-        Y.all('.selfreport .error').removeClass('error');
-        Y.one('.selfreport form').getDOMNode().reset();
+        form.all('.selfreport .error').removeClass('error');
+        form.getDOMNode().reset();
         e.target.removeClass('disabled');
 
         this._reportListWidget.addReport(report);
@@ -82,7 +91,7 @@ YUI.add('bmp-page-selfreport', function(Y) {
         //failure
         if (Y.Lang.isObject(response.fields)) {
           Y.Object.each(response.fields, function(message, field) {
-            Y.all('.selfreport input[name=' + field + ']').addClass('error');
+            form.all('input[name=' + field + ']').addClass('error');
           });
         } else {
           alert('Something went wrong. We\'ll give it a look.');
@@ -109,7 +118,7 @@ YUI.add('bmp-page-selfreport', function(Y) {
 
     _loadSelfReportList: function() {
       return Y.Data.get({
-        url: '/api/selfreport/v1'
+        url: '/api/selfreport'
       });
     }
   };

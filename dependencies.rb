@@ -16,6 +16,7 @@ DEPENDENCIES = {
  'widget-datasourced-chart' => ['model-basic', 'widget-gchart'],
  'widget-animated-number' => ['model-basic'],
  'widget-schooltowork-summary' => ['model-basic'],
+ 'widget-selfreport-list' => ['selfreport-text-generators'],
  
  'data-util' => [],
  'model-basic' => ['data-util', 'data-preparer'],

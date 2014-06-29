@@ -19,7 +19,7 @@
     }
 
 
-    input, select, {
+    input, select, textarea{
 
       @media (max-width: @screen-sm-min) {
         // display: block;
@@ -76,6 +76,13 @@
 
     }
 
+    textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+      border-left: 1px solid lighten(#000, 70%);
+    }
+
     textarea, input[type="text"], input[type="submit"] {
       -webkit-appearance: none;
     }
@@ -95,7 +102,7 @@
         width: 22em;
       // }
     }
-    input[name=space_price_time_unit] {
+    select[name=space_price_time_unit] {
       width: 132px;
     }
 

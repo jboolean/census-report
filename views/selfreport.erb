@@ -16,7 +16,7 @@ google.setOnLoadCallback(function() {
 <h1 class="main-description lead">Add your project.</h1>
 <small><strong>All fields are optional.</strong></small>
 
-<form>
+<form target="/api/selfreport/1">
   My name is
   <input type="text" name="name" autocapitalize="words">, and
   I made 
@@ -28,10 +28,10 @@ google.setOnLoadCallback(function() {
   for
   <input type="number" size="4" name="space_price_amount" placeholder="$">
   <select name="space_price_time_unit" id="">
-    <option value="month">per month</option>
-    <option value="day">per day</option>
-    <option value="hour">per hour</option>
-    <option value="">one time</option>
+    <option value="month">per month </option>
+    <option value="day">per day </option>
+    <option value="hour">per hour </option>
+    <option value="">one time </option>
   </select>
   in
   <input type="number" size="7" name="project_year" placeholder="year" maxlength="4">
@@ -40,6 +40,59 @@ google.setOnLoadCallback(function() {
   <input type="text" name="project_url" placeholder="example.com" autocapitalize="off" autocorrect="off">.
 
   <button type="button" class="submit">Add Project</button>
+  <div class="clearfix"></div>
+</form>
+
+<h1 class="main-description lead">Add your situation.</h1>
+<small><strong>All fields are optional.</strong></small>
+<form target="/api/selfreport/2">
+  My name is
+  <input type="text" name="name" autocapitalize="words">, and
+  I studied 
+  <input type="text" name="fod" placeholder="your major" autocapitalize="words">
+  as an undergraduate and currently pay
+  <input type="number" size="4" name="space_price_amount" placeholder="$">
+  to rent an apartment in
+  <input type="text" size="7" name="space_zip" maxlength="5" minlength="5" placeholder="zip code">
+  and
+  <input type="number" size="4" name="loan_price_amount" placeholder="$">
+  per month in student loans while working primarily in 
+  <input type="text" name="occupation" autocapitalize="off" placeholder="occupation">
+  and making roughly
+  <input type="number" size="4" name="salary_amount" placeholder="$">
+  <select name="salary_amount_time_unit" id="">
+    <option value="year" selected>per year </option>
+    <option value="month">per month </option>
+    <option value="week">per week </option>
+    <option value="day">per day </option>
+    <option value="hour">per hour </option>
+    <option value="semester">per semester </option>
+  </select>
+  for a family of 
+  <select name="family_members" id="">
+    <option value="1" selected>1 </option>
+    <option value="2">2 </option>
+    <option value="3">3 </option>
+    <option value="4">4 </option>
+    <option value="5">5 </option>
+  </select>.
+
+  I am a 
+  <input type="number" size="4" name="age" placeholder="age">
+  year old
+  <input type="text" name="ethnicity" autocapitalize="off" placeholder="ethnicity">
+  <select name="gender" id="">
+    <option value="" selected>gender </option>
+    <option value="male">male </option>
+    <option value="female">female </option>
+    <option value="other">other </option>
+  </select>.
+
+  I think this survey is
+  <textarea name="comment" placeholder="(20 word max)"></textarea>
+
+  
+  <button type="button" class="submit">Add Your Situation</button>
   <div class="clearfix"></div>
 </form>
 </section>
