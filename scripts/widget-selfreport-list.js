@@ -58,6 +58,10 @@ YUI.add('bmp-widget-selfreport-list', function(Y) {
         });
       }
 
+      if (Y.Lang.isValue(report.space_zip)) {
+        out += subAndEscape(' in {space_zip}', report);
+      }
+
       if (Y.Lang.isValue(report.space_price_amount)) {
         out += ' for';
         if (report.space_price_amount === '$0.00') {
