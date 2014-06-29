@@ -26,7 +26,7 @@ google.setOnLoadCallback(function() {
   in 
   <input type="text" size="7" name="space_zip" maxlength="5" minlength="5" placeholder="zip code">
   for
-  <input type="number" size="4" name="space_price_amount" placeholder="$">
+  <input type="number" size="4" name="space_price_amount" placeholder="$" class="money">
   <select name="space_price_time_unit" id="">
     <option value="month">per month </option>
     <option value="day">per day </option>
@@ -49,17 +49,28 @@ google.setOnLoadCallback(function() {
   My name is
   <input type="text" name="name" autocapitalize="words">, and
   I studied 
-  <input type="text" name="fod" placeholder="your major" autocapitalize="words">
+  <select name="fod">
+    <option value="" selected>your major </option>
+    <option value="Drama And Theater Arts">Drama and Theater Arts </option>
+    <option value="Music">Music </option>
+    <option value="Visual and Performing Arts">Visual and Performing Arts </option>
+    <option value="Visual and Performing Arts">Visual and Performing Arts </option>
+    <option value="Film Video And Photographics Arts">Film, Video, and Photographic Arts </option>
+    <option value="Art History And Criticism">Art History and Criticism </option>
+    <option value="Studio Arts">Studio Arts </option>
+    <option value="another art major">Another art Major </option>
+    <option value="a non-arts major">A non-arts major </option>
+  </select>
   as an undergraduate and currently pay
-  <input type="number" size="4" name="space_price_amount" placeholder="$">
+  <input type="number" size="4" name="space_price_amount" placeholder="$" class="money">
   to rent an apartment in
   <input type="text" size="7" name="space_zip" maxlength="5" minlength="5" placeholder="zip code">
   and
-  <input type="number" size="4" name="loan_price_amount" placeholder="$">
+  <input type="number" size="4" name="loan_price_amount" placeholder="$" class="money">
   per month in student loans while working primarily in 
   <input type="text" name="occupation" autocapitalize="off" placeholder="occupation">
   and making roughly
-  <input type="number" size="4" name="salary_amount" placeholder="$">
+  <input type="number" size="4" name="salary_amount" placeholder="$" class="money">
   <select name="salary_amount_time_unit" id="">
     <option value="year" selected>per year </option>
     <option value="month">per month </option>
@@ -78,7 +89,7 @@ google.setOnLoadCallback(function() {
   </select>.
 
   I am a 
-  <input type="number" size="4" name="age" placeholder="age">
+  <input type="number" size="4" name="age" placeholder="age" max="110" min="3">
   year old
   <input type="text" name="ethnicity" autocapitalize="off" placeholder="ethnicity">
   <select name="gender" id="">

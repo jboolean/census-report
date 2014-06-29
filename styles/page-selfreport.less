@@ -83,7 +83,7 @@
       border-left: 1px solid lighten(#000, 70%);
     }
 
-    textarea, input[type="text"], input[type="submit"], input[type="number"] {
+    textarea, input {
       -webkit-appearance: none;
     }
 
@@ -108,11 +108,13 @@
 
 
 
-    input[name=space_price_amount], input[name=project_year], 
-    input[name=space_size_x], input[name=space_size_y], input[name=space_size_unitless] {
-      @media (min-width: @screen-sm-min){
+    input.money, input[name=project_year], 
+    input[name=space_size_x], input[name=space_size_y], 
+    input[name=space_size_unitless],
+    input[name=age] {
+      // @media (min-width: @screen-sm-min){
         width: 5em;
-      }
+      // }
     }
 
   }
