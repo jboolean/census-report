@@ -17,7 +17,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     // 6099: 'Miscellaneous Fine Arts'
   };
 
-  CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6005, 6006, 6007, 6004];
+  CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6005, 6006, 6007];
 
   Y.namespace('BMP.Page').SchoolToWork = {
     initializePage: function() {
