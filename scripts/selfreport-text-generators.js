@@ -75,8 +75,9 @@ YUI.add('bmp-selfreport-text-generators', function(Y) {
 
     2: function(report) {
       sentence1 = '';
+      var nameClasue = '';
       if (Y.Lang.isString(report.name)) {
-        sentence1 += subAndEscape('My name is {name}, and ', report);
+        nameClasue += subAndEscape('My name is {name}', report);
       }
       sentence1 += 'I';
 
@@ -132,9 +133,16 @@ YUI.add('bmp-selfreport-text-generators', function(Y) {
 
       // sanity check. Add the period of this sentence is substation, or chuck it.
       if (sentence1.length > 5) {
+        if (nameClasue.length > 0) {
+          sentence1 = nameClasue + ', and ' + sentence1;
+        }
         sentence1 += '.';
       } else {
-        sentence1 = '';
+        if (nameClasue.length > 0) {
+          sentence1 = nameClasue + '.';
+        } else {
+          sentence1 = '';
+        }
       }
 
       var sentence2 = '';

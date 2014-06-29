@@ -50,7 +50,11 @@ YUI.add('bmp-page-selfreport', function(Y) {
       form.all('input, select, textarea').each(function(node) {
         var value = node.get('value');
         if (!isNullOrEmpty(value)) {
-          data[node.get('name')] = node.get('value');
+          var value = node.get('value');
+          if (value.indexOf('$') === 0) {
+            value = value.trim().substr(1);
+          }
+          data[node.get('name')] = value;
         }
       });
 
