@@ -3,6 +3,7 @@ require 'pp'
 require 'json'
 
 class BFAMFAPhD < Sinatra::Application
+  THRESHOLD = 200
 
   get '/api/acs/custom/schooltowork' do
 
@@ -14,17 +15,29 @@ class BFAMFAPhD < Sinatra::Application
 
     raw = settings.db.exec(sqlQuery)
 
+    occupationTotals = {}
+
+    raw.each_row do |row|
+      occp = row[1]
+      count = row[2].to_i
+      if occupationTotals[occp].nil?
+        occupationTotals[occp] = count
+      else
+        occupationTotals[occp] += count
+      end
+    end
+
+
     #otherization for uncommon occupations
     big = []
     others = {}
-    otherOccupations = {}
-    threshold = 100
 
     raw.each_row do |row|
       count = row[2].to_i
       fod = row[0]
       occp = row[1]
-      if count >= threshold
+      if occp == "Actors" then pp row end
+      if occupationTotals[occp] >= THRESHOLD
         big << [fod, occp, count]
       else
         if others[fod].nil?
@@ -32,13 +45,15 @@ class BFAMFAPhD < Sinatra::Application
         else
           others[fod] += count
         end
-        if otherOccupations[occp].nil?
-          otherOccupations[occp] = count
-        else
-          otherOccupations[occp] += count
-        end
       end
     end
+
+    otherOccupations = occupationTotals.select do |occp, count|
+      count < THRESHOLD
+    end
+
+
+
 
     out = [['Field of Degree', 'Occupation', 'Count']];
     # out << raw[0]
