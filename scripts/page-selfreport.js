@@ -21,6 +21,9 @@ YUI.add('bmp-page-selfreport', function(Y) {
       Y.all('.selfreport input[name=space_size_x], .selfreport input[name=space_size_y]')
         .on('keyup', this.updateSquaredArea);
 
+      Y.all('.selfreport textarea[name=comment]')
+        .on('keydown', this._onCommentChange);
+
       Y.all('.selfreport button.submit').after('tap', this.submitForm, null, this);
 
       // this.renderNav();
@@ -120,6 +123,21 @@ YUI.add('bmp-page-selfreport', function(Y) {
       return Y.Data.get({
         url: '/api/selfreport'
       });
+    },
+
+    _onCommentChange: function(e) {
+      if (e.keyCode === 8 || e.metaKey) {
+        return;
+      }
+      var textbox = e.target;
+      var text = textbox.get('value');
+      if (!text) {
+        return;
+      }
+      var words = text.match(/(\S*)\s+/g);
+      if (Y.Lang.isArray(words) && words.length > 20) {
+        e.halt(true);
+      }
     }
   };
 }, '1.0', {
