@@ -118,7 +118,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
         this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
-        this._dataModel.setFilter('fod1p', [6000,6099], 'between');
+        this._dataModel.setFilter('fod1p_artist', 1);
         this._summaryDataModel.setFilter('fod1p_artist', 1);
       }
       this._dataModel.load();
