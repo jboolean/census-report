@@ -13,6 +13,7 @@ google.setOnLoadCallback(function() {
 <!-- <h1>Explore You</h1> -->
 
 <section class="selfreport">
+<div id="selfreport-project">
 <h1 class="main-description lead">Add your project.</h1>
 <small><strong>All fields are optional.</strong></small>
 
@@ -42,7 +43,9 @@ google.setOnLoadCallback(function() {
   <button type="button" class="submit">Add Project</button>
   <div class="clearfix"></div>
 </form>
+</div>
 
+<div id="selfreport-situation" class="hidden">
 <h1 class="main-description lead">Add your situation.</h1>
 <small><strong>All fields are optional.</strong></small>
 <form target="/api/selfreport/2">
@@ -106,6 +109,7 @@ google.setOnLoadCallback(function() {
   <button type="button" class="submit">Add Your Situation</button>
   <div class="clearfix"></div>
 </form>
+</div>
 </section>
 
 <section class="reports">
