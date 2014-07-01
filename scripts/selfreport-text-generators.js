@@ -127,7 +127,11 @@ YUI.add('bmp-selfreport-text-generators', function(Y) {
         sentence1 += hadPreviousClauses ? ' making' : ' make';
         sentence1 += subAndEscape(' roughly {salary_amount} per {salary_amount_time_unit}', report);
         if (Y.Lang.isValue(report.family_members)) {
-          sentence1 += subAndEscape(' for a family of {family_members}', report);
+          if (report.family_members == 1) {
+            sentence1 += ' for myself';
+          } else {
+            sentence1 += subAndEscape(' for a family of {family_members}', report);
+          }
         }
       }
 
