@@ -219,7 +219,7 @@
 			"file": "routes/api.rb",
 			"settings":
 			{
-				"buffer_size": 2858,
+				"buffer_size": 1156,
 				"line_ending": "Unix"
 			}
 		},
@@ -227,7 +227,7 @@
 			"file": "helpers/queryparse.rb",
 			"settings":
 			{
-				"buffer_size": 3295,
+				"buffer_size": 3431,
 				"line_ending": "Unix"
 			}
 		},
@@ -235,7 +235,7 @@
 			"file": "views/layout.erb",
 			"settings":
 			{
-				"buffer_size": 745,
+				"buffer_size": 2040,
 				"line_ending": "Unix"
 			}
 		},
@@ -243,7 +243,7 @@
 			"file": "scripts/data-preparer.js",
 			"settings":
 			{
-				"buffer_size": 1254,
+				"buffer_size": 1455,
 				"line_ending": "Unix"
 			}
 		},
@@ -251,7 +251,7 @@
 			"file": "dependencies.rb",
 			"settings":
 			{
-				"buffer_size": 618,
+				"buffer_size": 1276,
 				"line_ending": "Unix"
 			}
 		},
@@ -259,7 +259,7 @@
 			"file": "routes/init.rb",
 			"settings":
 			{
-				"buffer_size": 148,
+				"buffer_size": 235,
 				"line_ending": "Unix"
 			}
 		}
@@ -685,15 +685,15 @@
 					"file": "routes/api.rb",
 					"settings":
 					{
-						"buffer_size": 2858,
+						"buffer_size": 1156,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1088,
-								866
+								0,
+								0
 							]
 						],
 						"settings":
@@ -858,6 +858,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
@@ -912,15 +913,15 @@
 					"file": "helpers/queryparse.rb",
 					"settings":
 					{
-						"buffer_size": 3295,
+						"buffer_size": 3431,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1232,
-								1258
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1085,6 +1086,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
@@ -1139,15 +1141,15 @@
 					"file": "views/layout.erb",
 					"settings":
 					{
-						"buffer_size": 745,
+						"buffer_size": 2040,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								385,
-								385
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1312,6 +1314,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
@@ -1366,15 +1369,15 @@
 					"file": "scripts/data-preparer.js",
 					"settings":
 					{
-						"buffer_size": 1254,
+						"buffer_size": 1455,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1118,
-								1169
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1539,6 +1542,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
@@ -1593,15 +1597,15 @@
 					"file": "dependencies.rb",
 					"settings":
 					{
-						"buffer_size": 618,
+						"buffer_size": 1276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								586,
-								586
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1766,6 +1770,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
@@ -1818,15 +1823,15 @@
 					"file": "routes/init.rb",
 					"settings":
 					{
-						"buffer_size": 148,
+						"buffer_size": 235,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1991,6 +1996,7 @@
 								"gcl": true,
 								"indent": 2.0,
 								"latedef": true,
+								"maxcomplexity": 6.0,
 								"quotmark": "single",
 								"regexdash": true,
 								"trailing": true,
