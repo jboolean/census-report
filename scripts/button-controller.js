@@ -18,10 +18,19 @@ YUI.add('bmp-button-controller', function(Y) {
     initializer: function(config) {
       var buttonContainer = config.buttonContainer;
       buttonContainer.delegate('change', this._onChange, '[data-filter-var]', this);
+      buttonContainer.all('[data-filter-var]').each(this._updateFilter, this);
+      if (config.load) {
+        this.get('dataSource').load();
+      }
     },
 
     _onChange: function(e) {
-      var group = e.target.ancestor('.filter');
+      this._updateFilter(e.target);
+      this.get('dataSource').load();
+    },
+
+    _updateFilter: function(node) {
+      var group = node.ancestor('.filter', true);
       var variable = group.getAttribute('data-filter-var');
 
       if (!Y.Lang.isValue(variable)) {
@@ -41,8 +50,11 @@ YUI.add('bmp-button-controller', function(Y) {
         }
       });
 
+      if (values.length === 0) {
+        values = null;
+      }
+
       this.get('dataSource').setFilter(variable, values);
-      this.get('dataSource').load();
     }
 
   }, {
@@ -59,6 +71,12 @@ YUI.add('bmp-button-controller', function(Y) {
         validator: function(val) {
           return val instanceof Y.BMP.Model.BasicModel;
         }
+      },
+
+      // load on initialize
+      load: {
+        validator: Y.Lang.isBoolean,
+        value: false
       }
     }
   });

@@ -9,16 +9,16 @@ YUI.add('bmp-page-poverty', function(Y) {
       // this.renderNav();
       
       var setArtistFilter = function(partitionType, dataModel) {
-        dataModel.removeFilter('occp_artist_class');
+        dataModel.removeFilter('occ_artist_class');
         dataModel.removeFilter('fod1p_artist');
         switch (partitionType) {
-        case 'occp_artist_class':
+        case 'occ_artist_class':
           dataModel.clearPartition();
-          dataModel.setFilter('occp_artist_class', [1]);
+          dataModel.setFilter('occ_artist_class', [1]);
           break;
-        case 'fod1p':
+        case 'artist_degree':
           dataModel.clearPartition();
-          dataModel.setFilter('fod1p_artist', 1);
+          dataModel.setFilter('artist_degree', true, 'eq');
         }
       };
 
@@ -46,11 +46,12 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       mainNumberWidget.render(Y.one('.main-chart-wrapper').empty());
 
-      dataModel.load();
+      // dataModel.load();
 
       new Y.BMP.ButtonController({
         dataSource: dataModel,
-        buttonContainer: Y.one('.controls')
+        buttonContainer: Y.one('.controls'),
+        load: true
       });
 
       Y.one('.artist-chooser').delegate('change', function(e) {

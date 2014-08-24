@@ -40,11 +40,8 @@ YUI.add('bmp-model-basic', function(Y) {
     },
 
     _setFilterOrPartition: function(filtersHash, column, values, operator) {
-      if (Y.Lang.isValue(values) && !Y.Lang.isArray(values)) {
-        values = [values];
-      }
 
-      if (!Y.Lang.isArray(values) || values.length === 0) {
+      if (!Y.Lang.isValue(values)) {
         this.removeFilter(column);
         return;
       }
@@ -52,6 +49,16 @@ YUI.add('bmp-model-basic', function(Y) {
       if (!Y.Lang.isValue(operator)) {
         operator = 'in';
       }
+
+      if (
+        operator === 'in' &&
+        Y.Lang.isValue(values) &&
+        !Y.Lang.isArray(values)) {
+
+        values = [values];
+      }
+
+      var value;
 
       filtersHash[column] = {
         operator: operator,
@@ -79,7 +86,8 @@ YUI.add('bmp-model-basic', function(Y) {
       }
 
       Y.Object.each(filters, function(filter_params, column) {
-        params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = filter_params.values.join(',');
+        var valuesStr = String(Y.Lang.isArray(filter_params.values) ? filter_params.values.join(',') : filter_params.values);
+        params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = valuesStr;
       }, this);
 
       return params;

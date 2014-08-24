@@ -50,16 +50,16 @@ google.setOnLoadCallback(function() {
           </label>
 
            <label class="btn btn-primary">
-            <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
+            <input type="radio" name="define-artist" value="occ_artist_class"> People who work as artists
           </label>
 
           <label class="btn btn-primary">
-            <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
+            <input type="radio" name="define-artist" value="artist_degree"> People with an art degree 
           </label>
         </div>
         <a class="define-artist" href="/artistclasses">How do we define &ldquo;artist&rdquo;?</a>
       </div>
-
+<!-- 
       <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
         <label class="btn btn-default active">
           <input type="radio" name="boro" value="-1" checked> All NYC
@@ -84,7 +84,7 @@ google.setOnLoadCallback(function() {
         <label class="btn btn-default">
           <input type="radio" name="boro" value="5"> Staten Island
         </label>
-      </div>
+      </div> -->
 
       <div class="clearfix hidden-md hidden-lg"></div>
 
@@ -103,7 +103,7 @@ google.setOnLoadCallback(function() {
       </div>
       
       
-      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-filter-var="ethnicity">
+      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-filter-var="race_hispan_simple">
         <label class="btn btn-default active">
           <input type="radio" name="ethnicity" value="-1" checked> Any
         </label>
@@ -121,39 +121,42 @@ google.setOnLoadCallback(function() {
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="4"> Hispanic
+          <input type="radio" name="ethnicity" value="999"> Hispanic
         </label>
         <small><sup>*</sup>non-hispanic</small>
       </div>
 
       <div class="clearfix hidden-xs"></div>
 
-      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="SCHL">
+      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="EDUC">
         <label class="btn btn-default active">
           <input type="radio" name="schl" value="-1" checked> Any
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"> Less than High School
+          <input type="radio" name="schl" value="0,1,2,3,4,5"> Less than High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="16"> Completed High School
+          <input type="radio" name="schl" value="6"> Completed High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="17,18,19,20"> Some College
+          <input type="radio" name="schl" value="7,8"> Some College
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="21"> Bachelor's Degree
+          <input type="radio" name="schl" value="10"> Bachelor's Degree
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="22,23,24"> Master's or higher
+          <input type="radio" name="schl" value="11"> Master's or higher
         </label>
       </div>
 
+      <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-filter-var="CITY">
+        <label class="btn btn-default"><input type="radio" name="city" value="-1">All USA</label>
+        <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York</label>
     </div>
   </div>
 

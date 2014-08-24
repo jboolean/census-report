@@ -15,6 +15,8 @@ gem "thin"
 
 gem 'newrelic_rpm'
 
+gem 'digest-murmurhash'
+
 
 group :development do
   gem "rerun"
