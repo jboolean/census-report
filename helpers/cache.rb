@@ -1,4 +1,7 @@
 require 'yaml'
+require 'digest/murmurhash'
+require 'gibbler'
+require 'gibbler/mixins'
 
 module StoredCache
   def cache_get(scope, key)
@@ -8,7 +11,7 @@ module StoredCache
     }
 
     sqlQuery = "SELECT * from cache WHERE
-      hash = #{scopedKey.hash}"
+      hash = #{_cache_make_hash(scopedKey)}"
 
     sqlResult = settings.db.exec(sqlQuery)
 
@@ -36,7 +39,12 @@ module StoredCache
     sqlQueryFormat = "INSERT INTO cache
       (hash, key, value) values ($1, $2, $3)"
 
-    sqlParams = [scopedKey.hash, YAML::dump(scopedKey), YAML::dump(value)] 
+    sqlParams = [_cache_make_hash(scopedKey), YAML::dump(scopedKey), YAML::dump(value)] 
     settings.db.exec_params(sqlQueryFormat, sqlParams);
   end
+
+  def _cache_make_hash(key)
+    key.gibbler.to_i % (2**32) - (2**31)
+  end
+
 end
