@@ -111,14 +111,12 @@ YUI.add('bmp-model-basic', function(Y) {
           errors: []
         });
         this.updateErrors();
-        this.set('dataState', 'loaded');
         this.fire('loaded');
         return response;
       }, this), Y.bind(function(response) {
         console.error('Data load error');
         this.set('errors', 'Data could not be loaded.');
         this.set('dataState', 'load-failed');
-        this.fire('load-failed');
       },this));
     },
 

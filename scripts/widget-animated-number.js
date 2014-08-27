@@ -23,17 +23,23 @@ YUI.add('bmp-widget-animated-number', function(Y) {
       //   this.syncUI();
       // }, this);
       
-      dataSource.on('dataStateChange', function() {
+      dataSource.after('dataStateChange', function() {
         this.syncUI();
       }, this);
 
+    },
+
+    renderUI: function() {
+      var cb = this.get('contentBox');
+
+      cb.empty().append('<div class="number-text"></div>' +
+        '<div class="loading-spinner"></div>');
     },
 
     syncUI: function() {
 
       var cb = this.get('contentBox');
       var bb = this.get('boundingBox');
-
 
       var dataSource = this.get('dataSource');
 
@@ -86,10 +92,8 @@ YUI.add('bmp-widget-animated-number', function(Y) {
 
       var cb = this.get('contentBox');
 
-      var numberFormatConfig = this.get('numberFormatConfig');
-
       if (newNumber === this._lastNumber) {
-        cb.set('text', Y.Number.format(newNumber, numberFormatConfig));
+        this._setNumber(newNumber);
         return;
       }
 
@@ -98,7 +102,7 @@ YUI.add('bmp-widget-animated-number', function(Y) {
 
       var cleanUp = Y.bind(function() {
         this._lastNumber = newNumber;
-        cb.set('text', Y.Number.format(newNumber, numberFormatConfig));
+        this._setNumber(newNumber);
         window.clearInterval(intervalId);
       }, this);
 
@@ -106,21 +110,26 @@ YUI.add('bmp-widget-animated-number', function(Y) {
 
       var currentFrame = 0;
 
-      var animate = function() {
+      var animate = Y.bind(function() {
         if (increment === 0) {
           return;
           // I don't know why this case happens
         }
         currentNumber += increment;
-        cb.set('text', Y.Number.format(currentNumber, numberFormatConfig));
+        this._setNumber(currentNumber);
         currentFrame += 1;
 
         if (currentFrame >= totalFrames) {
           cleanUp();
         }
-      };
+      }, this);
 
       intervalId = window.setInterval(animate, msPerFrame);
+    },
+
+    _setNumber: function(number) {
+      var numberFormatConfig = this.get('numberFormatConfig');
+      this.get('contentBox').one('.number-text').set('text', Y.Number.format(number, numberFormatConfig));
     }
 
   }, {
