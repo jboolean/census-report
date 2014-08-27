@@ -18,7 +18,7 @@ YUI.add('bmp-plugins-toggle-buttons', function(Y) {
   Y.Base.create('ToggleButtons', Y.Plugin.Base, [], {
     initializer: function() {
       var host = this.get('host');
-      host.delegate('tap', this._toggle, '.btn', this);
+      host.delegate('change', this._toggle, '.btn input[type=radio]', this);
     },
 
     _toggle: function(e) {

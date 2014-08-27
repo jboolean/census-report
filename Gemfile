@@ -17,6 +17,9 @@ gem 'newrelic_rpm'
 
 gem 'digest-murmurhash'
 
+gem 'attic'
+gem 'gibbler'
+
 
 group :development do
   gem "rerun"

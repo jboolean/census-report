@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    attic (0.5.3)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     commonjs (0.2.7)
@@ -11,6 +12,7 @@ GEM
     eventmachine (1.0.3)
     execjs (2.2.0)
     ffi (1.9.3)
+    gibbler (0.9.0)
     json (1.8.1)
     kgio (2.9.2)
     less (2.6.0)
@@ -57,7 +59,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attic
   digest-murmurhash
+  gibbler
   json
   less
   newrelic_rpm

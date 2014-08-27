@@ -7,13 +7,15 @@ google.setOnLoadCallback(function() {
     });
 
   });
+
+CITIES_TO_CODES = <%=@cities_to_codes%>;
 </script>
 
 <div class="page-poverty">
   <div class=""><div class="container">
   
     <!-- <h1>Explore Poverty Rates</h1> -->
-    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in New York City. Filter the data to see poverty rates for different groups.</strong></p>
+    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in [The selected city TODO: update copy]. Filter the data to see poverty rates for different groups.</strong></p>
 
     <div class="the-numbers">
     <div class="comparison">
@@ -126,7 +128,7 @@ google.setOnLoadCallback(function() {
         <small><sup>*</sup>non-hispanic</small>
       </div>
 
-      <div class="clearfix hidden-xs"></div>
+      <!-- <div class="clearfix hidden-xs"></div> -->
 
       <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="EDUC">
         <label class="btn btn-default active">
@@ -157,7 +159,11 @@ google.setOnLoadCallback(function() {
       <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-filter-var="CITY">
         <label class="btn btn-default"><input type="radio" name="city" value="-1">All USA</label>
         <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York</label>
+        <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"><div>
+      </div>
+      
     </div>
+
   </div>
 
 </div>

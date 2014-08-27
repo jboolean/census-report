@@ -10,7 +10,7 @@ YUI.add('bmp-page-poverty', function(Y) {
       
       var setArtistFilter = function(partitionType, dataModel) {
         dataModel.removeFilter('occ_artist_class');
-        dataModel.removeFilter('fod1p_artist');
+        dataModel.removeFilter('artist_degree');
         switch (partitionType) {
         case 'occ_artist_class':
           dataModel.clearPartition();
@@ -62,7 +62,44 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       }, 'input');
       
+      this._setupCitySelector();
 
+    },
+
+    _setupCitySelector: function() {
+      Y.one('body').addClass('yui3-skin-sam');
+
+      var cityFiltersNode = Y.one('.filter-city');
+
+      var otherCityInput = cityFiltersNode.one('.other input');
+      otherCityInput.plug(Y.Plugin.AutoComplete, {
+        source: Y.Object.keys(CITIES_TO_CODES),
+        resultFilters: 'startsWith',
+        maxResults: 5
+      });
+
+      otherCityInput.ac.on('select', function(e) {
+        var cityName = e.result.raw;
+        var cityCode = CITIES_TO_CODES[cityName];
+        if (!Y.Lang.isValue(cityCode)) {
+          //TODO: Notify user of unsupperted city
+          console.log('unsupported city');
+          return;
+        }
+
+        //Clone a button
+        var newButton = cityFiltersNode.one('.btn').cloneNode(true);
+        var radioBtn = cityFiltersNode.one('.btn input').cloneNode();
+        newButton.set('text', cityName);
+        radioBtn.setAttribute('value', cityCode);
+        newButton.prepend(radioBtn);
+
+        cityFiltersNode.one('.other').insert(newButton, 'before');
+        radioBtn.simulate('click');
+        e.preventDefault();
+        otherCityInput.set('value', '');
+
+      }, this);
     },
 
     renderNav: function() {
@@ -72,6 +109,8 @@ YUI.add('bmp-page-poverty', function(Y) {
   };
 }, '1.0', {
   requires:[
+    'autocomplete',
+    'autocomplete-filters',
     'base',
     'bmp-button-controller',
     'bmp-model-basic',
@@ -80,6 +119,7 @@ YUI.add('bmp-page-poverty', function(Y) {
     'bmp-widget-dropdown-nav',
     'event',
     'node',
-    'node-pluginhost'
+    'node-pluginhost',
+    'node-event-simulate'
   ]
 });

@@ -13,6 +13,12 @@ class BFAMFAPhD < Sinatra::Application
     erb :artistclasses
   end
 
+  get '/poverty' do
+    @cities_to_codes = IO.read('public/staticdata/cities_to_codes.json')
+
+    erb :poverty
+  end
+
   get '/*' do |page|
     path = File.join(settings.views, page+'.erb')
     pass unless File.exist?(path)
