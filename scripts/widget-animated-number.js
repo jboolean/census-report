@@ -52,7 +52,7 @@ YUI.add('bmp-widget-animated-number', function(Y) {
       bb.toggleClass('has-errors', hasErrors);
 
       if (dataState === 'load-failed' || hasErrors) {
-        cb.setHTML('&mdash;');
+        this._setNumber(null);
         return;
       }
 
@@ -128,8 +128,16 @@ YUI.add('bmp-widget-animated-number', function(Y) {
     },
 
     _setNumber: function(number) {
-      var numberFormatConfig = this.get('numberFormatConfig');
-      this.get('contentBox').one('.number-text').set('text', Y.Number.format(number, numberFormatConfig));
+      var text;
+      if (Y.Lang.isNull(number)) {
+        text = '—';
+
+      } else {
+        var numberFormatConfig = this.get('numberFormatConfig');
+        text = Y.Number.format(number, numberFormatConfig);
+      }
+
+      this.get('contentBox').one('.number-text').set('text', text);
     }
 
   }, {

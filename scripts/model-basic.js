@@ -107,10 +107,12 @@ YUI.add('bmp-model-basic', function(Y) {
           data: data,
           rawResponse: response,
           populationSize: response.populationSize,
-          dataState: 'loaded',
           errors: []
         });
         this.updateErrors();
+
+        this.set('dataState', 'loaded');
+        
         this.fire('loaded');
         return response;
       }, this), Y.bind(function(response) {
