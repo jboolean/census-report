@@ -1,6 +1,5 @@
+require 'pp'
 module QueryParse
-  VALID_COLS = ['relp', 'agep',  'fod1p', 'occp',  'cit', 'sex', 'schl',  
-    'wagp',  'cow', 'ethnicity', 'boro',  'ten', 'grpip', 'pwgtp', 'wgtp', 'grpip_group3', 'occp_artist_class', 'occp_group', 'fod1p_artist']
   COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex', 'occp_artist_class', 'occp_group', 'city']
 
   def valid_col? (col_name)
@@ -36,6 +35,44 @@ module QueryParse
         :column => column,
         :values => vals
       }
+    end
+    filters
+  end
+
+  def deserialize_enum(enum, value)
+    enum.invert[value]
+  end
+
+  def get_facet_selections_from_query_params
+    # returns enum keys, 
+    # or raw values when does not correspond to an enum
+    # portal should validate / parse these cases
+
+    prefix = 'facet'
+    filters = {}
+    facets = settings.facets
+
+    params.each_key do |param|
+      next unless param.start_with? "#{prefix}_"
+      _, raw_facet = param.split('_', 2)
+
+      facet = deserialize_enum(facets, raw_facet)
+
+      if facet.nil?
+        throw "No such facet=\"#{raw_facet}\""
+        next
+      end
+
+      vals = params[param].split(',')
+
+      if settings.facet_values.has_key?(facet)
+        vals.map! do |val| 
+          deserialize_enum(settings.facet_values[facet], val)
+        end
+      end
+
+
+      filters[facet] = vals
     end
     filters
   end

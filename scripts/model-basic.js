@@ -20,15 +20,34 @@ YUI.add('bmp-model-basic', function(Y) {
       this.publish('load-failed');
       this._filters = {};
       this._partitions = {};
+      this._facets = {};
     },
 
-
+    /** @deprecated **/
     setFilter: function(column, values, operator) {
       this._setFilterOrPartition(this._filters, column, values, operator);
     },
 
+
     removeFilter: function(column) {
       delete this._filters[column];
+    },
+
+    setFacet: function(facet, selections) {
+      if (!Y.Lang.isValue(selections)) {
+        this.removeFacet(facet);
+        return;
+      }
+
+      if (!Y.Lang.isArray(selections)) {
+        selections = [selections];
+      }
+
+      this._facets[facet] = selections;
+    },
+
+    removeFacet: function(facet) {
+      delete this._facets[facet];
     },
 
     setPartition: function(column, values, operator) {
@@ -67,16 +86,14 @@ YUI.add('bmp-model-basic', function(Y) {
     },
 
     _getQueryParams: function() {
-      params = {
+      return Y.merge({
         groupby : this.get('groupby').join(','),
         use_descriptions: this.get('useDescriptions'),
         sort: this.get('sort')
-      };
-
-      params = Y.merge(params, this._createFilterQueryParams(this._filters));
-      params = Y.merge(params, this._createFilterQueryParams(this._partitions, 'partition'));
-
-      return params;
+      },
+      this._createFilterQueryParams(this._filters),
+      this._createFilterQueryParams(this._partitions, 'partition'),
+      this._createFacetQueryParams(this._facets));
     },
 
     _createFilterQueryParams: function(filters, prefix) {
@@ -89,6 +106,17 @@ YUI.add('bmp-model-basic', function(Y) {
         var valuesStr = String(Y.Lang.isArray(filter_params.values) ? filter_params.values.join(',') : filter_params.values);
         params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = valuesStr;
       }, this);
+
+      return params;
+    },
+
+    _createFacetQueryParams: function(facets) {
+      var params = {};
+      var prefix = 'facet';
+
+      Y.Object.each(this._facets, function(selections, facet) {
+        params[prefix + '_' + facet] = selections.join(',');
+      });
 
       return params;
     },

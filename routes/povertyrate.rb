@@ -3,14 +3,17 @@ require 'json'
 class BFAMFAPhD < Sinatra::Application
 
   get '/api/acs/custom/povertyrate' do
-    filters = get_filters_from_query_params
 
-    cache_result = cache_get('povertyrate', filters)
+    facetSelections = get_facet_selections_from_query_params
+    filters = IPUMSPortal.getSpecificFilters(facetSelections)
+
+    cache_result = cache_get('povertyrate', facetSelections)
     unless cache_result.nil?
       return cache_result
     end
 
     whereSql = create_whereSql(filters)
+    # return whereSql.inspect
 
     whereSql = 'WHERE ' + whereSql unless whereSql.empty?
     
@@ -36,7 +39,7 @@ class BFAMFAPhD < Sinatra::Application
       :citation => 'American Community Survey 2009-2011, processed by BFAMFAPhD'
     }.to_json
 
-    cache_put('povertyrate', filters, response)
+    cache_put('povertyrate', facetSelections, response)
     response
   end
 

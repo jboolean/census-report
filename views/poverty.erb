@@ -11,6 +11,9 @@ google.setOnLoadCallback(function() {
 CITIES_TO_CODES = <%=@cities_to_codes%>;
 </script>
 
+<% facets = settings.facets %>
+<% facet_values = settings.facet_values %>
+
 <div class="page-poverty">
   <div class=""><div class="container">
   
@@ -62,7 +65,7 @@ CITIES_TO_CODES = <%=@cities_to_codes%>;
         <a class="define-artist" href="/artistclasses">How do we define &ldquo;artist&rdquo;?</a>
       </div>
 <!-- 
-      <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
+      <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-facet-name="boro">
         <label class="btn btn-default active">
           <input type="radio" name="boro" value="-1" checked> All NYC
         </label>
@@ -90,73 +93,75 @@ CITIES_TO_CODES = <%=@cities_to_codes%>;
 
       <div class="clearfix hidden-md hidden-lg"></div>
 
-      <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
+      <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" 
+      data-facet-name="<%=facets[:sex]%>">
         <label class="btn btn-default active">
           <input type="radio" name="sex" value="-1" checked> Both
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="sex" value="1"> Male
+          <input type="radio" name="sex" value="<%=facet_values[:sex][:male]%>"> Male
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="sex" value="2"> Female
+          <input type="radio" name="sex" value="<%=facet_values[:sex][:female]%>"> Female
         </label>
       </div>
       
       
-      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-filter-var="race_hispan_simple">
+      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:race_hispan_simple]%>">
         <label class="btn btn-default active">
           <input type="radio" name="ethnicity" value="-1" checked> Any
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="1"> White<sup>*</sup>
+          <input type="radio" name="ethnicity" 
+          value="<%=facet_values[:race_hispan_simple][:white]%>"> White<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="2"> Black<sup>*</sup>
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:black]%>"> Black<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="3"> Asian<sup>*</sup>
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:asian]%>"> Asian<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="999"> Hispanic
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:hispanic]%>"> Hispanic
         </label>
         <small><sup>*</sup>non-hispanic</small>
       </div>
 
       <!-- <div class="clearfix hidden-xs"></div> -->
 
-      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="EDUC">
+      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:education]%>">
         <label class="btn btn-default active">
           <input type="radio" name="schl" value="-1" checked> Any
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="0,1,2,3,4,5"> Less than High School
+          <input type="radio" name="schl" value="<%=facet_values[:education][:less_than_high_school]%>"> Less than High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="6"> Completed High School
+          <input type="radio" name="schl" value="<%=facet_values[:education][:completed_high_school]%>"> Completed High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="7,8"> Some College
+          <input type="radio" name="schl" value="<%=facet_values[:education][:some_college]%>"> Some College
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="10"> Bachelor's Degree
+          <input type="radio" name="schl" value="<%=facet_values[:education][:bachelors]%>"> Bachelor's Degree
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="11"> Master's or higher
+          <input type="radio" name="schl" value="<%=facet_values[:education][:masters_or_higher]%>"> Master's or higher
         </label>
       </div>
 
-      <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-filter-var="CITY">
+      <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:city]%>">
         <label class="btn btn-default"><input type="radio" name="city" value="-1">All USA</label>
         <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York</label>
         <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"><div>
