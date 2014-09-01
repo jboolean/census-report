@@ -124,26 +124,6 @@ module QueryParse
     "#{selectSql} FROM #{table} #{joins.join(' ')} #{whereSql} #{groupbySql} #{sortSql};"
   end
 
-  def create_whereSql(filters)
-    wheres = []
-    filters.each do |filter|
-      escaped_col = settings.db.quote_ident(filter[:column])
-      case filter[:operator]
-      when :eq
-        val_escaped = settings.db.escape_string(filter[:values][0].to_s)
-        wheres << "#{escaped_col} = #{val_escaped}"
-      when :in
-        valuesAsEscapedStrings = filter[:values].map {|n| settings.db.escape_string(n.to_s)}
-        wheres << "#{escaped_col} in (#{valuesAsEscapedStrings.join(',')}) "
-      when :between
-        lower_bound = settings.db.escape_string(filter[:values][0].to_s)
-        upper_bound = settings.db.escape_string(filter[:values][1].to_s)
-        wheres << "#{escaped_col} BETWEEN #{lower_bound} AND #{upper_bound}"
-      end
-    end
-    return wheres.join(' AND ')
-  end
-
   def last_col_to_i(data)
     data.map do |row|
       row[0..-2] + [row[-1].to_i]

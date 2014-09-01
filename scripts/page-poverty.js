@@ -9,16 +9,16 @@ YUI.add('bmp-page-poverty', function(Y) {
       // this.renderNav();
       
       var setArtistFilter = function(partitionType, dataModel) {
-        dataModel.removeFilter('occ_artist_class');
-        dataModel.removeFilter('artist_degree');
+        dataModel.removeFacet('artist_by_occupation');
+        dataModel.removeFacet('artist_by_education');
         switch (partitionType) {
         case 'occ_artist_class':
           dataModel.clearPartition();
-          dataModel.setFilter('occ_artist_class', [1]);
+          dataModel.setFacet('artist_by_occupation', 'artists');
           break;
         case 'artist_degree':
           dataModel.clearPartition();
-          dataModel.setFilter('artist_degree', true, 'eq');
+          dataModel.setFacet('artist_by_education', 'artist');
         }
       };
 
