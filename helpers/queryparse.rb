@@ -43,12 +43,12 @@ module QueryParse
     enum.invert[value]
   end
 
-  def get_facet_selections_from_query_params
+  def get_facet_selections_from_query_params(prefix='facet')
     # returns enum keys, 
     # or raw values when does not correspond to an enum
     # portal should validate / parse these cases
 
-    prefix = 'facet'
+    # prefix = 'facet'
     filters = {}
     facets = settings.facets
 

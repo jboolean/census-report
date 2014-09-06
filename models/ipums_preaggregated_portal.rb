@@ -7,7 +7,8 @@ class IPUMSPreaggregatedPortal < IPUMSPortal
     :sex => 'sex',
     :race_hispan_simple => 'race_hispan_simple_condensed',
     :education => 'educ_condensed',
-    :city => 'city'
+    :city => 'city',
+    :rentburden => 'rentburden_classes'
   }
 
   COLUMN_VALUES = {
@@ -41,6 +42,10 @@ class IPUMSPreaggregatedPortal < IPUMSPortal
       :masters_or_higher => 4
     }
   }
+
+  def tableName
+    'preaggregated'
+  end
 
   def getPovertyRate(db, facets)
     whereSql = getWhereSql(db, facets)

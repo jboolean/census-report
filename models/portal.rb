@@ -7,6 +7,10 @@ class Portal
     self.class::COLUMN_VALUES
   end
 
+  def tableName
+    throw 'Abstract, not implemented'
+  end
+
   def getFilters(facetSelections)
     filters = []
     facetSelections.each do |facet, selections|

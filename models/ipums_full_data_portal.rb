@@ -7,7 +7,9 @@ class IPUMSFullDataPortal < IPUMSPortal
     :sex => 'sex',
     :race_hispan_simple => 'race_hispan_simple',
     :education => 'educ',
-    :city => 'city'
+    :city => 'city',
+    :rentburden => 'rentburden_classes'
+
   }
 
   COLUMN_VALUES = {
@@ -41,6 +43,10 @@ class IPUMSFullDataPortal < IPUMSPortal
       :masters_or_higher => [11]
     }
   }
+
+  def tableName
+    'acs_usa_ipums_2011'
+  end
 
   def getPovertyRate(db, facets)
     whereSql = getWhereSql(db, facets)

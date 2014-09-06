@@ -20,6 +20,7 @@ YUI.add('bmp-model-basic', function(Y) {
       this.publish('load-failed');
       this._filters = {};
       this._partitions = {};
+      this._partitionfacets = {};
       this._facets = {};
     },
 
@@ -38,16 +39,16 @@ YUI.add('bmp-model-basic', function(Y) {
         this.removeFacet(facet);
         return;
       }
-
-      if (!Y.Lang.isArray(selections)) {
-        selections = [selections];
-      }
-
-      this._facets[facet] = selections;
+      
+      this._setFacet(this._facets, facet, selections);
     },
 
     removeFacet: function(facet) {
       delete this._facets[facet];
+    },
+
+    setPartitionFacet: function(facet, selections) {
+      this._setFacet(this._partitionfacets, facet, selections);
     },
 
     setPartition: function(column, values, operator) {
@@ -56,6 +57,7 @@ YUI.add('bmp-model-basic', function(Y) {
 
     clearPartition: function() {
       this._partitions = {};
+      this._partitionfacets = {};
     },
 
     _setFilterOrPartition: function(filtersHash, column, values, operator) {
@@ -85,6 +87,14 @@ YUI.add('bmp-model-basic', function(Y) {
       };
     },
 
+    _setFacet: function(facetsHash, facet, selections) {
+      if (!Y.Lang.isArray(selections)) {
+        selections = [selections];
+      }
+
+      facetsHash[facet] = selections;
+    },
+
     _getQueryParams: function() {
       return Y.merge({
         groupby : this.get('groupby').join(','),
@@ -93,7 +103,8 @@ YUI.add('bmp-model-basic', function(Y) {
       },
       this._createFilterQueryParams(this._filters),
       this._createFilterQueryParams(this._partitions, 'partition'),
-      this._createFacetQueryParams(this._facets));
+      this._createFacetQueryParams(this._facets),
+      this._createFacetQueryParams(this._partitionfacets, 'partitionfacet'));
     },
 
     _createFilterQueryParams: function(filters, prefix) {
@@ -110,11 +121,13 @@ YUI.add('bmp-model-basic', function(Y) {
       return params;
     },
 
-    _createFacetQueryParams: function(facets) {
+    _createFacetQueryParams: function(facets, prefix) {
       var params = {};
-      var prefix = 'facet';
+      if (!prefix) {
+        prefix = 'facet';
+      }
 
-      Y.Object.each(this._facets, function(selections, facet) {
+      Y.Object.each(facets, function(selections, facet) {
         params[prefix + '_' + facet] = selections.join(',');
       });
 

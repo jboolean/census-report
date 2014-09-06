@@ -14,11 +14,11 @@ YUI.add('bmp-page-rentburden', function(Y) {
         switch (partitionType) {
         case 'occp_artist_class':
           dataModel.clearPartition();
-          dataModel.setPartition('occp_artist_class', [1]);
+          dataModel.setPartitionFacet('artist_by_occupation', 'artists');
           break;
         case 'fod1p':
           dataModel.clearPartition();
-          dataModel.setPartition('fod1p_artist', 1);
+          dataModel.setPartitionFacet('artist_by_education', 'artist');
         }
       };
 
