@@ -44,7 +44,6 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       } else if (dataState === 'loading') {
         cb.append(Y.Node.create('<div class="alert alert-info">Loading</div>'));
       } else {
-        DataSourcedChart.superclass.syncUI.apply(this, arguments);
 
 
         // don't display if there are fatal errors
@@ -59,8 +58,9 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
         });
 
         var chartWrapper = cb.one('.inner-chart-wrapper');
-
         chartWrapper.toggleView(!hasFatalErrors);
+        DataSourcedChart.superclass.syncUI.apply(this, arguments);
+
       }
     }
 
