@@ -135,7 +135,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         this._summaryDataModel.setFacet('degfield', value);
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
-        this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
+        this._summaryWidget.set('displayedFilterText', 'all people with an art degree');
         this._dataModel.removeFacet('degfield');
         this._summaryDataModel.removeFacet('degfield');
         this._dataModel.setFacet('artist_by_education', 'artist');
