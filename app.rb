@@ -16,6 +16,7 @@ class BFAMFAPhD < Sinatra::Application
 
   configure :production do
     db_parts = ENV['DATABASE_URL'].split(/\/|:|@/)
+    puts db_parts.inspect
     username = db_parts[3]
     password = db_parts[4]
     host = db_parts[5]
