@@ -27,9 +27,9 @@ class BFAMFAPhD < Sinatra::Application
     facetSelections = get_facet_selections_from_query_params
 
     cache_result = cache_get('schooltowork/groups', facetSelections)
-    # unless cache_result.nil?
-    #   return cache_result
-    # end
+    unless cache_result.nil?
+      return cache_result
+    end
 
     portal = IPUMSFullDataPortal.new
 

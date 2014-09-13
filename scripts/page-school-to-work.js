@@ -54,7 +54,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 
       var summary = this._summaryWidget = new Y.BMP.Widget.SchoolToWorkSummary({
         dataSource: summaryDataModel,
-        displayedFilterText: 'all people in NYC with an art degree'
+        displayedFilterText: 'all people with an arts degree'
       });
 
       chart.on('select', function(e) {
@@ -64,6 +64,25 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       });
 
       this.renderFilter();
+
+      Y.one('#filter-city').after('change', Y.bind(function(e) {
+        var value = e.target.get('value');
+
+        var cityName = e.target.one(':checked').get('text');
+
+        if (value != -1) {
+          dataModel.setFacet('city', value);
+          summaryDataModel.setFacet('city', value);
+        } else {
+          dataModel.removeFacet('city');
+          summaryDataModel.removeFacet('city');
+        }
+
+        this._dataModel.load();
+        this._summaryDataModel.load();
+
+        Y.all('.location-name').set('text', cityName);
+      }, this));
 
       dataModel.load();
       summaryDataModel.load();
@@ -117,8 +136,10 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
         this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
-        dataModel.setFacet('artist_by_education', 'artist');
-        summaryDataModel.setFacet('artist_by_education', 'artist');
+        this._dataModel.removeFacet('degfield');
+        this._summaryDataModel.removeFacet('degfield');
+        this._dataModel.setFacet('artist_by_education', 'artist');
+        this._summaryDataModel.setFacet('artist_by_education', 'artist');
       }
       this._dataModel.load();
       this._summaryDataModel.load();

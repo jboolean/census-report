@@ -92,13 +92,19 @@ class IPUMSFullDataPortal < IPUMSPortal
     degCol = 0
     countCol = 2
 
+    totalPop = 0;
+
     occupationTotals = Hash.new(0)
 
     tallyResult.each do |row|
       occ = row[occCol]
       count = row[countCol].to_i
       occupationTotals[occ] += count
+      totalPop += count
     end
+
+    threshold = totalPop * 0.01
+    threshold = 200 if threshold < 200
 
     big = []
     others = Hash.new(0)
@@ -108,7 +114,7 @@ class IPUMSFullDataPortal < IPUMSPortal
       fod = row[degCol]
       occ = row[occCol]
 
-      if occupationTotals[occ] >= SCHOOL_TO_WORK_THRESHOLD
+      if occupationTotals[occ] >= threshold
         big << [fod, occ, count]
       else
         others[fod] += count
@@ -116,7 +122,7 @@ class IPUMSFullDataPortal < IPUMSPortal
     end
 
     otherOccupations = occupationTotals.select do |occ, count|
-      count < SCHOOL_TO_WORK_THRESHOLD
+      count < threshold
     end
 
     out = [['Field of Degree', 'Occupation', 'Count']];
@@ -130,7 +136,8 @@ class IPUMSFullDataPortal < IPUMSPortal
       :results => out,
       :fields => ['Field of Degree', 'Occupation', 'Count'], 
       :citation => 'American Community Survey 2009-2011, processed by IPUMS and BFAMFAPhD',
-      :otherOccupations => otherOccupations.keys
+      :otherOccupations => otherOccupations.keys,
+      :threshold => threshold
     }
   end
 

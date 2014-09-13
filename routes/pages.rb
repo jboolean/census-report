@@ -20,6 +20,12 @@ class BFAMFAPhD < Sinatra::Application
     erb page.to_sym
   end
 
+  get '/schooltowork' do
+    @cities_to_codes = JSON.parse(IO.read('public/staticdata/cities_to_codes.json'))
+
+    erb :schooltowork
+  end
+
   get '/*' do |page|
     path = File.join(settings.views, page+'.erb')
     pass unless File.exist?(path)
