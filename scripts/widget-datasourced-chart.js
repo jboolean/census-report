@@ -42,6 +42,7 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       if (dataState === 'initial') {
         return;
       } else if (dataState === 'loading') {
+        cb.one('.inner-chart-wrapper').hide();
         cb.append(Y.Node.create('<div class="alert alert-info">Loading</div>'));
       } else {
 

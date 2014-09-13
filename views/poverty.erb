@@ -18,12 +18,12 @@ CITIES_TO_CODES = <%=@cities_to_codes%>;
   <div class=""><div class="container">
   
     <!-- <h1>Explore Poverty Rates</h1> -->
-    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in [The selected city TODO: update copy]. Filter the data to see poverty rates for different groups.</strong></p>
+    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in <span class="location-name">The United States</span>. Filter the data to see poverty rates for different groups.</strong></p>
 
     <div class="the-numbers">
     <div class="comparison">
       <span class="number-label">National poverty rate</span>
-      <span class="number">14.9%</span>
+      <span class="number">15.2%</span>
     </div>
 
     <div class="user-chosen">
@@ -31,9 +31,9 @@ CITIES_TO_CODES = <%=@cities_to_codes%>;
       <span class="main-chart-wrapper number"></span>
     </div>
 
-    <div class="comparison">     
-      <span class="number-label">NYC poverty rate</span>
-      <span class="number">20.8%</span>
+    <div class="comparison unfiltered">     
+      <span class="number-label"><span class="location-name">The United States</span> poverty rate</span>
+      <span class="number"></span>
     </div>
     
     <div class="clearfix"></div>
@@ -163,8 +163,8 @@ CITIES_TO_CODES = <%=@cities_to_codes%>;
 
       <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:city]%>">
         <label class="btn btn-default"><input type="radio" name="city" value="-1">All USA</label>
-        <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York</label>
-        <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"><div>
+        <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York City</label>
+        <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"></div>
       </div>
       
     </div>

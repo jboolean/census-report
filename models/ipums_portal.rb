@@ -4,10 +4,10 @@ class IPUMSPortal < Portal
 
   def getFilter(facet, selections)
 
-    if facet == :city
+    if facet == :city || facet == :degfield
       return {
-        :column => columnNames[:city],
-        :values => selections.map {|cityCode| cityCode.to_i},
+        :column => columnNames[facet],
+        :values => selections.map {|code| code.to_i},
         :operator => :in
       }
     else
@@ -75,5 +75,41 @@ class IPUMSPortal < Portal
       :query => sqlQuery,
       :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
     }
+  end
+
+  def getTally(db, groupbys, facets, description_tables, sort)
+    escapedColumns = groupbys.map do |col_name|
+      col_name.downcase!
+      if description_tables.has_key?(col_name)
+        escaped_table = db.quote_ident(description_tables[col_name])
+        "#{escaped_table}.definition"
+      else
+        db.quote_ident(col_name) 
+      end
+    end
+
+    selectSql = 'SELECT '
+    selectSql << (escapedColumns + ['sum(perwt)']).join(',')
+    unless groupbys.empty?
+      groupbySql = 'GROUP BY ' + escapedColumns.join(',')
+    end
+
+    joins = []
+    groupbys.each do |col_name|
+      if description_tables.has_key?(col_name)
+        escaped_col = db.quote_ident(col_name)
+        escaped_table = db.quote_ident(description_tables[col_name])
+        joins << "INNER JOIN #{escaped_table} ON #{escaped_col} = #{escaped_table}.code"
+      end
+    end
+    
+    wheres = getWhereSql(db, facets)
+    whereSql = wheres.empty? ? '' : 'WHERE ' + wheres
+
+    sortSql = sort ? 'ORDER BY sum(PERWT) DESC' : ''
+
+    fullSql = "#{selectSql} FROM #{tableName} #{joins.join(' ')} #{whereSql} #{groupbySql} #{sortSql};"
+    puts fullSql
+    db.exec(fullSql).values()
   end
 end

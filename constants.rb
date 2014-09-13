@@ -17,7 +17,8 @@ class BFAMFAPhD
         :sex,
         :race_hispan_simple,
         :education,
-        :city
+        :city,
+        :degfield
       ])
 
     set :facet_values, {

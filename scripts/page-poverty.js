@@ -26,6 +26,11 @@ YUI.add('bmp-page-poverty', function(Y) {
         endpoint: '/api/acs/custom/povertyrate'
       });
 
+      var unfilteredDataModel = new Y.BMP.Model.BasicModel({
+        endpoint: '/api/acs/custom/povertyrate'
+      });
+
+
       var mainNumberWidget = new Y.BMP.Widget.AnimatedNumberChart({
         dataSource: dataModel,
         dataProperty: 'povertyRate',
@@ -46,6 +51,25 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       mainNumberWidget.render(Y.one('.main-chart-wrapper').empty());
 
+
+      var unfilteredNumberWidget = new Y.BMP.Widget.AnimatedNumberChart({
+        dataSource: unfilteredDataModel,
+
+        dataProperty: 'povertyRate',
+
+        numberFormatConfig: {
+          decimalPlaces: 1,
+          suffix: '%'
+        },
+
+        sizeEffectEnabled: false
+      });
+
+      unfilteredNumberWidget.render(Y.one('.the-numbers .comparison.unfiltered .number'));
+
+      unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
+      unfilteredDataModel.load();
+
       // dataModel.load();
 
       new Y.BMP.ButtonController({
@@ -61,8 +85,27 @@ YUI.add('bmp-page-poverty', function(Y) {
         dataModel.load();
 
       }, 'input');
+
+      //city comparison number
+
+      Y.one('.filter-city').delegate('change', function(e) {
+        var node = Y.one('.the-numbers .comparison.unfiltered');
+
+        var cityCode = e.target.get('value');
+        if (cityCode == -1) {
+          // unfilteredDataModel.removeFacet('city');
+          node.hide();
+        } else {
+          unfilteredDataModel.setFacet('city', cityCode);
+          unfilteredDataModel.load();
+          node.show();
+        }
+
+      }, 'input');
       
       this._setupCitySelector();
+
+      dataModel.on('loaded', this._updateCityText, this);
 
     },
 
@@ -71,35 +114,25 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       var cityFiltersNode = Y.one('.filter-city');
 
-      var otherCityInput = cityFiltersNode.one('.other input');
-      otherCityInput.plug(Y.Plugin.AutoComplete, {
-        source: Y.Object.keys(CITIES_TO_CODES),
-        resultFilters: 'startsWith',
-        maxResults: 5
-      });
+      cityFiltersNode.plug(Y.BMP.Plugin.CitySelector);
+    },
 
-      otherCityInput.ac.on('select', function(e) {
-        var cityName = e.result.raw;
-        var cityCode = CITIES_TO_CODES[cityName];
-        if (!Y.Lang.isValue(cityCode)) {
-          //TODO: Notify user of unsupperted city
-          console.log('unsupported city');
-          return;
-        }
+    _updateCityText: function() {
+      var selectedButton = Y.one('.filter-city input:checked');
+      if (!selectedButton) {
+        return;
+      }
 
-        //Clone a button
-        var newButton = cityFiltersNode.one('.btn').cloneNode(true);
-        var radioBtn = cityFiltersNode.one('.btn input').cloneNode();
-        newButton.set('text', cityName);
-        radioBtn.setAttribute('value', cityCode);
-        newButton.prepend(radioBtn);
+      var cityCode = selectedButton.get('value');
 
-        cityFiltersNode.one('.other').insert(newButton, 'before');
-        radioBtn.simulate('click');
-        e.preventDefault();
-        otherCityInput.set('value', '');
+      var label = selectedButton.ancestor('.btn');
+      var cityName = label.get('text');
 
-      }, this);
+      if (cityCode == -1) {
+        cityName = 'The United States';
+      }
+
+      Y.all('.location-name').set('text', cityName);
     },
 
     renderNav: function() {
@@ -114,12 +147,12 @@ YUI.add('bmp-page-poverty', function(Y) {
     'base',
     'bmp-button-controller',
     'bmp-model-basic',
+    'bmp-plugin-city-selector',
     'bmp-plugins-toggle-buttons',
     'bmp-widget-animated-number',
     'bmp-widget-dropdown-nav',
     'event',
     'node',
-    'node-pluginhost',
-    'node-event-simulate'
+    'node-pluginhost'
   ]
 });

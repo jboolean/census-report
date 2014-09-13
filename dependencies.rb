@@ -5,9 +5,11 @@ DEPENDENCIES = {
  'main-footer' => [],
 
  'page-rentburden' => ['widget-datasourced-chart', 'model-basic', 
-     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
+     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav',
+     'plugin-city-selector'],
   'page-poverty' => ['model-basic', 
-     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav'],
+     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav',
+     'plugin-city-selector'],
  'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer',
     'widget-dropdown-nav', 'widget-schooltowork-summary'],
  'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],

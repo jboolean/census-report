@@ -65,11 +65,14 @@ YUI.add('bmp-widget-animated-number', function(Y) {
 
         // cb.set('text', Y.Number.format(number, this.get('numberFormatConfig')));
         this.setNumberInterpolated(number);
-        this.setSize(number);
+        if (this.get('sizeEffectEnabled')) {
+          this.setSize(number);
+        }
       }
     },
 
     setSize: function(number) {
+
       var config = this.get('sizeEffect');
 
       // make a "line" equation where number value is on the x axis and font percentage on y
@@ -165,6 +168,11 @@ YUI.add('bmp-widget-animated-number', function(Y) {
       numberFormatConfig: {
         value: {},
         writeOnce: 'initOnly'
+      },
+
+      sizeEffectEnabled: {
+        value: true,
+        validator: Y.Lang.isBoolean
       },
 
       sizeEffect: {

@@ -8,7 +8,8 @@ class IPUMSFullDataPortal < IPUMSPortal
     :race_hispan_simple => 'race_hispan_simple',
     :education => 'educ',
     :city => 'city',
-    :rentburden => 'rentburden_classes'
+    :rentburden => 'rentburden_classes',
+    :degfield => 'degfieldd'
 
   }
 
@@ -73,6 +74,63 @@ class IPUMSFullDataPortal < IPUMSPortal
       :populationSize => population,
       :results => {:povertyRate => povertyRate},
       :citation => 'American Community Survey 2009-2011, processed by BFAMFAPhD'
+    }
+  end
+
+  SCHOOL_TO_WORK_THRESHOLD = 2000
+  def getSchoolToWork(db, facets)
+
+    #   def getTally(db, groupbys, facets, description_tables, sort)
+    description_tables = {
+      'degfieldd' => 'defs_fod1p',
+      'occ' => 'defs_occp'
+    }
+
+    tallyResult = getTally(db, ['degfieldd', 'occ'], facets, description_tables, false)
+
+    occCol = 1
+    degCol = 0
+    countCol = 2
+
+    occupationTotals = Hash.new(0)
+
+    tallyResult.each do |row|
+      occ = row[occCol]
+      count = row[countCol].to_i
+      occupationTotals[occ] += count
+    end
+
+    big = []
+    others = Hash.new(0)
+
+    tallyResult.each do |row|
+      count = row[countCol].to_i
+      fod = row[degCol]
+      occ = row[occCol]
+
+      if occupationTotals[occ] >= SCHOOL_TO_WORK_THRESHOLD
+        big << [fod, occ, count]
+      else
+        others[fod] += count
+      end
+    end
+
+    otherOccupations = occupationTotals.select do |occ, count|
+      count < SCHOOL_TO_WORK_THRESHOLD
+    end
+
+    out = [['Field of Degree', 'Occupation', 'Count']];
+
+    out.concat(big)
+    others.each do |fod, count|
+      out << [fod, 'Miscellaneous', count]
+    end
+
+    {
+      :results => out,
+      :fields => ['Field of Degree', 'Occupation', 'Count'], 
+      :citation => 'American Community Survey 2009-2011, processed by IPUMS and BFAMFAPhD',
+      :otherOccupations => otherOccupations.keys
     }
   end
 

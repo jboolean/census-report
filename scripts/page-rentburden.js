@@ -38,7 +38,8 @@ YUI.add('bmp-page-rentburden', function(Y) {
           },
           vAxis: {
             baseline: 0,
-            minValue: 0
+            minValue: 0,
+            maxValue: 100
           },
           legend: {
             position: 'top'
@@ -50,11 +51,12 @@ YUI.add('bmp-page-rentburden', function(Y) {
 
       setPartition('occp_artist_class', dataModel);
 
-      dataModel.load();
+      // dataModel.load();
 
       new Y.BMP.ButtonController({
         dataSource: dataModel,
-        buttonContainer: Y.one('.filter-controls')
+        buttonContainer: Y.one('.filter-controls'),
+        load: true
       });
 
       Y.one('.comparison-chooser').delegate('change', function(e) {
@@ -64,7 +66,11 @@ YUI.add('bmp-page-rentburden', function(Y) {
         dataModel.load();
 
       }, 'input');
+
+      this._setupCitySelector();
       
+      dataModel.on('loaded', this._updateCityText, this);
+
 
     },
 
@@ -75,13 +81,45 @@ YUI.add('bmp-page-rentburden', function(Y) {
 
     renderDefineArtistModal: function() {
       // Y.one('#defineArtistModal .modal-body').load('/artistclasses', '.container');
+    },
+
+    _setupCitySelector: function() {
+      Y.one('body').addClass('yui3-skin-sam');
+
+      var cityFiltersNode = Y.one('.filter-city');
+
+      cityFiltersNode.plug(Y.BMP.Plugin.CitySelector);
+    },
+
+    _updateCityText: function() {
+      var selectedButton = Y.one('.filter-city input:checked');
+      if (!selectedButton) {
+        return;
+      }
+
+      var cityCode = selectedButton.get('value');
+
+      var label = selectedButton.ancestor('.btn');
+      var cityName = label.get('text');
+
+      if (cityCode == -1) {
+        cityName = 'The United States';
+      }
+
+      Y.all('.location-name').set('text', cityName);
     }
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-datasourced-chart', 'bmp-model-basic',
-    'bmp-plugins-toggle-buttons', 'node-pluginhost',
-    'bmp-button-controller', 'bmp-data-preparer',
-    'node', 'bmp-widget-dropdown-nav', 'node-load'
+    'bmp-button-controller',
+    'bmp-data-preparer',
+    'bmp-model-basic',
+    'bmp-plugin-city-selector',
+    'bmp-plugins-toggle-buttons',
+    'bmp-widget-datasourced-chart',
+    'bmp-widget-dropdown-nav',
+    'node',
+    'node-load',
+    'node-pluginhost'
   ]
 });

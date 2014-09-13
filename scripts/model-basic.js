@@ -20,8 +20,8 @@ YUI.add('bmp-model-basic', function(Y) {
       this.publish('load-failed');
       this._filters = {};
       this._partitions = {};
-      this._partitionfacets = {};
       this._facets = {};
+      this._partitionfacets = {};
     },
 
     /** @deprecated **/

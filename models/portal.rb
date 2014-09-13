@@ -40,7 +40,7 @@ class Portal
         :values => values
       }
     else
-      throw "Facet not known for this table"
+      throw "Facet not known for this table #{facet}" 
     end
 
   end

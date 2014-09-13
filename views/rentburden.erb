@@ -5,12 +5,13 @@ google.setOnLoadCallback(function() {
     YUI().use('bmp-page-rentburden', function(Y) {
       Y.BMP.Page.RentBurden.initializePage();
     });
-
   });
+
+  CITIES_TO_CODES = <%=@cities_to_codes%>;
 </script>
 <div class="page-rentburden container">
   <!-- <h1>Explore Rent Burden</h1> -->
-  <p class="main-description lead">This shows the <b>rent burdens*</b> of artists in comparison to other people living in [TODO: update copy] City.</p>
+  <p class="main-description lead">This shows the <b>rent burdens*</b> of artists in comparison to other people living in  <strong><span class="location-name">The United States</span></strong>.</p>
 
   <div class="chart-and-comparison-controls">
     <div class="chart-column">
@@ -113,6 +114,12 @@ google.setOnLoadCallback(function() {
         <label class="btn btn-default">
           <input type="radio" name="schl" value="<%=facet_values[:education][:masters_or_higher]%>"> Master's or higher
         </label>
+      </div>
+
+       <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:city]%>">
+        <label class="btn btn-default"><input type="radio" name="city" value="-1">All USA</label>
+        <label class="btn btn-default active"><input type="radio" name="city" value="4610" checked>New York City</label>
+        <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"></div>
       </div>
       
   </div>

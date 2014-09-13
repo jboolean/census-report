@@ -25,24 +25,22 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       // this.renderNav();
 
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
-        endpoint: '/api/acs/custom/schooltowork'
+        endpoint: '/api/acs/custom/schooltowork/flow'
       });
 
       var summaryDataModel = this._summaryDataModel = new Y.BMP.Model.BasicModel({
-        endpoint: '/api/acs',
-        groupby: 'occp_group',
-        useDescriptions: false,
-        sort: true
+        endpoint: '/api/acs/custom/schooltowork/groups',
       });
 
-      dataModel.setFilter('fod1p_artist', 1);
-      summaryDataModel.setFilter('fod1p_artist', 1);
+      dataModel.setFacet('artist_by_education', 'artist');
+      summaryDataModel.setFacet('artist_by_education', 'artist');
 
       var chart = new Y.BMP.Widget.DataSourcedChart({
         chartType: 'Sankey',
         options: {
           enableInteractivity: false,
-          height: 2500,
+          // height: 2500,
+          height: 3500,
           // height: 1500,
           sankey: {
             iterations: 100,
@@ -105,22 +103,22 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     _handleFilterChange: function(e) {
       var value = e.target.get('value');
 
-      this._dataModel.removeFilter('fod1p');
-      this._summaryDataModel.removeFilter('fod1p');
+      this._dataModel.removeFacet('artist_by_education');
+      this._summaryDataModel.removeFacet('artist_by_education');
       
-      this._dataModel.removeFilter('fod1p_artist');
-      this._summaryDataModel.removeFilter('fod1p_artist');
+      // this._dataModel.removeFilter('fod1p_artist');
+      // this._summaryDataModel.removeFilter('fod1p_artist');
 
       if (value != -1){
         this._summaryWidget.set('displayedFilterText', 'people who reported ' +
           FOD1P_DEFINITONS[value] + ' as their degree field');
-        this._dataModel.setFilter('fod1p', value, 'eq');
-        this._summaryDataModel.setFilter('fod1p', value, 'eq');
+        this._dataModel.setFacet('degfield', value);
+        this._summaryDataModel.setFacet('degfield', value);
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
         this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');
-        this._dataModel.setFilter('fod1p_artist', 1);
-        this._summaryDataModel.setFilter('fod1p_artist', 1);
+        dataModel.setFacet('artist_by_education', 'artist');
+        summaryDataModel.setFacet('artist_by_education', 'artist');
       }
       this._dataModel.load();
       this._summaryDataModel.load();

@@ -13,10 +13,11 @@ class BFAMFAPhD < Sinatra::Application
     erb :artistclasses
   end
 
-  get '/poverty' do
+  get %r{/(poverty|rentburden)} do
+    page = params[:captures].first
     @cities_to_codes = IO.read('public/staticdata/cities_to_codes.json')
 
-    erb :poverty
+    erb page.to_sym
   end
 
   get '/*' do |page|
