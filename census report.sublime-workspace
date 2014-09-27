@@ -4,24 +4,492 @@
 		"selected_items":
 		[
 			[
-				"margin",
-				"margin-top"
+				"_sa",
+				"_summaryDataModel"
+			],
+			[
+				"data",
+				"dataModel"
+			],
+			[
+				"occ",
+				"occupationTotals"
+			],
+			[
+				"col",
+				"col_name"
+			],
+			[
+				"set",
+				"setFacet"
+			],
+			[
+				"size",
+				"sizeEffectEnabled"
+			],
+			[
+				"siz",
+				"sizeA"
+			],
+			[
+				"unf",
+				"unfilteredDataModel"
+			],
+			[
+				"da",
+				"dataSource"
+			],
+			[
+				"city",
+				"cityCode"
+			],
+			[
+				"selected",
+				"selectedButton"
+			],
+			[
+				"sel",
+				"selectedButton"
+			],
+			[
+				"plugi",
+				"plugin-city-selector"
+			],
+			[
+				"_",
+				"_partitionfacets  (variable)"
+			],
+			[
+				"_par",
+				"_partitionfacets"
+			],
+			[
+				"partitionfa",
+				"_partitionfacets"
+			],
+			[
+				"sql",
+				"sqlQuery"
+			],
+			[
+				"we",
+				"whereSql"
+			],
+			[
+				"part",
+				"partitionFacets"
+			],
+			[
+				"column",
+				"columnNames"
+			],
+			[
+				"get",
+				"get_facet_selections_from_query_params"
+			],
+			[
+				"fil",
+				"filters"
+			],
+			[
+				"facet",
+				"facetSelections"
+			],
+			[
+				"COLUM",
+				"COLUMN_VALUES"
+			],
+			[
+				"fac",
+				"facet"
+			],
+			[
+				"remove",
+				"removeFacet"
+			],
+			[
+				"_crea",
+				"_createFacetQueryParams"
+			],
+			[
+				"COL",
+				"COLUMN_VALUES"
+			],
+			[
+				"fa",
+				"facet_values"
+			],
+			[
+				"IP",
+				"IPUMSPortal"
+			],
+			[
+				"req",
+				"require_relative"
+			],
+			[
+				"make",
+				"make_enum"
+			],
+			[
+				"othe",
+				"otherCityInput"
+			],
+			[
+				"ciy",
+				"cityFiltersNode"
+			],
+			[
+				"cit",
+				"cityName"
+			],
+			[
+				"oth",
+				"otherCityInput"
+			],
+			[
+				"scope",
+				"scopedKey"
+			],
+			[
+				"cache",
+				"cache_result"
+			],
+			[
+				"val",
+				"val_escaped"
+			],
+			[
+				"but",
+				"buttonContainer"
+			],
+			[
+				"name",
+				"nameClasue"
+			],
+			[
+				"senten",
+				"sentence1"
+			],
+			[
+				"nam",
+				"nameClasue"
+			],
+			[
+				"text",
+				"textbox"
+			],
+			[
+				"sen",
+				"sentence1"
+			],
+			[
+				"has",
+				"hasLoan"
+			],
+			[
+				"sent",
+				"sentence1"
+			],
+			[
+				"is",
+				"isValue"
+			],
+			[
+				"space",
+				"space_zip"
+			],
+			[
+				"sal",
+				"salary_amount_time_unit"
+			],
+			[
+				"other",
+				"otherOccupations"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"to",
+				"toReturn"
+			],
+			[
+				"pro",
+				"project_url_domain"
+			],
+			[
+				"url",
+				"urlMatchPattern"
+			],
+			[
+				"proje",
+				"project_url_domain"
+			],
+			[
+				"sub",
+				"subAndEscape"
+			],
+			[
+				"prj",
+				"project_url"
+			],
+			[
+				"project",
+				"project_url"
+			],
+			[
+				"re",
+				"renderFilter"
 			],
 			[
 				"fod",
-				"fod1p-filter-wrapper"
+				"fod1p_artist"
+			],
+			[
+				"occp",
+				"occp_artist_class"
+			],
+			[
+				"pie",
+				"pieChartOptions"
+			],
+			[
+				"inverte",
+				"inverted-link-color"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"accent",
+				"accent-text-color"
+			],
+			[
+				"nav",
+				"navbar-padding-vertical"
+			],
+			[
+				"na",
+				"nav-font-size-base"
+			],
+			[
+				"padd",
+				"padding-base-vertical"
+			],
+			[
+				"font-size",
+				"font-size-h2"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"bo",
+				"bolder"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"Summ",
+				"_summaryWidget"
+			],
+			[
+				"total",
+				"totalOther"
+			],
+			[
+				"the",
+				"threshold"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"Ma",
+				"maxToShow"
+			],
+			[
+				"_s",
+				"_summaryDataModel"
+			],
+			[
+				"summ",
+				"summaryDataModel"
+			],
+			[
+				"use",
+				"useDescriptions"
+			],
+			[
+				"th",
+				"threshold"
 			],
 			[
 				"pop",
-				"populationSize"
+				"populationLargeEnough"
+			],
+			[
+				"current",
+				"currentNumber"
+			],
+			[
+				"new",
+				"newNumber"
+			],
+			[
+				"cont",
+				"contentBox"
+			],
+			[
+				"num",
+				"numberFormatConfig"
+			],
+			[
+				"dat",
+				"dataProperty"
+			],
+			[
+				"af",
+				"afun	anonymous-fun"
+			],
+			[
+				"space_",
+				"space_price_amount"
+			],
+			[
+				"report",
+				"reportListWidget"
+			],
+			[
+				"newR",
+				"newReportsNode"
+			],
+			[
+				"or",
+				"originalReportsNode"
+			],
+			[
+				"_e",
+				"_reportToString"
+			],
+			[
+				"con",
+				"contentBox"
+			],
+			[
+				"wid",
+				"widget-dropdown-nav"
+			],
+			[
+				"rend",
+				"renderNav"
+			],
+			[
+				"border-bott",
+				"border-bottom-color"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"spac",
+				"space_size_units"
+			],
+			[
+				"me",
+				"metersToFeet"
+			],
+			[
+				"subm",
+				"submitForm"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"bor-",
+				"border-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"proj",
+				"project_year"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"space_price",
+				"space_price_unit"
+			],
+			[
+				"ren",
+				"renderNav"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ac",
+				"activeItem"
+			],
+			[
+				"acti",
+				"active-text"
+			],
+			[
+				"Dr",
+				"DropdownNav"
+			],
+			[
+				"dataS",
+				"dataSource"
+			],
+			[
+				"up",
+				"updateErrors"
 			],
 			[
 				"calcu",
 				"calculate_percentage"
-			],
-			[
-				"data",
-				"data-preparer"
 			],
 			[
 				"Basi",
@@ -30,10 +498,6 @@
 			[
 				"filter",
 				"filterColumns"
-			],
-			[
-				"up",
-				"upper_bound"
 			],
 			[
 				"es",
@@ -50,236 +514,114 @@
 			[
 				"partiton",
 				"partitonSql"
-			],
-			[
-				"creat",
-				"create_whereSql"
-			],
-			[
-				"par",
-				"partiton"
-			],
-			[
-				"num",
-				"num_fields"
-			],
-			[
-				"sql",
-				"sqlResult"
-			],
-			[
-				"per",
-				"percent1"
-			],
-			[
-				"error",
-				"errorNode"
-			],
-			[
-				"rent",
-				"rentBurdenDefinitions"
-			],
-			[
-				"new",
-				"newRow"
-			],
-			[
-				"where",
-				"whereSql"
-			],
-			[
-				"grp",
-				"grpip_group3"
-			],
-			[
-				"re",
-				"response"
-			],
-			[
-				"res",
-				"results"
-			],
-			[
-				"scr",
-				"scriptsManifest"
-			],
-			[
-				"fil",
-				"filter_params"
-			],
-			[
-				"fi",
-				"filter_params"
-			],
-			[
-				"raw",
-				"rawResults"
-			],
-			[
-				"qu",
-				"quote_ident"
-			],
-			[
-				"Col",
-				"col_name"
-			],
-			[
-				"gr",
-				"groupbySql"
-			],
-			[
-				"group",
-				"groupbys"
-			],
-			[
-				"vali",
-				"valid_col"
-			],
-			[
-				"col",
-				"col_name"
-			],
-			[
-				"to",
-				"to_json"
-			],
-			[
-				"sc",
-				"scriptsManifest"
-			],
-			[
-				"styles",
-				"stylesDir"
-			],
-			[
-				"FOD",
-				"FOD_CODES"
-			],
-			[
-				"OCCP",
-				"OCCP_CODES"
-			],
-			[
-				"dra",
-				"drawChart"
-			],
-			[
-				"wri",
-				"write_token_file"
-			],
-			[
-				"add",
-				"add_yui_event"
-			],
-			[
-				"add_y",
-				"add_yui_class  (function)"
-			],
-			[
-				"dash",
-				"dash_type"
-			],
-			[
-				"PUM",
-				"PUMA10"
-			],
-			[
-				"out",
-				"output_countdown"
-			],
-			[
-				"st",
-				"studied_art"
-			],
-			[
-				"IN",
-				"INCLUDE_COLS"
-			],
-			[
-				"val",
-				"val_in_range"
-			],
-			[
-				"ART",
-				"ART_FOD"
-			],
-			[
-				"mixin",
-				"mixinsStr"
-			],
-			[
-				"assg",
-				"assignedValue"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "routes/api.rb",
+			"file": "routes/schooltowork.rb",
 			"settings":
 			{
-				"buffer_size": 1156,
+				"buffer_size": 1320,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "helpers/queryparse.rb",
+			"file": "views/schooltowork.erb",
 			"settings":
 			{
-				"buffer_size": 3431,
+				"buffer_size": 1405,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/layout.erb",
+			"file": "styles/page-school-to-work.less",
 			"settings":
 			{
-				"buffer_size": 2040,
+				"buffer_size": 701,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/data-preparer.js",
+			"file": "scripts/page-school-to-work.js",
 			"settings":
 			{
-				"buffer_size": 1455,
+				"buffer_size": 4988,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dependencies.rb",
+			"file": "scripts/page-rentburden.js",
 			"settings":
 			{
-				"buffer_size": 1276,
+				"buffer_size": 3190,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "routes/init.rb",
+			"file": "models/ipums_full_data_portal.rb",
 			"settings":
 			{
-				"buffer_size": 235,
+				"buffer_size": 3371,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/widget-schooltowork-summary.js",
+			"settings":
+			{
+				"buffer_size": 4316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 136 files for \"NYC\" (regex)\n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/build/rollup.js:\n   13  YUI.add(\"bmp-page-poverty\",function(e){e.namespace(\"BMP.Page\").Poverty={initializePage:function(){var t=function(e,t){switch(t.removeFacet(\"artist_by_occupation\"),t.removeFacet(\"artist_by_education\"),e){case\"occ_artist_class\":t.clearPartition(),t.setFacet(\"artist_by_occupation\",\"artists\");break;case\"artist_degree\":t.clearPartition(),t.setFacet(\"artist_by_education\",\"artist\")}},a=new e.BMP.Model.BasicModel({endpoint:\"/api/acs/custom/povertyrate\"}),o=new e.BMP.Model.BasicModel({endpoint:\"/api/acs/custom/povertyrate\"}),n=new e.BMP.Widget.AnimatedNumberChart({dataSource:a,dataProperty:\"povertyRate\",numberFormatConfig:{decimalPlaces:1,suffix:\"%\"},sizeEffect:{valueA:10,sizeA:100,valueB:30,sizeB:120,duration:1}});n.render(e.one(\".main-chart-wrapper\").empty());var i=new e.BMP.Widget.AnimatedNumberChart({dataSource:o,dataProperty:\"povertyRate\",numberFormatConfig:{decimalPlaces:1,suffix:\"%\"},sizeEffectEnabled:!1});i.render(e.one(\".the-numbers .comparison.unfiltered .number\")),o.setFacet(\"city\",4610),o.load(),new e.BMP.ButtonController({dataSource:a,buttonContainer:e.one(\".controls\"),load:!0}),e.one(\".artist-chooser\").delegate(\"change\",function(e){var o=e.target,n=o.get(\"value\");t(n,a),a.load()},\"input\"),e.one(\".filter-city\").delegate(\"change\",function(t){var a=e.one(\".the-numbers .comparison.unfiltered\"),n=t.target.get(\"value\");-1==n?a.hide():(o.setFacet(\"city\",n),o.load(),a.show())},\"input\"),this._setupCitySelector(),a.on(\"loaded\",this._updateCityText,this)},_setupCitySelector:function(){e.one(\"body\").addClass(\"yui3-skin-sam\");var t=e.one(\".filter-city\");t.plug(e.BMP.Plugin.CitySelector)},_updateCityText:function(){var t=e.one(\".filter-city input:checked\");if(t){var a=t.get(\"value\"),o=t.ancestor(\".btn\"),n=o.get(\"text\");-1==a&&(n=\"The United States\"),e.all(\".location-name\").set(\"text\",n)}},renderNav:function(){var t=new e.BMP.Widget.DropdownNav;t.render(e.one(\"h1\").empty())}}},\"1.0\",{requires:[\"autocomplete\",\"autocomplete-filters\",\"base\",\"bmp-button-controller\",\"bmp-model-basic\",\"bmp-plugin-city-selector\",\"bmp-plugins-toggle-buttons\",\"bmp-widget-animated-number\",\"bmp-widget-dropdown-nav\",\"event\",\"node\",\"node-pluginhost\"]});\n   14  YUI.add(\"bmp-widget-schooltowork-summary\",function(e){var r={other:\"work in a variety of other fields\",\"null\":\"have not worked in the last five years\",999:\"are not in the labor force\",1:\"make a living as artists\",2:\"are educators\",3:\"work in service jobs\",4:\"work in sales and other office occupations\",5:\"work in various blue collar occupations\",6:\"are in the military\",7:\"work in farming, fishing, and forestry\",10:\"work in various professional fields\",11:\"are managers\",12:\"are working in business and finance\",13:\"now work in science, technology or engineering\",14:\"now work in medicine\"},t=e.namespace(\"BMP.Widget\").SchoolToWorkSummary=e.Base.create(\"SchoolToWorkSummary\",e.Widget,[],{threshold:2e3,bindUI:function(){t.superclass.bindUI.apply(this,arguments);var e=this.get(\"dataSource\");e.on(\"loaded\",function(){this.syncUI()},this)},syncUI:function(){var e=this.get(\"dataSource\"),r=e.get(\"dataState\");if(\"loaded\"===r){var t=e.get(\"data\");this.get(\"contentBox\").setHTML(this._generateText(this._prepareData(t)))}},_generateText:function(t){for(var a=[],n=0;n<t.length;n++){var i=t[n][1];if(1>i)break;var o=e.Number.format(i,{decimalPlaces:0,suffix:\"%\"}),s=o+\" \"+r[t[n][0]];1===Number(t[n][0])&&(s=\"<strong>\"+s+\"</strong>\"),a.push(s)}var c=\"Of \"+this.get(\"displayedFilterText\")+\", \";return e.Array.each(a,function(e,r,t){var a=r===t.length-1&&t.length>1;a&&(c+=\" and \"),c+=e,r!==t.length-1&&(c+=\", \")}),c+\".\"},_prepareData:function(r){var t=this.threshold,a=e.Array.partition(r,function(e){return e[1]>=t}),n=e.Array.reduce(a.rejects,0,function(e,r){return e+r[1]}),i=e.Array.reduce(a.matches,0,function(e,r){return e+r[1]}),o=i+n,s=e.Array.map(a.matches,function(e){return 0===o?0:(e[1]=100*e[1]/o,e)});return s.push([\"other\",100*n/o]),s}},{CSS_PREFIX:\"bmp-schooltowork-summary\",ATTRS:{dataSource:{writeOnce:\"initOnly\",validator:function(r){return r instanceof e.BMP.Model.BasicModel}},displayedFilterText:{value:\"people who reported this as their degree field\",validator:e.Lang.isString}}})},\"1.0\",{requires:[\"array-extras\",\"widget\",\"datatype-number-format\",\"base\"]});\n   15: YUI.add(\"bmp-page-school-to-work\",function(e){FOD1P_DEFINITONS={\"-1\":\"All Art Fields\",6e3:\"Fine Arts\",6001:\"Drama And Theater Arts\",6002:\"Music\",6003:\"Visual And Performing Arts\",6004:\"Commercial Art And Graphic Design\",6005:\"Film Video And Photographic Arts\",6006:\"Art History And Criticism\",6007:\"Studio Arts\"},CODES_DISPLAY_ORDER=[-1,6001,6002,6003,6005,6006,6007],e.namespace(\"BMP.Page\").SchoolToWork={initializePage:function(){var t=this._dataModel=new e.BMP.Model.BasicModel({endpoint:\"/api/acs/custom/schooltowork/flow\"}),a=this._summaryDataModel=new e.BMP.Model.BasicModel({endpoint:\"/api/acs/custom/schooltowork/groups\"});t.setFacet(\"artist_by_education\",\"artist\"),a.setFacet(\"artist_by_education\",\"artist\");var o=new e.BMP.Widget.DataSourcedChart({chartType:\"Sankey\",options:{enableInteractivity:!1,height:3500,sankey:{iterations:100,node:{width:10}}},dataSource:t}),r=this._summaryWidget=new e.BMP.Widget.SchoolToWorkSummary({dataSource:a,displayedFilterText:\"all people with an arts degree\"});o.on(\"select\",function(){console.log(\"hey! It's a wonderful day, sankey select just worked\")}),this.renderFilter(),e.one(\"#filter-city\").after(\"change\",e.bind(function(o){var r=o.target.get(\"value\"),i=o.target.one(\":checked\").get(\"text\");-1!=r?(t.setFacet(\"city\",r),a.setFacet(\"city\",r)):(t.removeFacet(\"city\"),a.removeFacet(\"city\")),this._dataModel.load(),this._summaryDataModel.load(),e.all(\".location-name\").set(\"text\",i)},this)),t.load(),a.load(),o.render(e.one(\".main-chart-wrapper\").empty()),r.render(e.one(\".summary-wrapper\")),t.after(\"loaded\",function(){var a=e.one(\".other-list\").empty();e.Array.each(t.get(\"rawResponse\").otherOccupations,function(t){var o=e.Node.create(\"<li>\");o.set(\"text\",t),a.append(o)})})},renderFilter:function(){var t=e.one(\".fod1p-filter-wrapper\"),a=e.Node.create('<select name=\"fod1p-filter\" class=\"form-control\">');e.Array.each(CODES_DISPLAY_ORDER,function(t){var o=FOD1P_DEFINITONS[t];a.append(e.Lang.sub('<option value=\"{code}\">{definiton}</option>',{code:t,definiton:o}))}),a.on(\"change\",this._handleFilterChange,this),t.empty().append(a)},renderNav:function(){var t=new e.BMP.Widget.DropdownNav;t.render(e.one(\"h1\").empty())},_handleFilterChange:function(e){var t=e.target.get(\"value\");this._dataModel.removeFacet(\"artist_by_education\"),this._summaryDataModel.removeFacet(\"artist_by_education\"),-1!=t?(this._summaryWidget.set(\"displayedFilterText\",\"people who reported \"+FOD1P_DEFINITONS[t]+\" as their degree field\"),this._dataModel.setFacet(\"degfield\",t),this._summaryDataModel.setFacet(\"degfield\",t)):(this._summaryWidget.set(\"displayedFilterText\",\"all people in NYC with an art degree\"),this._dataModel.removeFacet(\"degfield\"),this._summaryDataModel.removeFacet(\"degfield\"),this._dataModel.setFacet(\"artist_by_education\",\"artist\"),this._summaryDataModel.setFacet(\"artist_by_education\",\"artist\")),this._dataModel.load(),this._summaryDataModel.load()}}},\"1.0\",{requires:[\"bmp-widget-datasourced-chart\",\"bmp-model-basic\",\"bmp-data-preparer\",\"node\",\"bmp-widget-dropdown-nav\",\"bmp-widget-schooltowork-summary\",\"array-extras\"]});\n   16  YUI.add(\"bmp-selfreport-text-generators\",function(e){var n=function(){return e.Escape.html(e.Lang.sub.apply(this,arguments))};e.namespace(\"BMP\").SelfReportTextGenerators={getListNode:function(n){if(!this[n.version])return console.error(\"unsupported report version\"),null;var a=this[n.version](n),t=e.Node.create(\"<li>\");return t.setHTML(a),t.setAttribute(\"data-id\",n.id),t},1:function(a){var t=\"\";return e.Lang.isString(a.name)&&(t+=n(\"My name is {name}, and \",a)),t+=\"I made \"+e.Escape.html(a.project_description),(e.Lang.isValue(a.space_price_amount)||e.Lang.isValue(a.space_type))&&(t+=n(\" while renting a {space_type}\",{space_type:a.space_type||\"space\"})),e.Lang.isValue(a.space_zip)&&(t+=n(\" in {space_zip}\",a)),e.Lang.isValue(a.space_price_amount)&&(t+=\" for\",\"$0.00\"===a.space_price_amount?t+=\" free\":(t+=\" \"+e.Escape.html(a.space_price_amount),e.Lang.isValue(a.space_price_unit)&&(t+=\" per \"+e.Escape.html(a.space_price_unit)))),e.Lang.isValue(a.project_year)&&(t+=n(\" in {project_year}\",a)),t+=\".\",e.Lang.isValue(a.project_url)&&(t+=\" Find out more about it at \"+e.Lang.sub('<a href=\"{project_url}\" target=\"_blank\" class=\"external\">{project_url_domain} </a>.',{project_url:a.project_url.replace('\"',\"&quot;\"),project_url_domain:e.Escape.html(a.project_url_domain)})),t},2:function(a){sentence1=\"\";var t=\"\";e.Lang.isString(a.name)&&(t+=n(\"My name is {name}\",a)),sentence1+=\"I\",e.Lang.isString(a.fod)&&(sentence1+=n(\" studied {fod} as an undergraduate and\",a));var r=e.Lang.isValue(a.space_price_amount),s=e.Lang.isValue(a.loan_price_amount);(r||s)&&(sentence1+=\" currently pay\"),r&&(sentence1+=n(\" {space_price_amount} to rent an apartment\",a),e.Lang.isValue(a.space_zip)&&(sentence1+=n(\" in {space_zip}\",a)),sentence1+=\" and\"),s&&(sentence1+=n(\" {loan_price_amount} per month in student loans\",a)),sentence1=sentence1.replace(/ and$/,\"\");var i=e.Lang.isString(a.occupation),c=e.Lang.isValue(a.salary_amount),p=!sentence1.match(/I$/);(i||c)&&p&&(sentence1+=\" while\"),i&&(sentence1+=p?\" working\":\" work\",sentence1+=n(\" primarily in {occupation}\",a),c&&(sentence1+=\" and\")),c&&(sentence1+=p?\" making\":\" make\",sentence1+=n(\" roughly {salary_amount} per {salary_amount_time_unit}\",a),e.Lang.isValue(a.family_members)&&(sentence1+=1==a.family_members?\" for myself\":n(\" for a family of {family_members}\",a))),sentence1.length>5?(t.length>0&&(sentence1=t+\", and \"+sentence1),sentence1+=\".\"):sentence1=t.length>0?t+\".\":\"\";var o=\"\";(a.age||a.ethnicity||a.gender)&&(o+=\" I am\"),(a.age||a.gender)&&(o+=\" a\"),a.age&&(a.age=Number(a.age),(18===a.age||(\"\"+a.age).match(/^8/))&&(o+=\"n\"),a.age&&(o+=n(\" {age} year old\",a))),a.ethnicity&&(o+=n(\" {ethnicity}\",a)),a.gender&&(o+=n(\" {gender}\",a)),o.length>5&&(o+=\".\");var u=\"\";return a.comment&&(u+=n(\"I think this survey is {comment}.\",a)),[sentence1,o,u].join(\" \")}}},\"1.0\",{requires:[\"escape\"]});\n   17  YUI.add(\"bmp-widget-selfreport-list\",function(e){var t=e.namespace(\"BMP.Widget\").SelfReportList=e.Base.create(\"SelfReportListWidget\",e.Widget,[],{TEMPLATE:'<ul class=\"report-list new-reports\"></ul><ul class=\"report-list old-reports\"></ul>',renderUI:function(){t.superclass.renderUI.apply(this,arguments),this.get(\"contentBox\").append(this.TEMPLATE)},syncUI:function(){t.superclass.syncUI.apply(this,arguments);var r=this.get(\"contentBox\"),s=r.one(\".old-reports\").empty();e.Array.each(this.get(\"originalReports\"),function(e){s.append(this._renderReport(e))},this)},addReport:function(e){var t=this.get(\"contentBox\").one(\".new-reports\");t.prepend(this._renderReport(e))},setOriginalReportList:function(e){this._set(\"originalReports\",e),this.syncUI()},_renderReport:function(t){return e.BMP.SelfReportTextGenerators.getListNode(t)}},{CSS_PREFIX:\"bmp-selfreport-list\",ATTRS:{originalReports:{required:!0,value:[]},newReports:{value:[]}}})},\"1.0\",{requires:[\"widget\",\"node\",\"base\",\"bmp-selfreport-text-generators\"]});\n   18  YUI.add(\"bmp-page-selfreport\",function(e){var t=function(t){return!e.Lang.isValue(t)||\"\"===t},a=function(t){return e.Lang.isString(t)&&(t=parseFloat(t)),3.28084*t};e.namespace(\"BMP.Page\").SelfReport={initializePage:function(){e.all(\".selfreport input[name=space_size_x], .selfreport input[name=space_size_y]\").on(\"keyup\",this.updateSquaredArea),e.all(\".selfreport textarea[name=comment]\").on(\"keydown\",this._onCommentChange),e.all(\".selfreport button.submit\").after(\"tap\",this.submitForm,null,this);var t=this._reportListWidget=new e.BMP.Widget.SelfReportList;t.render(e.one(\".reports\")),this._loadSelfReportList().then(function(e){t.setOriginalReportList(e.results)},function(e){console.log(e)})},submitForm:function(s){s.halt();var r=s.target.ancestor(\"form\"),i=r.getAttribute(\"target\");s.target.addClass(\"disabled\");var n={};if(r.all(\"input, select, textarea\").each(function(e){var a=e.get(\"value\");if(!t(a)){var a=e.get(\"value\");0===a.indexOf(\"$\")&&(a=a.trim().substr(1)),n[e.get(\"name\")]=a}}),e.Object.size(n)<=r.all(\"select\").size()-1)return s.target.removeClass(\"disabled\"),void s.halt();if(!t(n.space_size_unitless)&&!t(n.space_size_units))if(\"m\"===n.space_size_units)n.space_size_ft=a(n.space_size_unitless);else{if(\"ft\"!==n.space_size_units)throw\"bad units\";n.space_size_ft=n.space_size_unitless}e.Lang.isString(n.space_price_amount)&&0===n.space_price_amount.trim().indexOf(\"$\")&&(n.space_price_amount=n.space_price_amount.trim().substr(1)),e.Data.post({url:i,data:n},this).then(e.bind(function(e){var t=e.results[0];r.all(\".selfreport .error\").removeClass(\"error\"),r.getDOMNode().reset(),s.target.removeClass(\"disabled\"),this._reportListWidget.addReport(t)},this),function(t){e.Lang.isObject(t.fields)?e.Object.each(t.fields,function(e,t){r.all(\"input[name=\"+t+\"]\").addClass(\"error\")}):alert(\"Something went wrong. We'll give it a look.\"),s.target.removeClass(\"disabled\")})},updateSquaredArea:function(){var t=e.one(\".selfreport input[name=space_size_unitless]\"),a=e.one(\".selfreport input[name=space_size_x]\"),s=e.one(\".selfreport input[name=space_size_y]\"),r=a.get(\"value\"),i=s.get(\"value\");r&&i&&t.set(\"value\",r*i)},renderNav:function(){var t=new e.BMP.Widget.DropdownNav;t.render(e.one(\"h1\").empty())},_loadSelfReportList:function(){return e.Data.get({url:\"/api/selfreport\"})},_onCommentChange:function(t){if(8!==t.keyCode&&!t.metaKey){var a=t.target,s=a.get(\"value\");if(s){var r=s.match(/(\\S*)\\s+/g);e.Lang.isArray(r)&&r.length>20&&t.halt(!0)}}}}},\"1.0\",{requires:[\"bmp-widget-selfreport-list\",\"bmp-widget-dropdown-nav\",\"event-tap\",\"jsb-data-util\",\"node\",\"node-event-delegate\"]});\n   19: YUI.add(\"bmp-page-artistclasses\",function(e){e.namespace(\"BMP.Page\").ArtistClasses={pieChartOptions:{height:300,legend:{position:\"labeled\"}},smallPieChartOptions:e.merge(this.pieChartOptions,{height:300,legend:{position:\"bottom\"},fontSize:8,pieSliceTextStyle:{fontSize:7}}),getPieChartOptions:function(){return e.DOM.winWidth()>480?this.pieChartOptions:this.smallPieChartOptions},initializePage:function(){this._renderOccupationClasses(),this._renderDegrees(),this._renderOccupations()},_renderOccupationClasses:function(){var t=new e.BMP.Widget.GChart({chartType:\"PieChart\",options:e.merge(this.getPieChartOptions(),{colors:[\"#6E5321\",\"#211B11\",\"#2C486E\"]}),dataTable:STATIC_CHART_DATA.artistClasses});t.render(e.one(\".section.occupation .classes-chart-wrapper\").empty())},_renderOccupations:function(){var t=new e.BMP.Widget.GChart({chartType:\"BarChart\",options:{title:\"Approximate number of people in NYC in each creative occupation:\",height:650,legend:{position:\"none\"},chartArea:{width:\"60%\",height:\"85%\",right:0,bottom:0},vAxis:{textStyle:{fontSize:10}},titleTextStyle:{bold:!1}},dataTable:STATIC_CHART_DATA.allOccupations});t.render(e.one(\".section.occupation .occp-chart-wrapper\").empty())},_renderDegrees:function(){var t=new e.BMP.Widget.GChart({chartType:\"PieChart\",options:this.getPieChartOptions(),dataTable:STATIC_CHART_DATA.artDegrees});t.render(e.one(\".section.degree .chart-wrapper\").empty())}}},\"1.0\",{requires:[\"bmp-data-preparer\",\"bmp-widget-gchart\",\"node\",\"dom-screen\"]});\n   20  YUI.add(\"bmp-widget-animated-number\",function(t){var e=t.namespace(\"BMP.Widget\").AnimatedNumberChart=t.Base.create(\"AnimatedNumberChart\",t.Widget,[],{_lastNumber:0,bindUI:function(){e.superclass.bindUI.apply(this,arguments);var t=this.get(\"dataSource\");t.after(\"dataStateChange\",function(){this.syncUI()},this)},renderUI:function(){var t=this.get(\"contentBox\");t.empty().append('<div class=\"number-text\"></div><div class=\"loading-spinner\"></div>')},syncUI:function(){var e=(this.get(\"contentBox\"),this.get(\"boundingBox\")),a=this.get(\"dataSource\"),i=a.get(\"dataState\"),n=a.get(\"errors\").length>0;if(e.toggleClass(\"loading\",\"initial\"===i||\"loading\"===i),e.toggleClass(\"load-failed\",\"load-failed\"===i),e.toggleClass(\"has-errors\",n),\"load-failed\"===i||n)return void this._setNumber(null);if(\"loaded\"===i){var s=a.get(\"data\")[this.get(\"dataProperty\")];if(!t.Lang.isNumber(s))throw\"Can't draw the number animation because it's not a number!\";this.setNumberInterpolated(s),this.get(\"sizeEffectEnabled\")&&this.setSize(s)}},setSize:function(t){var e=this.get(\"sizeEffect\"),a=(e.sizeB-e.sizeA)/(e.valueB-e.valueA),i=e.sizeA-a*e.valueA,n=a*t+i;this.get(\"contentBox\").setStyle(\"fontSize\",\"\"+n+\"%\")},setNumberInterpolated:function(e){{var a=10,i=a*this.get(\"sizeEffect\").duration,n=(e-this._lastNumber)/i,s=1e3/30;this.get(\"contentBox\")}if(e===this._lastNumber)return void this._setNumber(e);var r,o=t.bind(function(){this._lastNumber=e,this._setNumber(e),window.clearInterval(r)},this),u=this._lastNumber,d=0,l=t.bind(function(){0!==n&&(u+=n,this._setNumber(u),d+=1,d>=i&&o())},this);r=window.setInterval(l,s)},_setNumber:function(e){var a;if(t.Lang.isNull(e))a=\"\\u2014\";else{var i=this.get(\"numberFormatConfig\");a=t.Number.format(e,i)}this.get(\"contentBox\").one(\".number-text\").set(\"text\",a)}},{CSS_PREFIX:\"bmp-animated-number\",ATTRS:{dataSource:{writeOnce:\"initOnly\",validator:function(e){return e instanceof t.BMP.Model.BasicModel}},dataProperty:{validator:t.Lang.isString},numberFormatConfig:{value:{},writeOnce:\"initOnly\"},sizeEffectEnabled:{value:!0,validator:t.Lang.isBoolean},sizeEffect:{value:{valueA:0,sizeA:100,valueB:100,sizeB:200,duration:1}}}})},\"1.0\",{requires:[\"widget\",\"base\",\"datatype-number-format\"]});\n   21  \n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-artistclasses.js:\n   59          chartType: 'BarChart',\n   60          options: {\n   61:           title: 'Approximate number of people in NYC in each creative occupation:',\n   62            height: 650,\n   63            legend: {\n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-poverty.js:\n   68        unfilteredNumberWidget.render(Y.one('.the-numbers .comparison.unfiltered .number'));\n   69  \n   70:       unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove\n   71        unfilteredDataModel.load();\n   72  \n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-school-to-work.js:\n  136        } else {\n  137          // no filter actually means filter to all \"art\" majors (non commercial)\n  138:         this._summaryWidget.set('displayedFilterText', 'all people in NYC with an art degree');\n  139          this._dataModel.removeFacet('degfield');\n  140          this._summaryDataModel.removeFacet('degfield');\n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/thirdparty/jquery-1.11.1.js:\n 2301  			return elem === checkContext;\n 2302  		}, implicitRelative, true ),\n 2303: 		matchAnyContext = addCombinator( function( elem ) {\n 2304  			return indexOf.call( checkContext, elem ) > -1;\n 2305  		}, implicitRelative, true ),\n ....\n 2308  				(checkContext = context).nodeType ?\n 2309  					matchContext( elem, context, xml ) :\n 2310: 					matchAnyContext( elem, context, xml ) );\n 2311  		} ];\n 2312  \n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/artistclasses.erb:\n   18  \n   19    <div class=\"section occupation\">\n   20:     <h2>If we define artist by primary occupation, there are 98,412 artists in NYC.</h2> \n   21      <div class=\"row\">\n   22      <div class=\"classes-chart-wrapper\"></div>\n   ..\n   59  \n   60    <div class=\"section degree\">\n   61:     <h2>If we define artist by bachelors degree, there are 168,413 artists in NYC.</h2>\n   62      <h4>The <i>American Community Survey</i> records respondent's Bachelor's degrees. \n   63        The following are the arts degrees recorded:</h4>\n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/layout.erb:\n   34    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n   35  \n   36:   <meta property=\"og:title\" content=\"Explore Data About Artists in NYC: BFAMFAPhD Census Report\" />\n   37  \n   38    <meta property=\"og:site_name\" content=\"BFAMFAPhD Census Report\" />\n\n/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/poverty.erb:\n   68        <div class=\"filter filter-boro btn-group-vertical\" data-toggle=\"buttons\" data-facet-name=\"boro\">\n   69          <label class=\"btn btn-default active\">\n   70:           <input type=\"radio\" name=\"boro\" value=\"-1\" checked> All NYC\n   71          </label>\n   72  \n\n11 matches across 8 files\n",
+			"settings":
+			{
+				"buffer_size": 20493,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app.rb",
+			"settings":
+			{
+				"buffer_size": 1419,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/widget-datasourced-chart.js",
+			"settings":
+			{
+				"buffer_size": 2090,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "[\"postgres\", \"\", \"\", \"u773ihun6h2qhs\", \"pblcqgfpjrt2jlk6pdee3qs2pl\", \"ec2-23-23-183-109.compute-1.amazonaws.com\", \"5602\", \"d4h61kc918270b\"]\n[\"postgres\", \"\", \"\", \"xsbjpkrbqqadlw\", \"2FWKU4sQ2YDvu71RcenZu4FhdA\", \"ec2-54-83-204-104.compute-1.amazonaws.com\", \"5432\", \"d6onm1o44i29d4\"]\npblcqgfpjrt2jlk6pdee3qs2pl\npblcqgfpjrt2jlk6pdee3qs2pl",
+			"settings":
+			{
+				"buffer_size": 333,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Twitter Recess/Recess.sublime-build",
 	"command_palette":
 	{
-		"height": 87.0,
+		"height": 267.0,
 		"selected_items":
 		[
 			[
-				"synless",
-				"Set Syntax: LESS"
+				"rub",
+				"Set Syntax: Ruby"
 			],
 			[
-				"synjs",
-				"Set Syntax: JavaScript"
-			],
-			[
-				"git com",
+				"git co",
 				"Git: Commit"
 			],
 			[
@@ -291,8 +633,116 @@
 				"Sort Lines"
 			],
 			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
 				"syn js",
 				"Set Syntax: JavaScript"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add..."
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"synjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"synsql",
+				"Set Syntax: SQL"
+			],
+			[
+				"synles",
+				"Set Syntax: LESS"
+			],
+			[
+				"syn html",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"git add c",
+				"Git: Add Current File"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"synru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"synjso",
+				"Set Syntax: JSON"
+			],
+			[
+				"synsq",
+				"Set Syntax: SQL"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git diffa",
+				"Git: Diff All"
+			],
+			[
+				"git di",
+				"Git: Diff All"
+			],
+			[
+				"syn sq",
+				"Set Syntax: SQL"
+			],
+			[
+				"recess",
+				"Recess: Check for problems"
+			],
+			[
+				"reces",
+				"Recess: Check for problems"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"red",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syn rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"synj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"synless",
+				"Set Syntax: LESS"
 			],
 			[
 				"synbash",
@@ -307,24 +757,12 @@
 				"Set Syntax: SQL (Rails)"
 			],
 			[
-				"syn sq",
-				"Set Syntax: SQL"
-			],
-			[
-				"synsql",
-				"Set Syntax: SQL"
-			],
-			[
 				"syn less",
 				"Set Syntax: LESS"
 			],
 			[
 				"syn htm",
 				"Set Syntax: HTML (Rails)"
-			],
-			[
-				"rein",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"low",
@@ -351,16 +789,8 @@
 				"Set Syntax: Handlebars"
 			],
 			[
-				"syn rub",
-				"Set Syntax: Ruby"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"reind",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"reinden",
@@ -371,7 +801,7 @@
 				"Set Syntax: JavaScript"
 			]
 		],
-		"width": 647.0
+		"width": 241.0
 	},
 	"console":
 	{
@@ -388,134 +818,134 @@
 	},
 	"file_history":
 	[
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-school-to-work.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/rentburden.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-rentburden.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/schooltowork.erb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-school-to-work.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api-schooltowork.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-gchart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-datasourced-chart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/model-basic.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/forms.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/_base.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/global.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-util.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-schooltowork-summary.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/ipums_portal.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/ipums_full_data_portal.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-poverty.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/README.md",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/povertyrate.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/portal.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/pages.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/testchart.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/create-rollups.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-gchart.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/queryparse.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-rentburden.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/staticdata/cities_to_codes.json",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/constants.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-datasourced-chart.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/cities.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/poverty.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-poverty.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-animated-number.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/rentburden.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/model-basic.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/button-controller.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/rentburden.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-gchart.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/plugin-city-selector.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/dependencies.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/app.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/button-controller.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/config.ru",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/build/rollup.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/ipums_preaggregated_portal.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/init.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/model-selfreport-list.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-animated-number.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/preaggregate-groups.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/variables.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/handlebars.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/layout.erb",
+		"/Users/julianboilen/.ssh/known_hosts",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/plugin-toggle-buttons.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/cache.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/selfreport.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/init.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-selfreport.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/init.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/Gemfile",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/staticdata/artistclasses.json",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/preprocess.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-selfreport-list.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/selfreport-text-generators.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/selfreport.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-selfreport.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/mainnav.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/selfreport-helpers.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/schooltowork.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-selfreport-list.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-artistclasses.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/main-footer.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-school-to-work.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/schooltowork.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/config/newrelic.yml",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/main-footer.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/mainfooter.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/artistclasses.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-artistclasses.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-main-nav.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-preparer.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/navbar.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-rentburden.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/custom_globals.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-dropdown-nav.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/buttons.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-main-nav.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-dropdown-nav.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/grid.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/glyphicons.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts.manifest",
+		"/Users/julianboilen/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/julianboilen/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/julianboilen/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/julianboilen/.bash_history",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/import command.sql",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api-schooltowork.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/mixins.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/artist classes",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/preprocessor.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/build/manifest.css",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/create-rollups.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/config.ru",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/.gitignore",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/build/.gitignore",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/theme.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/census report.sublime-project",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/build/# Don't commit the build to repo",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/type.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-util.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/wells.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/widget-selfreport-list.js",
+		"/Users/julianboilen/Dropbox/bfamfaphd-census-report/create-rollups.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/global.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles.manifest",
+		"/Users/julianboilen/Documents/jira-planningpoker/model.rb",
+		"/Users/julianboilen/Documents/jira-planningpoker/server.rb",
+		"/Users/julianboilen/Dropbox/test custom dropdown.html",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/LICENSE",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/dropdowns.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/forms.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/_base.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/testchart.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-gchart.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/Procfile",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/models-basic.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/.gitignore",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-preparer.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/push database.sh",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/rent burden.sql",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/plugin-toggle-buttons.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/layout.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/queryparse.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api_misc.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/init.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/custom_globals.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/test.html",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/test.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widgets-gchart.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/testchart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/init.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/preprocess.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/test.erb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/test.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/test.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/test.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/common.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/import command.sql",
 		"/Users/julianboilen/.bash_profile",
 		"/Users/julianboilen/.bashrc",
 		"/Users/julianboilen/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/julianboilen/Dropbox/pums analysis/filter.rb",
 		"/tmp/subl stdin LwOuhy.txt",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/ui-base.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/ss-badge.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/stats-graph-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/string-utils.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/stringset-utils-mixin.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/structured-input.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/superclick.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/support-app.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/support-billing-accounts-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/system-page.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/tab-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/table-shopping-cart.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/tax-rule-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/taxonomy.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-artifacts-list-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-helpers.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-install.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-integrated-shopping-cart.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-list-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/template-picker.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/terms-of-service-overlay.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/text-editor.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/textile.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/timer-mixin.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/timers.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/timezone-tools.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/toggle.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/save-manager.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/scrolling-auto-complete-list.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/scrollintoview.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/search.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/settings-recycle-bin.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/shell.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/shipping-rule-list.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/signup-rpc.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/signup.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/simple-liking.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/site-info-header-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/site-information-billing-tab.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/site-information-dashboard-tab.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/site-information-domains-tab.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/smugmug-image-picker.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/smugmug-sync-plugin.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/social-authenticator.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/social-button.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/social-buttons.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/social-share-toggle.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/spinner.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/squarespace-dimensions.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/lookup-logo-view.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/panel.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/logger.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/login-dialog.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/login.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/mailcheck.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/murmurhash.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/node-flyout.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/node-flyover.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/numeric-badge.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/oauth-authenticator.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/object-builder.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/oembed-resolvers.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/order-csv-export-dialog.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/pagination.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-slider-fill.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/password-reset.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/pill-shopping-cart.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/pinterest.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plan-features.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plan-selector.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-actionoverlay.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-block-field-editor.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-focalpoint.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-infinite-scroll.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-integer-restrictor.js",
-		"/Users/julianboilen/Dropbox/document-everything scripts-v6/plugin-loading-overlay.js"
+		"/Users/julianboilen/Dropbox/document-everything scripts-v6/ui-base.js"
 	],
 	"find":
 	{
@@ -526,6 +956,8 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"",
+			"*.less",
 			""
 		]
 	},
@@ -534,126 +966,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"filter",
-			"value1",
-			"pp",
-			"use_descriptions",
-			"widget-gchart",
-			"rentburden",
-			"rentBurden",
-			"rentburden",
-			"RentBurden",
-			"rentburden",
-			"/**",
-			"RentBurden",
-			"rentburden",
-			"RentBurden",
-			"rentburden",
-			"this._cache",
-			"this",
-			"string",
-			"GChart",
-			"Models",
-			"GChart",
-			"filterColumns",
-			"colu",
-			"occp_artist_class",
-			"settings.db.quote_ident(filter[:column])",
-			"sex",
-			"where",
-			"end",
-			"then",
-			"i",
-			"output",
-			"populationSize",
-			"ethnicity",
-			"_onClick",
-			"boro",
-			"sex",
-			".definition",
-			"defs_grpip_group3",
-			"description",
-			"2600",
-			"BMP",
-			"bma-models-generic",
-			"\\",
-			"<a href=\"\" class=\"btn\">Male</a>",
-			"button",
-			"div",
-			"rawResults",
-			"description",
-			"escape_ident",
-			"ident",
-			"selectSql",
-			"([A-Z0-9]+)",
-			"([A-Z]+)",
-			"handleComplete",
-			"renderUI",
-			"array",
-			"arraf",
-			"arrap",
-			"Class",
-			"class",
-			"Class",
-			"scriptsManifest",
-			"manifest",
-			"added",
-			"seen",
-			"'",
+			"NYC",
+			"SCHOOL_TO_WORK_THRESHOLD",
+			"NYC",
+			"e.nevVal",
+			"_summaryDataModel",
+			"_dataModel",
+			"'artist'",
+			"artist_by_education",
+			"fod1p-filter-wrapper",
+			"result",
+			"cityCode",
+			"fod1p",
+			"Filter",
+			"fod1p_artist",
+			"occ",
+			"OCC",
+			"DEGFIELDD",
+			"THRESHOLD",
+			"CountCol",
+			"DegCol",
+			"OccCol",
+			"groupby",
+			"settings",
+			"setSize",
+			"national",
+			"sizeEffect",
+			".artist-chooser",
+			"load",
+			"resize",
+			"selectedButton",
+			"city",
 			",",
-			"relevant <<",
-			"PUMA00",
-			"([A-Z0-9]+),",
-			"([A-Z]+)",
-			"[A-Z]+",
-			"\\w+",
-			"\\w*",
-			"\\w",
-			"RT",
-			"chart_div",
-			"private",
-			" + '.html'",
-			"class",
-			".name",
-			"\"itemtype\": \"event",
-			"name",
-			"add_yui_event",
-			"name",
-			"\"type\": ",
-			"type: \"att",
-			"private",
-			"property",
-			"Squarespace.SSWidget",
-			"    ",
-			"val_in_range",
-			"FOD",
-			"FODi",
-			"FOD",
-			"OCCP",
-			"direction",
-			"mostRec",
-			"linkIt",
-			"variables",
-			"value",
-			"namespaec",
-			"SearchContainer",
-			"Squarespace.",
-			"SearchContainer",
-			"context",
-			"crosslink",
-			"unplug",
-			"spinnerCon",
-			"down",
-			"dwon",
+			"plugin-city-selector",
+			"city",
+			"data-filter",
+			"PWGTP",
+			"partiton",
+			"setPartition",
+			"partiton",
+			"Filter",
+			"settings",
+			"COLUMN_VALUES",
+			"COLUMN_NAMES",
+			"data-filter-var",
+			"filter-var",
+			"_updateFilter",
+			"deserializeEnum",
+			"_deserializeEnum",
+			"facet",
+			"pp",
+			"genericFilters",
+			"key",
+			"sex",
+			"make_enum",
+			"=",
+			"updateErrors",
+			"-",
+			"toggle",
+			"dataState",
+			"loading",
+			"load",
+			"cs.rit",
+			"cs",
+			"div",
+			"has_defs",
+			"key",
+			"valuesList",
+			"values",
+			"      if (Y.Lang.isValue(values) && !Y.Lang.isArray(values)) {\n        values = [values];\n      }",
+			"load",
+			"Contr",
+			"contr",
+			"occp_artist_class",
+			"ethnicity",
+			"dafault",
+			"pwgtp",
+			"povpip",
+			"appearance",
+			"age",
+			"pp ",
+			"pp",
+			"shadow",
+			"selfre",
+			"null",
+			"out",
+			"Y.Lang.isValue(report.salary_amount)",
+			"Y.Lang.isString(report.occupation)",
+			"border",
+			"%;\n",
+			",",
+			"line",
+			"media",
+			"small",
+			"reports",
+			"description",
+			"project",
+			"fod1p",
+			"\"",
+			",3",
+			"3",
+			"2",
+			"1",
+			"'",
+			"f",
+			"sm",
+			"define-artist",
+			"default",
+			"inverted",
+			"default",
+			"btn-",
+			"zip",
+			"primary",
+			"margin",
+			"meta",
+			"Menu",
+			"logo-size-base",
+			"padding",
+			"column",
+			"padding",
+			"h1",
+			"padd",
+			"main",
+			"glyphicon",
+			"swap",
 			"move",
-			"anchor",
-			"archor",
-			" Y.",
-			"Y.",
-			"intoVar",
-			"print",
-			"nameRes",
-			"baseCreateRes"
+			"swap",
+			"move",
+			"margin-bot"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -661,6 +1101,14 @@
 		"regex": true,
 		"replace_history":
 		[
+			"partition",
+			"data-facet-name",
+			"facet-name",
+			"deserialize_enum",
+			"'",
+			"\"'",
+			"\"",
+			"'",
 			"",
 			"'$1', ",
 			"'$1'",
@@ -669,7 +1117,7 @@
 			" ",
 			""
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -678,22 +1126,23 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "routes/api.rb",
+					"file": "routes/schooltowork.rb",
 					"settings":
 					{
-						"buffer_size": 1156,
+						"buffer_size": 1320,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								45,
+								45
 							]
 						],
 						"settings":
@@ -876,7 +1325,7 @@
 							],
 							"pyflakes_ignore_import_*": true,
 							"sublime_auto_complete": true,
-							"sublimelinter": true,
+							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -903,25 +1352,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 192.0,
+						"translation.y": 26.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "helpers/queryparse.rb",
+					"file": "views/schooltowork.erb",
 					"settings":
 					{
-						"buffer_size": 3431,
+						"buffer_size": 1405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								728,
+								728
 							]
 						],
 						"settings":
@@ -1104,235 +1553,7 @@
 							],
 							"pyflakes_ignore_import_*": true,
 							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "alpha",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 807.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "views/layout.erb",
-					"settings":
-					{
-						"buffer_size": 2040,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"curly": true,
-								"es3": true,
-								"gcl": true,
-								"indent": 2.0,
-								"latedef": true,
-								"maxcomplexity": 6.0,
-								"quotmark": "single",
-								"regexdash": true,
-								"trailing": true,
-								"wsh": true,
-								"yui": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
+							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -1365,19 +1586,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "scripts/data-preparer.js",
+					"buffer": 2,
+					"file": "styles/page-school-to-work.less",
 					"settings":
 					{
-						"buffer_size": 1455,
+						"buffer_size": 701,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								689,
+								689
 							]
 						],
 						"settings":
@@ -1560,7 +1781,711 @@
 							],
 							"pyflakes_ignore_import_*": true,
 							"sublime_auto_complete": true,
-							"sublimelinter": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/page-school-to-work.js",
+					"settings":
+					{
+						"buffer_size": 4988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3677,
+								3677
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1322.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/page-rentburden.js",
+					"settings":
+					{
+						"buffer_size": 3190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2587,
+								2587
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 846.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "models/ipums_full_data_portal.rb",
+					"settings":
+					{
+						"buffer_size": 3371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3343,
+								3343
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 916.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scripts/widget-schooltowork-summary.js",
+					"settings":
+					{
+						"buffer_size": 4316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1568,
+								1568
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -1593,19 +2518,70 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "dependencies.rb",
+					"buffer": 7,
 					"settings":
 					{
-						"buffer_size": 1276,
+						"buffer_size": 20493,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										6967,
+										6970
+									],
+									[
+										14811,
+										14814
+									],
+									[
+										17831,
+										17834
+									],
+									[
+										18178,
+										18181
+									],
+									[
+										18516,
+										18519
+									],
+									[
+										18844,
+										18847
+									],
+									[
+										19106,
+										19109
+									],
+									[
+										19377,
+										19380
+									],
+									[
+										19607,
+										19610
+									],
+									[
+										20004,
+										20007
+									],
+									[
+										20430,
+										20433
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								18526,
+								18526
 							]
 						],
 						"settings":
@@ -1754,6 +2730,7 @@
 								"vendor-prefix": true,
 								"zero-units": "warning"
 							},
+							"detect_indentation": false,
 							"gjslint_ignore":
 							[
 								110.0
@@ -1777,6 +2754,7 @@
 								"wsh": true,
 								"yui": true
 							},
+							"output_tag": 1,
 							"pep8": true,
 							"pep8_ignore":
 							[
@@ -1787,8 +2765,12 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
 							"sublime_auto_complete": true,
-							"sublimelinter": true,
+							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -1810,28 +2792,29 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4439.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "routes/init.rb",
+					"buffer": 8,
+					"file": "app.rb",
 					"settings":
 					{
-						"buffer_size": 235,
+						"buffer_size": 1419,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								396,
+								396
 							]
 						],
 						"settings":
@@ -2014,7 +2997,364 @@
 							],
 							"pyflakes_ignore_import_*": true,
 							"sublime_auto_complete": true,
-							"sublimelinter": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "scripts/widget-datasourced-chart.js",
+					"settings":
+					{
+						"buffer_size": 2090,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "alpha",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 197.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 10,
+					"settings":
+					{
+						"buffer_size": 333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								280
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"curly": true,
+								"es3": true,
+								"gcl": true,
+								"indent": 2.0,
+								"latedef": true,
+								"maxcomplexity": 6.0,
+								"quotmark": "single",
+								"regexdash": true,
+								"trailing": true,
+								"wsh": true,
+								"yui": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
+							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -2064,11 +3404,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.709620994139,
 			1.0
 		],
 		"rows":
@@ -2078,6 +3425,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
 	"output.git":
 	{
 		"height": 112.0
@@ -2093,116 +3444,516 @@
 		"selected_items":
 		[
 			[
+				"chart",
+				"scripts/widget-datasourced-chart.js"
+			],
+			[
+				"summ",
+				"scripts/widget-schooltowork-summary.js"
+			],
+			[
+				"app",
+				"app.rb"
+			],
+			[
+				"schooless",
+				"styles/page-school-to-work.less"
+			],
+			[
+				"summa",
+				"scripts/widget-schooltowork-summary.js"
+			],
+			[
+				"porta",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"rentbjs",
+				"scripts/page-rentburden.js"
+			],
+			[
+				"pagesch",
+				"scripts/page-school-to-work.js"
+			],
+			[
+				"schootoles",
+				"styles/page-school-to-work.less"
+			],
+			[
+				"citi",
+				"public/staticdata/cities_to_codes.json"
+			],
+			[
+				"schoo",
+				"views/schooltowork.erb"
+			],
+			[
+				"qur",
+				"helpers/queryparse.rb"
+			],
+			[
+				"port",
+				"models/portal.rb"
+			],
+			[
+				"const",
+				"constants.rb"
+			],
+			[
+				"conts",
+				"constants.rb"
+			],
+			[
+				"summary",
+				"scripts/widget-schooltowork-summary.js"
+			],
+			[
+				"pove",
+				"routes/povertyrate.rb"
+			],
+			[
 				"datasou",
 				"scripts/widget-datasourced-chart.js"
 			],
 			[
-				"gch",
-				"scripts/widget-gchart.js"
-			],
-			[
-				"form",
-				"styles/bootstrap/forms.less"
-			],
-			[
-				"de",
-				"dependencies.rb"
-			],
-			[
-				"basi",
-				"scripts/model-basic.js"
-			],
-			[
-				"layou",
-				"views/layout.erb"
-			],
-			[
-				"lay",
-				"views/layout.erb"
-			],
-			[
-				"basic",
-				"scripts/model-basic.js"
-			],
-			[
-				"mod",
-				"scripts/model-basic.js"
-			],
-			[
-				"data",
-				"scripts/data-util.js"
-			],
-			[
-				"da",
-				"scripts/data-preparer.js"
-			],
-			[
-				"layo",
-				"views/layout.erb"
-			],
-			[
-				"rent",
+				"pagerent",
 				"scripts/page-rentburden.js"
+			],
+			[
+				"r",
+				"README.md"
+			],
+			[
+				"poveles",
+				"styles/page-poverty.less"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"ipu",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"ipums",
+				"models/ipums_portal.rb"
+			],
+			[
+				"quer",
+				"helpers/queryparse.rb"
+			],
+			[
+				"anima",
+				"scripts/widget-animated-number.js"
+			],
+			[
+				"pagepo",
+				"scripts/page-poverty.js"
+			],
+			[
+				"render",
+				"views/rentburden.erb"
+			],
+			[
+				"raud",
+				"scripts/page-rentburden.js"
+			],
+			[
+				"contr",
+				"scripts/button-controller.js"
+			],
+			[
+				"cont",
+				"scripts/button-controller.js"
+			],
+			[
+				"pover",
+				"views/poverty.erb"
 			],
 			[
 				"model",
 				"scripts/model-basic.js"
 			],
 			[
+				"city",
+				"scripts/plugin-city-selector.js"
+			],
+			[
+				"retnb",
+				"routes/rentburden.rb"
+			],
+			[
+				"pagepov",
+				"scripts/page-poverty.js"
+			],
+			[
+				"api",
+				"routes/api.rb"
+			],
+			[
+				"pagere",
+				"scripts/page-rentburden.js"
+			],
+			[
+				"depen",
+				"dependencies.rb"
+			],
+			[
+				"poverb",
+				"views/poverty.erb"
+			],
+			[
+				"pagepv",
+				"scripts/page-poverty.js"
+			],
+			[
+				"ip",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"query",
+				"helpers/queryparse.rb"
+			],
+			[
+				"ipumsp",
+				"models/ipums_preaggregated_portal.rb"
+			],
+			[
+				"poverty",
+				"routes/povertyrate.rb"
+			],
+			[
+				"rent",
+				"routes/rentburden.rb"
+			],
+			[
+				"rentb",
+				"views/rentburden.erb"
+			],
+			[
+				"redm",
+				"README.md"
+			],
+			[
+				"button",
+				"scripts/button-controller.js"
+			],
+			[
+				"reade",
+				"README.md"
+			],
+			[
+				"mode",
+				"scripts/model-basic.js"
+			],
+			[
+				"var",
+				"styles/bootstrap/variables.less"
+			],
+			[
+				"widgetan",
+				"styles/widget-animated-number.less"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"pagep",
+				"scripts/page-poverty.js"
+			],
+			[
+				"plu",
+				"scripts/plugin-toggle-buttons.js"
+			],
+			[
+				"butt",
+				"scripts/button-controller.js"
+			],
+			[
+				"plugb",
+				"scripts/plugin-toggle-buttons.js"
+			],
+			[
+				"but",
+				"scripts/button-controller.js"
+			],
+			[
+				"cache",
+				"helpers/cache.rb"
+			],
+			[
+				"self",
+				"routes/selfreport.rb"
+			],
+			[
+				"buttonc",
+				"scripts/button-controller.js"
+			],
+			[
+				"readm",
+				"README.md"
+			],
+			[
+				"povery",
+				"scripts/page-poverty.js"
+			],
+			[
+				"lay",
+				"views/layout.erb"
+			],
+			[
+				"schooljs",
+				"scripts/page-school-to-work.js"
+			],
+			[
+				"mainn",
+				"views/mainnav.erb"
+			],
+			[
+				"gene",
+				"scripts/selfreport-text-generators.js"
+			],
+			[
+				"mann",
+				"views/mainnav.erb"
+			],
+			[
+				"selfrb",
+				"routes/selfreport.rb"
+			],
+			[
+				"pagesel",
+				"scripts/page-selfreport.js"
+			],
+			[
+				"de",
+				"dependencies.rb"
+			],
+			[
+				"selfer",
+				"views/selfreport.erb"
+			],
+			[
+				"selflist",
+				"scripts/widget-selfreport-list.js"
+			],
+			[
+				"selfjs",
+				"scripts/page-selfreport.js"
+			],
+			[
+				"selfless",
+				"styles/page-selfreport.less"
+			],
+			[
+				"selferb",
+				"views/selfreport.erb"
+			],
+			[
+				"selfles",
+				"styles/page-selfreport.less"
+			],
+			[
+				"schoojs",
+				"scripts/page-school-to-work.js"
+			],
+			[
+				"schooerb",
+				"views/schooltowork.erb"
+			],
+			[
+				"selflistless",
+				"styles/widget-selfreport-list.less"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"school",
+				"styles/page-school-to-work.less"
+			],
+			[
+				"layo",
+				"views/layout.erb"
+			],
+			[
 				"dep",
 				"dependencies.rb"
 			],
 			[
-				"testch",
-				"views/testchart.erb"
+				"artistless",
+				"styles/page-artistclasses.less"
 			],
 			[
-				"proc",
-				"Procfile"
+				"artst.rb",
+				"views/artistclasses.erb"
 			],
 			[
-				"pro",
-				"Procfile"
-			],
-			[
-				"creat",
-				"create-rollups.rb"
-			],
-			[
-				"con",
-				"config.ru"
-			],
-			[
-				"datas",
-				"scripts/widget-datasourced-chart.js"
+				"artst",
+				"views/artistclasses.erb"
 			],
 			[
 				"page",
+				"scripts/page-artistclasses.js"
+			],
+			[
+				"la",
+				"views/layout.erb"
+			],
+			[
+				"vari",
+				"styles/bootstrap/variables.less"
+			],
+			[
+				"selfre",
+				"styles/widget-selfreport-list.less"
+			],
+			[
+				"arti",
+				"views/artistclasses.erb"
+			],
+			[
+				"sel",
+				"views/selfreport.erb"
+			],
+			[
+				"rentjs",
 				"scripts/page-rentburden.js"
 			],
 			[
-				"depe",
+				"pagpovjs",
+				"scripts/page-poverty.js"
+			],
+			[
+				"basic",
+				"scripts/model-basic.js"
+			],
+			[
+				"data",
+				"scripts/data-preparer.js"
+			],
+			[
+				"arts",
+				"views/artistclasses.erb"
+			],
+			[
+				"pov",
+				"views/poverty.erb"
+			],
+			[
+				"d",
 				"dependencies.rb"
 			],
 			[
-				"qu",
+				"gch",
+				"scripts/widget-gchart.js"
+			],
+			[
+				"artsjs",
+				"scripts/page-artistclasses.js"
+			],
+			[
+				"arte",
+				"views/artistclasses.erb"
+			],
+			[
+				"que",
 				"helpers/queryparse.rb"
 			],
 			[
-				"plug",
-				"scripts/plugin-toggle-buttons.js"
+				"povless",
+				"styles/page-poverty.less"
 			],
 			[
-				"logo",
-				"lookup-logo-view.js"
+				"renterb",
+				"views/rentburden.erb"
 			],
 			[
-				"modelmembe",
-				"models/member-account.js"
+				"artistj",
+				"scripts/page-artistclasses.js"
 			],
 			[
-				"util",
-				"util.js"
+				"manav",
+				"styles/page-main-nav.less"
+			],
+			[
+				"navless",
+				"styles/bootstrap/navbar.less"
+			],
+			[
+				"povr",
+				"views/poverty.erb"
+			],
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"",
+				"views/rentburden.erb"
+			],
+			[
+				"pagenav",
+				"styles/page-main-nav.less"
+			],
+			[
+				"rentless",
+				"styles/page-rentburden.less"
+			],
+			[
+				"buttons",
+				"styles/bootstrap/buttons.less"
+			],
+			[
+				"gcha",
+				"scripts/widget-gchart.js"
+			],
+			[
+				"va",
+				"styles/bootstrap/variables.less"
+			],
+			[
+				"dro",
+				"styles/widget-dropdown-nav.less"
+			],
+			[
+				"pager",
+				"scripts/page-rentburden.js"
+			],
+			[
+				"rend",
+				"views/rentburden.erb"
+			],
+			[
+				"pagpovle",
+				"styles/page-poverty.less"
+			],
+			[
+				"grid",
+				"styles/bootstrap/grid.less"
+			],
+			[
+				"gly",
+				"styles/bootstrap/glyphicons.less"
+			],
+			[
+				"glob",
+				"styles/custom_globals.less"
+			],
+			[
+				"drop",
+				"scripts/widget-dropdown-nav.js"
+			],
+			[
+				"layout",
+				"views/layout.erb"
+			],
+			[
+				"poverless",
+				"styles/page-poverty.less"
 			]
 		],
 		"width": 0.0
@@ -2219,6 +3970,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 179.0,
 	"status_bar_visible": true
 }

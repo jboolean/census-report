@@ -33,11 +33,18 @@ YUI.add('bmp-widget-gchart', function(Y) {
     syncUI: function() {
       GChart.superclass.syncUI.apply(this, arguments);
       
+      this._drawChart();
+    },
+
+    setData: function(data) {
+      this.set('dataTable', data);
+    },
+
+    _drawChart: function() {
       var cb = this.get('contentBox');
 
       var chartWrapper = cb.one('.inner-chart-wrapper');
       this._wrapper.draw(chartWrapper.getDOMNode());
-
     },
 
     bindUI: function() {

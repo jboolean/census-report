@@ -10,8 +10,8 @@ DEPENDENCIES = {
   'page-poverty' => ['model-basic', 
      'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav',
      'plugin-city-selector'],
- 'page-school-to-work' => ['widget-datasourced-chart', 'model-basic', 'data-preparer',
-    'widget-dropdown-nav', 'widget-schooltowork-summary'],
+ 'page-school-to-work' => ['widget-datasourced-chart', 'model-basic',
+    'widget-dropdown-nav', 'widget-schooltowork-summary', 'widget-d3-sankey', 'data-preparer-d3-sankey'],
  'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],
  'page-artistclasses' => ['widget-dropdown-nav', 'widget-gchart'],
 
@@ -19,6 +19,7 @@ DEPENDENCIES = {
  'widget-animated-number' => ['model-basic'],
  'widget-schooltowork-summary' => ['model-basic'],
  'widget-selfreport-list' => ['selfreport-text-generators'],
+ 'widget-d3-sankey' => ['thirdparty/sankey'],
  
  'data-util' => [],
  'model-basic' => ['data-util', 'data-preparer'],
@@ -27,5 +28,5 @@ DEPENDENCIES = {
  'data-preparer' => []
 
 
- # 'thirdparty/bootstrap/modal' => ['thirdparty/jquery-1.11.1']
+ # ' party/bootstrap/modal' => ['thirdparty/jquery-1.11.1']
 }

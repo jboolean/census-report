@@ -28,7 +28,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
         dataPreparer: Y.BMP.DataPreparers.rentBurden
       });
 
-      var chart = new Y.BMP.Widget.DataSourcedChart({
+      var gchart = new Y.BMP.Widget.GChart({
         chartType: 'ColumnChart',
         options: {
           height: 300,
@@ -44,9 +44,14 @@ YUI.add('bmp-page-rentburden', function(Y) {
           legend: {
             position: 'top'
           }
-        },
+        }
+      });
+
+      var chart = new Y.BMP.Widget.DataSourcedChart({
+        chart: gchart,
         dataSource: dataModel
       });
+
       chart.render(Y.one('.main-chart-wrapper').empty());
 
       setPartition('occp_artist_class', dataModel);
@@ -117,6 +122,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
     'bmp-plugin-city-selector',
     'bmp-plugins-toggle-buttons',
     'bmp-widget-datasourced-chart',
+    'bmp-widget-gchart',
     'bmp-widget-dropdown-nav',
     'node',
     'node-load',

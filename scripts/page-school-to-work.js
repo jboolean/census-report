@@ -25,30 +25,38 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       // this.renderNav();
 
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
-        endpoint: '/api/acs/custom/schooltowork/flow'
+        endpoint: '/api/acs/custom/schooltowork/flow',
+        dataPreparer: Y.BMP.DataPreparers.D3Sankey
       });
 
       var summaryDataModel = this._summaryDataModel = new Y.BMP.Model.BasicModel({
-        endpoint: '/api/acs/custom/schooltowork/groups',
+        endpoint: '/api/acs/custom/schooltowork/groups'
       });
 
       dataModel.setFacet('artist_by_education', 'artist');
       summaryDataModel.setFacet('artist_by_education', 'artist');
 
+      // var chart = new Y.BMP.Widget.DataSourcedChart({
+      //   chartType: 'Sankey',
+      //   options: {
+      //     enableInteractivity: false,
+      //     // height: 2500,
+      //     height: 3500,
+      //     // height: 1500,
+      //     sankey: {
+      //       iterations: 100,
+      //       node: {
+      //         width: 10
+      //       }
+      //     }
+      //   },
+      //   dataSource: dataModel
+      // });
+
+      var d3chart = new Y.BMP.Widget.D3Sankey();
+
       var chart = new Y.BMP.Widget.DataSourcedChart({
-        chartType: 'Sankey',
-        options: {
-          enableInteractivity: false,
-          // height: 2500,
-          height: 3500,
-          // height: 1500,
-          sankey: {
-            iterations: 100,
-            node: {
-              width: 10
-            }
-          }
-        },
+        chart: d3chart,
         dataSource: dataModel
       });
 
@@ -148,7 +156,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 }, '1.0', {
   requires:[
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
-    'bmp-data-preparer', 'node', 'bmp-widget-dropdown-nav',
-    'bmp-widget-schooltowork-summary', 'array-extras'
+    'node', 'bmp-widget-dropdown-nav',
+    'bmp-widget-schooltowork-summary', 'array-extras',
+    'bmp-widget-d3-sankey', 'bmp-data-preparer-schooltowork-d3-sankey'
   ]
 });

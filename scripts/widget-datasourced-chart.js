@@ -13,23 +13,32 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
    * @contructor
    */
   Y.namespace('BMP.Widget').DataSourcedChart =
-  Y.Base.create('DataSourcedChart', Y.BMP.Widget.GChart, [], {
+  Y.Base.create('DataSourcedChart', Y.Widget, [], {
+
+    renderUI: function() {
+      var cb = this.get('contentBox');
+      var chartContainer = Y.Node.create('<div class="ds-chart-wrapper"></div>');
+      cb.append(chartContainer);
+
+      this.get('chart').render(chartContainer);
+    },
 
     bindUI: function() {
       DataSourcedChart.superclass.bindUI.apply(this, arguments);
       
       var dataSource = this.get('dataSource');
-      dataSource.on('loaded', function() {
-        this.set('dataTable', dataSource.get('data'));
+      dataSource.after('loaded', function() {
+        this.get('chart').setData(dataSource.get('data'));
       }, this);
       
-      dataSource.on('dataStateChange', function() {
+      dataSource.after('dataStateChange', function() {
         this.syncUI();
       }, this);
 
     },
 
     syncUI: function() {
+      DataSourcedChart.superclass.syncUI.apply(this, arguments);
 
       var cb = this.get('contentBox');
 
@@ -42,10 +51,9 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       if (dataState === 'initial') {
         return;
       } else if (dataState === 'loading') {
-        cb.one('.inner-chart-wrapper').hide();
+        cb.one('.ds-chart-wrapper').hide();
         cb.append(Y.Node.create('<div class="alert alert-info">Loading</div>'));
       } else {
-
 
         // don't display if there are fatal errors
         var hasFatalErrors = false;
@@ -58,11 +66,14 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
           hasFatalErrors = true;
         });
 
-        var chartWrapper = cb.one('.inner-chart-wrapper');
+        var chartWrapper = cb.one('.ds-chart-wrapper');
         chartWrapper.toggleView(!hasFatalErrors);
-        DataSourcedChart.superclass.syncUI.apply(this, arguments);
-
+        
       }
+    },
+
+    _drawChart: function() {
+      throw 'not implmented';
     }
 
   }, {
@@ -74,13 +85,20 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
         validator: function(val) {
           return val instanceof Y.BMP.Model.BasicModel;
         }
+      },
+
+      chart: {
+        required: true,
+        validator: function(val) {
+          return Y.Lang.isFunction(val.setData);
+        }
       }
 
     }
   });
 }, '1.0', {
   requires:[
-    'bmp-widget-gchart',
-    'base'
+    'base',
+    'widget'
   ]
 });

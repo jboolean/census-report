@@ -49,7 +49,7 @@ class BFAMFAPhD < Sinatra::Application
       :populationSize => total
     }.to_json
 
-    # cache_put('schooltowork/groups', facetSelections, response)
+    cache_put('schooltowork/groups', facetSelections, response)
     return response
   end
 
