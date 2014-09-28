@@ -15,12 +15,7 @@ google.setOnLoadCallback(function() {
 <p class="main-description lead">What do artists do for a living? This shows the relationship between
 <strong>an arts degree and a job</strong> for people living in <span class="location-name">the United States</span>. Scroll down to see links between arts degrees (on the left) and jobs (on the right).</p>
 
-<div id="controls">
-  <div>
-    <label>Filter to a single major.</label>
-    <div class="fod1p-filter-wrapper"></div>
-  </div>
-  
+<div id="controls">  
   <div>
     <label>Choose a major city.</label>
     <select name="city" id="filter-city" class="form-control">
@@ -29,6 +24,11 @@ google.setOnLoadCallback(function() {
       <option value="<%=code%>"><%=name%></option>
       <% end %>
     </select>
+  </div>
+
+  <div>
+    <label>Filter to a single major.</label>
+    <div class="fod1p-filter-wrapper"></div>
   </div>
 </div>
 
