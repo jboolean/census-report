@@ -2,7 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "/Users/julianboilen/Documents/bfamfaphd dataviz/app"
+			"path": "/Users/julianboilen/Documents/bfamfaphd dataviz/app",
+      "folder_exclude_patterns": [
+          "build",
+          "handlebars",
+          "scripts/thirdparty"
+      ],
+      "file_exclude_patterns":[
+        "*.manifest",
+        "*.sublime-workspace"
+     ]
 		}
 	]
 }
