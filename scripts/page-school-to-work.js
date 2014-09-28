@@ -20,6 +20,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
   CODES_DISPLAY_ORDER = [-1, 6001, 6002, 6003, 6005, 6006, 6007];
 
   Y.namespace('BMP.Page').SchoolToWork = {
+    model: null,
     initializePage: function() {
 
       // this.renderNav();
@@ -36,22 +37,9 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       dataModel.setFacet('artist_by_education', 'artist');
       summaryDataModel.setFacet('artist_by_education', 'artist');
 
-      // var chart = new Y.BMP.Widget.DataSourcedChart({
-      //   chartType: 'Sankey',
-      //   options: {
-      //     enableInteractivity: false,
-      //     // height: 2500,
-      //     height: 3500,
-      //     // height: 1500,
-      //     sankey: {
-      //       iterations: 100,
-      //       node: {
-      //         width: 10
-      //       }
-      //     }
-      //   },
-      //   dataSource: dataModel
-      // });
+      this.model = new Y.Model({'city': null, 'degree': null});
+
+      this.model.after('change', this._handleFiltersChange, this);
 
       var d3chart = new Y.BMP.Widget.D3Sankey();
 
@@ -65,12 +53,6 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         displayedFilterText: 'all people with an arts degree'
       });
 
-      chart.on('select', function(e) {
-        // So there's a knows issue with Sankey charts - they do not fire 'select'
-        // Google does not seem interested in fixing this
-        console.log('hey! It\'s a wonderful day, sankey select just worked');
-      });
-
       this.renderFilter();
 
       Y.one('#filter-city').after('change', Y.bind(function(e) {
@@ -78,18 +60,8 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 
         var cityName = e.target.one(':checked').get('text');
 
-        if (value != -1) {
-          dataModel.setFacet('city', value);
-          summaryDataModel.setFacet('city', value);
-        } else {
-          dataModel.removeFacet('city');
-          summaryDataModel.removeFacet('city');
-        }
+        this.model.set('city', value == -1 ? null : value);
 
-        this._dataModel.load();
-        this._summaryDataModel.load();
-
-        Y.all('.location-name').set('text', cityName);
       }, this));
 
       dataModel.load();
@@ -117,7 +89,11 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         select.append(Y.Lang.sub('<option value="{code}">{definiton}</option>', {code: code, definiton: definiton}));
       });
 
-      select.on('change', this._handleFilterChange, this);
+      // select.on('change', this._handleFilterChange, this);
+      select.after('change', function(e) {
+        var value = e.target.get('value');
+        this.model.set('degree', value == -1 ? null : value);
+      }, this);
 
       wrapper.empty().append(select);
     },
@@ -127,30 +103,49 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       nav.render(Y.one('h1').empty());
     },
 
-    _handleFilterChange: function(e) {
-      var value = e.target.get('value');
+    _handleFiltersChange: function() {
+      //update datasource from this.model and reload
+      var model = this.model;
 
       this._dataModel.removeFacet('artist_by_education');
       this._summaryDataModel.removeFacet('artist_by_education');
-      
-      // this._dataModel.removeFilter('fod1p_artist');
-      // this._summaryDataModel.removeFilter('fod1p_artist');
 
-      if (value != -1){
-        this._summaryWidget.set('displayedFilterText', 'people who reported ' +
-          FOD1P_DEFINITONS[value] + ' as their degree field');
-        this._dataModel.setFacet('degfield', value);
-        this._summaryDataModel.setFacet('degfield', value);
+      var degree = model.get('degree');
+      var city = model.get('city');
+
+      var cityName = Y.Lang.isValue(city) ? CODES_TO_CITIES[city] : 'The United States' ;
+
+      var populationDescription = 'people in ' + cityName;
+
+      if (degree !== null){
+        populationDescription += ' who reported ' +
+          FOD1P_DEFINITONS[degree] + ' as their degree field';
+        this._dataModel.setFacet('degfield', degree);
+        this._summaryDataModel.setFacet('degfield', degree);
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
-        this._summaryWidget.set('displayedFilterText', 'all people with an art degree');
+        populationDescription += ' with an art degree';
         this._dataModel.removeFacet('degfield');
         this._summaryDataModel.removeFacet('degfield');
         this._dataModel.setFacet('artist_by_education', 'artist');
         this._summaryDataModel.setFacet('artist_by_education', 'artist');
       }
+
+      if (city !== null) {
+        this._dataModel.setFacet('city', city);
+        this._summaryDataModel.setFacet('city', city);
+      } else {
+        this._dataModel.removeFacet('city');
+        this._summaryDataModel.removeFacet('city');
+      }
+
+      this._summaryWidget.set('displayedFilterText', populationDescription);
+
       this._dataModel.load();
       this._summaryDataModel.load();
+
+      Y.all('.location-name').set('text', cityName);
+
     }
   };
 }, '1.0', {
@@ -158,6 +153,6 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     'bmp-widget-datasourced-chart', 'bmp-model-basic',
     'node', 'bmp-widget-dropdown-nav',
     'bmp-widget-schooltowork-summary', 'array-extras',
-    'bmp-widget-d3-sankey', 'bmp-data-preparer-schooltowork-d3-sankey'
+    'bmp-widget-d3-sankey', 'bmp-data-preparer-schooltowork-d3-sankey', 'model'
   ]
 });
