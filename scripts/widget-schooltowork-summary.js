@@ -57,6 +57,10 @@ YUI.add('bmp-widget-schooltowork-summary', function(Y) {
     },
 
     _generateText: function(data) {
+      if (data.length === 0 || data[0][0] == 'other') {
+        return 'There are too few ' + this.get('displayedFilterText') + ' for a detailed analysis.';
+      }
+
       var sentenceClauses = [];
       for (var i = 0; i < data.length; i++) {
         var value = data[i][1];

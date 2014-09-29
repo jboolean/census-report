@@ -137,7 +137,8 @@ class IPUMSFullDataPortal < IPUMSPortal
       :fields => ['Field of Degree', 'Occupation', 'Count'], 
       :citation => 'American Community Survey 2009-2011, processed by IPUMS and BFAMFAPhD',
       :otherOccupations => otherOccupations.keys,
-      :threshold => threshold
+      :threshold => threshold,
+      :populationSize => totalPop
     }
   end
 
