@@ -50,7 +50,8 @@ YUI.add('bmp-widget-d3-sankey', function(Y) {
 
 
       var margin = this.get('margins');
-      var width = this.get('canvasWidth') - margin.left - margin.right;
+      var cbWidth = +this.get('contentBox').getComputedStyle('width').match(/[0-9]*/)[0]
+      var width = cbWidth - margin.left - margin.right;
       var height = (graph.nodes.length * this.get('perNodeAverageHeight') /2) - margin.top - margin.bottom;
 
       // this.get('contentBox').set('height', height + margin.top + margin.bottom);
@@ -184,11 +185,6 @@ YUI.add('bmp-widget-d3-sankey', function(Y) {
 
     ATTRS:{
       data: {},
-
-      canvasWidth: {
-        value: 1140,
-        validator: Y.Lang.isNumber
-      },
 
       perNodeAverageHeight: {
         value: 150,
