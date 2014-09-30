@@ -3,18 +3,18 @@
     ["Artist Class", "# Individuals", { "role": "style" }],
     [
       "Other Cultural Producers",
-      37565,
+      1316497,
       "#6E5321"
 
     ],
     [
       "Architects and Designers",
-      68208,
+      1142547,
       "#211B11"
     ],
     [
       "Artist",
-      98412,
+      482127,
       "#2C486E"
     ]
   ],
@@ -22,53 +22,53 @@
     ["Field of Degree", "Approx. # Individuals"],
     [
       "Visual And Performing Arts",
-      9607
+      69550
     ],
     [
       "Miscellaneous Fine Arts",
-      234
+      6380
     ],
     [
       "Studio Arts",
-      7055
+      103057
     ],
     [
       "Film Video And Photographic Arts",
-      18852
+      140231
     ],
     [
       "Drama And Theater Arts",
-      30581
+      234768
     ],
     [
       "Music",
-      31777
+      470441
     ],
     [
       "Fine Arts",
-      53538
+      725025
     ],
     [
       "Art History And Criticism",
-      16769
+      142579
     ]
   ],
   "allOccupations": [
   ["Occupations", "Approx # Individuals", {"role": "style"}],
-  ["Photographers",10857, "#2C486E"],
-  ["Musicians, singers, and related workers", 15171 ,"#2C486E"],
-  ["Actors",  9356 ,"#2C486E"],
-  ["Artists and related workers", 17977 ,"#2C486E"],
-  ["Producers and directors", 20308 ,"#2C486E"],
-  ["Writers and authors", 19635 ,"#2C486E"],
-  ["Entertainers and performers, sports and related workers, all other",  2705 ,"#2C486E"],
-  ["Dancers and choreographers",  2403 ,"#2C486E"],
-  ["Designers", 55776 ,"#211B11"],
-  ["Architects, except naval", 12432 ,"#211B11"],
-  ["Television, video, and motion picture camera operators and editors",  3812 ,"#6E5321"],
-  ["Broadcast and sound engineering technicians and radio operators, and media and communication equipment workers, all other",  4993 ,"#6E5321"],
-  ["Editors", 20203 ,"#6E5321"],
-  ["Miscellaneous media and communication workers",  5555 ,"#6E5321"],
-  ["Archivists, curators, and museum technicians",  3002 ,"#6E5321"]
+  ["Photographers",200334, "#2C486E"],
+  ["Musicians, singers, and related workers", 245757 ,"#2C486E"],
+  ["Actors",  70397 ,"#2C486E"],
+  ["Artists and related workers", 244724 ,"#2C486E"],
+  ["Producers and directors", 164677 ,"#2C486E"],
+  ["Writers and authors", 240835 ,"#2C486E"],
+  ["Entertainers and performers, sports and related workers, all other",  57557 ,"#2C486E"],
+  ["Dancers and choreographers",  33496 ,"#2C486E"],
+  ["Designers", 938225 ,"#211B11"],
+  ["Architects, except naval", 204322 ,"#211B11"],
+  ["Television, video, and motion picture camera operators and editors",  58720 ,"#6E5321"],
+  ["Broadcast and sound engineering technicians and radio operators, and media and communication equipment workers, all other",  111134 ,"#6E5321"],
+  ["Editors", 197320 ,"#6E5321"],
+  ["Miscellaneous media and communication workers",  119760 ,"#6E5321"],
+  ["Archivists, curators, and museum technicians",  53913 ,"#6E5321"]
 ]
 }
