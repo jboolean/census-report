@@ -15,6 +15,10 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
   Y.namespace('BMP.Widget').DataSourcedChart =
   Y.Base.create('DataSourcedChart', Y.Widget, [], {
 
+    initializer: function() {
+      this.syncUIDebounced = Y.BMP.Util.Debounce(this.syncUI, 100, this);
+    },
+
     renderUI: function() {
       var cb = this.get('contentBox');
       var chartContainer = Y.Node.create('<div class="ds-chart-wrapper"></div>');
@@ -32,7 +36,7 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       }, this);
       
       dataSource.after('dataStateChange', function() {
-        this.syncUI();
+        this.syncUIDebounced();
       }, this);
 
     },
@@ -52,7 +56,7 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
         return;
       } else if (dataState === 'loading') {
         cb.one('.ds-chart-wrapper').hide();
-        cb.append(Y.Node.create('<div class="alert alert-info">Loading</div>'));
+        cb.append(Y.Node.create('<div class="alert alert-info">Calculating</div>'));
       } else {
 
         // don't display if there are fatal errors
@@ -99,6 +103,7 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
 }, '1.0', {
   requires:[
     'base',
-    'widget'
+    'widget',
+    'bmp-debounce'
   ]
 });

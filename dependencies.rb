@@ -15,7 +15,7 @@ DEPENDENCIES = {
  'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],
  'page-artistclasses' => ['widget-dropdown-nav', 'widget-gchart'],
 
- 'widget-datasourced-chart' => ['model-basic', 'widget-gchart'],
+ 'widget-datasourced-chart' => ['model-basic', 'widget-gchart', 'debounce'],
  'widget-animated-number' => ['model-basic'],
  'widget-schooltowork-summary' => ['model-basic'],
  'widget-selfreport-list' => ['selfreport-text-generators'],
