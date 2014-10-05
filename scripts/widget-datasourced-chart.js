@@ -37,6 +37,7 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       
       dataSource.after('dataStateChange', function() {
         this.syncUIDebounced();
+        // this.syncUI();
       }, this);
 
     },
@@ -55,8 +56,9 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
       if (dataState === 'initial') {
         return;
       } else if (dataState === 'loading') {
-        cb.one('.ds-chart-wrapper').hide();
-        cb.append(Y.Node.create('<div class="alert alert-info">Calculating</div>'));
+        // cb.one('.ds-chart-wrapper').hide();
+        cb.one('.ds-chart-wrapper').setStyle('visibility', 'hidden');
+        cb.prepend(Y.Node.create('<div class="alert alert-info">Calculating</div>'));
       } else {
 
         // don't display if there are fatal errors
@@ -66,12 +68,13 @@ YUI.add('bmp-widget-datasourced-chart', function(Y) {
         Y.Array.each(errors, function(errorText) {
           var errorNode = Y.Node.create('<div class="error alert alert-warning"></div>');
           errorNode.set('text', errorText);
-          cb.append(errorNode);
+          cb.prepend(errorNode);
           hasFatalErrors = true;
         });
 
         var chartWrapper = cb.one('.ds-chart-wrapper');
-        chartWrapper.toggleView(!hasFatalErrors);
+        // chartWrapper.toggleView(!hasFatalErrors);
+        chartWrapper.setStyle('visibility', hasFatalErrors ? 'hidden' : 'visible');
         
       }
     },

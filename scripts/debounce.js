@@ -1,5 +1,5 @@
 /**
- * The module containing the Class
+ * A debouncer.
  * @module bmp-debounce
  */
 YUI.add('bmp-debounce', function(Y) {
