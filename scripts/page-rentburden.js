@@ -6,7 +6,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
   Y.namespace('BMP.Page').RentBurden = {
 
     initializePage: function() {
-      // this.renderNav();
       this.renderDefineArtistModal();
 
       // what the 'compare on' switch does
@@ -79,11 +78,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
 
     },
 
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
-    },
-
     renderDefineArtistModal: function() {
       // Y.one('#defineArtistModal .modal-body').load('/artistclasses', '.container');
     },
@@ -123,7 +117,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
     'bmp-plugins-toggle-buttons',
     'bmp-widget-datasourced-chart',
     'bmp-widget-gchart',
-    'bmp-widget-dropdown-nav',
     'node',
     'node-load',
     'node-pluginhost'
