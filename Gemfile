@@ -11,7 +11,8 @@ gem "therubyracer"
 
 gem 'uglifier'
 
-gem "thin"
+# gem "thin"
+gem 'unicorn'
 
 gem 'newrelic_rpm'
 
