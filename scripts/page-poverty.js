@@ -66,7 +66,7 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       unfilteredNumberWidget.render(Y.one('.the-numbers .comparison.unfiltered .number'));
 
-      unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
+      // unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
       unfilteredDataModel.load();
 
       // dataModel.load();
