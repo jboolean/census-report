@@ -184,7 +184,7 @@ YUI.add('bmp-model-basic', function(Y) {
 
     updateErrors: function() {
       var errors = this.get('errors');
-      var threshold = 2000;
+      var threshold = 3500;
 
 
       var populationLargeEnough = true;
