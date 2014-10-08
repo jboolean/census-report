@@ -23,8 +23,6 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     model: null,
     initializePage: function() {
 
-      // this.renderNav();
-
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
         endpoint: '/api/acs/custom/schooltowork/flow',
         dataPreparer: Y.BMP.DataPreparers.D3Sankey
@@ -98,11 +96,6 @@ YUI.add('bmp-page-school-to-work', function(Y) {
       wrapper.empty().append(select);
     },
 
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
-    },
-
     _handleFiltersChange: function() {
       //update datasource from this.model and reload
       var model = this.model;
@@ -150,9 +143,13 @@ YUI.add('bmp-page-school-to-work', function(Y) {
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-datasourced-chart', 'bmp-model-basic',
-    'node', 'bmp-widget-dropdown-nav',
-    'bmp-widget-schooltowork-summary', 'array-extras',
-    'bmp-widget-d3-sankey', 'bmp-data-preparer-schooltowork-d3-sankey', 'model'
+    'array-extras',
+    'bmp-data-preparer-schooltowork-d3-sankey', 
+    'bmp-model-basic',
+    'bmp-widget-d3-sankey', 
+    'bmp-widget-datasourced-chart', 
+    'bmp-widget-schooltowork-summary', 
+    'model',
+    'node'
   ]
 });

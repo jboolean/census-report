@@ -6,7 +6,6 @@ YUI.add('bmp-page-poverty', function(Y) {
   Y.namespace('BMP.Page').Poverty = {
 
     initializePage: function() {
-      // this.renderNav();
       
       var setArtistFilter = function(partitionType, dataModel) {
         dataModel.removeFacet('artist_by_occupation');
@@ -67,7 +66,7 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       unfilteredNumberWidget.render(Y.one('.the-numbers .comparison.unfiltered .number'));
 
-      unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
+      // unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
       unfilteredDataModel.load();
 
       // dataModel.load();
@@ -133,11 +132,6 @@ YUI.add('bmp-page-poverty', function(Y) {
       }
 
       Y.all('.location-name').set('text', cityName);
-    },
-
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
     }
   };
 }, '1.0', {
@@ -150,7 +144,6 @@ YUI.add('bmp-page-poverty', function(Y) {
     'bmp-plugin-city-selector',
     'bmp-plugins-toggle-buttons',
     'bmp-widget-animated-number',
-    'bmp-widget-dropdown-nav',
     'event',
     'node',
     'node-pluginhost'

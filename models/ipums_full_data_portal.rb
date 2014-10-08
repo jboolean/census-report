@@ -77,16 +77,16 @@ class IPUMSFullDataPortal < IPUMSPortal
     }
   end
 
-  SCHOOL_TO_WORK_THRESHOLD = 2000
+  SCHOOL_TO_WORK_THRESHOLD = 3500
   def getSchoolToWork(db, facets)
 
     #   def getTally(db, groupbys, facets, description_tables, sort)
     description_tables = {
       'degfieldd' => 'defs_fod1p',
-      'occ' => 'defs_occp'
+      'occ_group' => 'defs_occp_group'
     }
 
-    tallyResult = getTally(db, ['degfieldd', 'occ'], facets, description_tables, false)
+    tallyResult = getTally(db, ['degfieldd', 'occ_group'], facets, description_tables, false)
 
     occCol = 1
     degCol = 0
@@ -103,8 +103,9 @@ class IPUMSFullDataPortal < IPUMSPortal
       totalPop += count
     end
 
-    threshold = totalPop * 0.01
-    threshold = 200 if threshold < 200
+    threshold = SCHOOL_TO_WORK_THRESHOLD
+    # threshold = totalPop * 0.01
+    # threshold = 200 if threshold < 200
 
     big = []
     others = Hash.new(0)
@@ -134,7 +135,7 @@ class IPUMSFullDataPortal < IPUMSPortal
 
     {
       :results => out,
-      :fields => ['Field of Degree', 'Occupation', 'Count'], 
+      :fields => ['Field of Degree', 'Occupation Group', 'Count'], 
       :citation => 'American Community Survey 2009-2011, processed by IPUMS and BFAMFAPhD',
       :otherOccupations => otherOccupations.keys,
       :threshold => threshold,

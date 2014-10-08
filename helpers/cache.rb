@@ -10,10 +10,10 @@ module StoredCache
       :key => key
     }
 
-    sqlQuery = "SELECT * from cache WHERE
-      hash = #{_cache_make_hash(scopedKey)}"
+    sqlQueryFormat = "SELECT * from cache WHERE
+      hash = $1 and scope = $2"
 
-    sqlResult = settings.db.exec(sqlQuery)
+    sqlResult = settings.db.exec_params(sqlQueryFormat, [_cache_make_hash(scopedKey), scope])
 
     if sqlResult.ntuples == 0
       puts "Cache miss key=#{scopedKey.to_s}"
@@ -37,9 +37,9 @@ module StoredCache
     }
 
     sqlQueryFormat = "INSERT INTO cache
-      (hash, key, value) values ($1, $2, $3)"
+      (hash, key, value, scope) values ($1, $2, $3, $4)"
 
-    sqlParams = [_cache_make_hash(scopedKey), YAML::dump(scopedKey), YAML::dump(value)] 
+    sqlParams = [_cache_make_hash(scopedKey), YAML::dump(scopedKey), YAML::dump(value), scope] 
     settings.db.exec_params(sqlQueryFormat, sqlParams);
   end
 

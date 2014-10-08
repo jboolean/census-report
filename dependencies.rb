@@ -1,19 +1,19 @@
 # hash from each js filename to array of other js filesnames it depends on
 # css will be included automatically if name matches
 DEPENDENCIES = {
- 'page-main-nav' => ['widget-dropdown-nav'],
+ 'page-main-nav' => [],
  'main-footer' => [],
 
  'page-rentburden' => ['widget-datasourced-chart', 'model-basic', 
-     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav',
+     'plugin-toggle-buttons', 'button-controller', 'data-preparer',
      'plugin-city-selector'],
   'page-poverty' => ['model-basic', 
-     'plugin-toggle-buttons', 'button-controller', 'data-preparer', 'widget-dropdown-nav',
+     'plugin-toggle-buttons', 'button-controller', 'data-preparer',
      'plugin-city-selector'],
  'page-school-to-work' => ['widget-datasourced-chart', 'model-basic',
-    'widget-dropdown-nav', 'widget-schooltowork-summary', 'widget-d3-sankey', 'data-preparer-d3-sankey'],
- 'page-selfreport' => ['data-util', 'widget-dropdown-nav', 'widget-selfreport-list'],
- 'page-artistclasses' => ['widget-dropdown-nav', 'widget-gchart'],
+    'widget-schooltowork-summary', 'widget-d3-sankey', 'data-preparer-d3-sankey'],
+ 'page-selfreport' => ['data-util', 'widget-selfreport-list'],
+ 'page-artistclasses' => ['widget-gchart'],
 
  'widget-datasourced-chart' => ['model-basic', 'widget-gchart', 'debounce'],
  'widget-animated-number' => ['model-basic'],

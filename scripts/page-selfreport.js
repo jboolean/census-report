@@ -26,8 +26,6 @@ YUI.add('bmp-page-selfreport', function(Y) {
 
       Y.all('.selfreport button.submit').after('tap', this.submitForm, null, this);
 
-      // this.renderNav();
-
       var reportListWidget = this._reportListWidget = new Y.BMP.Widget.SelfReportList();
 
       reportListWidget.render(Y.one('.reports'));
@@ -118,11 +116,6 @@ YUI.add('bmp-page-selfreport', function(Y) {
       }
     },
 
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
-    },
-
     _loadSelfReportList: function() {
       return Y.Data.get({
         url: '/api/selfreport'
@@ -147,7 +140,6 @@ YUI.add('bmp-page-selfreport', function(Y) {
 }, '1.0', {
   requires:[
     'bmp-widget-selfreport-list',
-    'bmp-widget-dropdown-nav',
     'event-tap',
     'jsb-data-util',
     'node',

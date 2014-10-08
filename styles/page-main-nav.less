@@ -86,9 +86,10 @@ nav {
     position: absolute;
     right: 0;
 
-    top: calc(50% - 11px);
+    // top: calc(50% - 11px);
 
     margin-right: (@grid-gutter-width / 2);
+    margin-top: 5px;
 
     @media(max-width: @screen-sm-max) {
       display: none;
@@ -98,3 +99,23 @@ nav {
   }
 
 }
+
+nav.container {
+  padding-top: 0;
+  padding-bottom: 0;
+  .left, .right {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    padding-left: 0;
+    padding-right: 0;
+    .left, .right {
+      padding-left: 15px;
+    }
+  }
+}
+
+
+@import "toolbar-nav";
