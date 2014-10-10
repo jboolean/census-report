@@ -8,6 +8,12 @@ google.setOnLoadCallback(function() {
     });
 
   });
+  <%
+
+  @chosen_cities = ['New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'San Francisco, CA'];
+  @chosen_cities_to_codes = @cities_to_codes.select {|city| @chosen_cities.include?(city)}
+
+  %>
 
   CODES_TO_CITIES = <%=@cities_to_codes.invert.to_json%>
 </script>
@@ -22,7 +28,7 @@ google.setOnLoadCallback(function() {
     <label>Choose a major city.</label>
     <select name="city" id="filter-city" class="form-control">
       <option value="-1">All USA</option>
-      <% @cities_to_codes.each do |name, code| %>
+      <% @chosen_cities_to_codes.each do |name, code| %>
       <option value="<%=code%>"><%=name%></option>
       <% end %>
     </select>
