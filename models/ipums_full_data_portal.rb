@@ -83,10 +83,10 @@ class IPUMSFullDataPortal < IPUMSPortal
     #   def getTally(db, groupbys, facets, description_tables, sort)
     description_tables = {
       'degfieldd' => 'defs_fod1p',
-      'occ_group' => 'defs_occp_group'
+      'occ_group2' => 'defs_occ_group2'
     }
 
-    tallyResult = getTally(db, ['degfieldd', 'occ_group'], facets, description_tables, false)
+    tallyResult = getTally(db, ['degfieldd', 'occ_group2'], facets, description_tables, false)
 
     occCol = 1
     degCol = 0
