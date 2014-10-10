@@ -113,7 +113,7 @@ class Preaggregator
     whereSql = wheres.join(' AND ')
 
     querySql = "SELECT SUM(PERWT) as PERWT " +
-      "from acs_usa_ipums_2011 WHERE #{whereSql};"
+      "from ipums_2011 WHERE #{whereSql};"
 
     # puts querySql
     sqlResult = db.exec(querySql)

@@ -46,7 +46,7 @@ class IPUMSFullDataPortal < IPUMSPortal
   }
 
   def tableName
-    'acs_usa_ipums_2011'
+    'ipums_2011'
   end
 
   def getPovertyRate(db, facets)
@@ -61,7 +61,7 @@ class IPUMSFullDataPortal < IPUMSPortal
                   SUM(CASE WHEN POVERTY is not null then PERWT else 0 end)) as poverty_rate
                 from
 
-                (SELECT PERWT, POVERTY from acs_usa_ipums_2011
+                (SELECT PERWT, POVERTY from ipums_2011
                   #{whereSql}) filtered;"
 
     puts sqlQuery

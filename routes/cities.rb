@@ -5,7 +5,7 @@ class BFAMFAPhD < Sinatra::Application
   get '/api/acs/defs/city' do
     
     # sqlQuery = "SELECT * from defs_city order by definition;"
-    sqlQuery = "select code, definition from defs_city inner join (select city from acs_usa_ipums_2011 group by city) data on code = data.city;"
+    sqlQuery = "select code, definition from defs_city inner join (select city from ipums_2011 group by city) data on code = data.city;"
 
     sqlResult = settings.db.exec(sqlQuery)
 
