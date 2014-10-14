@@ -17,12 +17,22 @@ YUI.add('bmp-button-controller', function(Y) {
 
     initializer: function(config) {
       var buttonContainer = config.buttonContainer;
-      buttonContainer.delegate('change', this._onChange, '[data-filter-var]', this);
+      buttonContainer.delegate('change', this._onChange, '[data-facet-name]', this);
+      buttonContainer.all('[data-facet-name]').each(this._updateFacets, this);
+      if (config.load) {
+        this.get('dataSource').load();
+      }
     },
 
     _onChange: function(e) {
-      var group = e.target.ancestor('.filter');
-      var variable = group.getAttribute('data-filter-var');
+      if (e.target.get('type') === 'text') return;
+      this._updateFacets(e.target);
+      this.get('dataSource').load();
+    },
+
+    _updateFacets: function(node) {
+      var group = node.ancestor('[data-facet-name]', true);
+      var variable = group.getAttribute('data-facet-name');
 
       if (!Y.Lang.isValue(variable)) {
         return;
@@ -33,16 +43,15 @@ YUI.add('bmp-button-controller', function(Y) {
 
         var value = button.get('value');
         if (Y.Lang.isValue(value) && value != -1) {
-
-          Y.Array.each(value.split(','), function(singleValue) {
-            values.push(singleValue);
-          });
-
+          values = value.split(',');
         }
       });
 
-      this.get('dataSource').setFilter(variable, values);
-      this.get('dataSource').load();
+      if (values.length === 0) {
+        values = null;
+      }
+
+      this.get('dataSource').setFacet(variable, values);
     }
 
   }, {
@@ -59,6 +68,12 @@ YUI.add('bmp-button-controller', function(Y) {
         validator: function(val) {
           return val instanceof Y.BMP.Model.BasicModel;
         }
+      },
+
+      // load on initialize
+      load: {
+        validator: Y.Lang.isBoolean,
+        value: false
       }
     }
   });

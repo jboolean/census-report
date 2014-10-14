@@ -1,3 +1,4 @@
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 google.setOnLoadCallback(function() {
 
@@ -7,16 +8,36 @@ google.setOnLoadCallback(function() {
     });
 
   });
+  <%
+
+  @chosen_cities = ['New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'San Francisco, CA'];
+  @chosen_cities_to_codes = @cities_to_codes.select {|city| @chosen_cities.include?(city)}
+
+  %>
+
+  CODES_TO_CITIES = <%=@cities_to_codes.invert.to_json%>
 </script>
 
 <div class="page-school-to-work container">
 <!-- <h1>Explore Art School &amp; Occupation</h1> -->
 <p class="main-description lead">What do artists do for a living? This shows the relationship between
-<strong>an arts degree and a job</strong> for people living in New York City. Scroll down to see links between arts degrees (on the left) and jobs (on the right).</p>
+<strong>an arts degree and a job</strong> for people living in <span class="location-name">the United States</span>. Scroll down to see links between arts degrees (on the left) and jobs (on the right).</p>
 
-<div>
-<label>Choose a single major for a clearer picture of where students go after getting an art degree.</label>
-<div class="fod1p-filter-wrapper"></div>
+<div id="controls">  
+  <div>
+    <label>Choose a major city.</label>
+    <select name="city" id="filter-city" class="form-control">
+      <option value="-1">All USA</option>
+      <% @chosen_cities_to_codes.each do |name, code| %>
+      <option value="<%=code%>"><%=name%></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label>Filter to a single major.</label>
+    <div class="fod1p-filter-wrapper"></div>
+  </div>
 </div>
 
 <div class="summary-wrapper"></div>
@@ -27,4 +48,5 @@ google.setOnLoadCallback(function() {
 
 <p><i>Miscellaneous</i> includes occupations with very few respondents. Those occupations may include:</p>
 <ul class="other-list"></ul>
+<cite>U.S. Census Bureau, American Community Survey Microdata 2009-2011, Processed by IPUMS and BFAMFAPhD.</cite>
 </div>

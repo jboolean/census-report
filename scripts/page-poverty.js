@@ -6,25 +6,29 @@ YUI.add('bmp-page-poverty', function(Y) {
   Y.namespace('BMP.Page').Poverty = {
 
     initializePage: function() {
-      // this.renderNav();
       
       var setArtistFilter = function(partitionType, dataModel) {
-        dataModel.removeFilter('occp_artist_class');
-        dataModel.removeFilter('fod1p_artist');
+        dataModel.removeFacet('artist_by_occupation');
+        dataModel.removeFacet('artist_by_education');
         switch (partitionType) {
-        case 'occp_artist_class':
+        case 'occ_artist_class':
           dataModel.clearPartition();
-          dataModel.setFilter('occp_artist_class', [1]);
+          dataModel.setFacet('artist_by_occupation', 'artists');
           break;
-        case 'fod1p':
+        case 'artist_degree':
           dataModel.clearPartition();
-          dataModel.setFilter('fod1p_artist', 1);
+          dataModel.setFacet('artist_by_education', 'artist');
         }
       };
 
       var dataModel = new Y.BMP.Model.BasicModel({
         endpoint: '/api/acs/custom/povertyrate'
       });
+
+      var unfilteredDataModel = new Y.BMP.Model.BasicModel({
+        endpoint: '/api/acs/custom/povertyrate'
+      });
+
 
       var mainNumberWidget = new Y.BMP.Widget.AnimatedNumberChart({
         dataSource: dataModel,
@@ -46,11 +50,31 @@ YUI.add('bmp-page-poverty', function(Y) {
 
       mainNumberWidget.render(Y.one('.main-chart-wrapper').empty());
 
-      dataModel.load();
+
+      var unfilteredNumberWidget = new Y.BMP.Widget.AnimatedNumberChart({
+        dataSource: unfilteredDataModel,
+
+        dataProperty: 'povertyRate',
+
+        numberFormatConfig: {
+          decimalPlaces: 1,
+          suffix: '%'
+        },
+
+        sizeEffectEnabled: false
+      });
+
+      unfilteredNumberWidget.render(Y.one('.the-numbers .comparison.unfiltered .number'));
+
+      // unfilteredDataModel.setFacet('city', 4610); // default to NYC. TODO: remove
+      unfilteredDataModel.load();
+
+      // dataModel.load();
 
       new Y.BMP.ButtonController({
         dataSource: dataModel,
-        buttonContainer: Y.one('.controls')
+        buttonContainer: Y.one('.controls'),
+        load: true
       });
 
       Y.one('.artist-chooser').delegate('change', function(e) {
@@ -60,23 +84,67 @@ YUI.add('bmp-page-poverty', function(Y) {
         dataModel.load();
 
       }, 'input');
+
+      //city comparison number
+
+      Y.one('.filter-city').delegate('change', function(e) {
+        var node = Y.one('.the-numbers .comparison.unfiltered');
+
+        if (e.target.get('type') === 'text') return;
+        var cityCode = e.target.get('value');
+        if (cityCode == -1) {
+          // unfilteredDataModel.removeFacet('city');
+          node.hide();
+        } else {
+          unfilteredDataModel.setFacet('city', cityCode);
+          unfilteredDataModel.load();
+          node.show();
+        }
+
+      }, 'input');
       
+      this._setupCitySelector();
+
+      dataModel.on('loaded', this._updateCityText, this);
 
     },
 
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
+    _setupCitySelector: function() {
+      Y.one('body').addClass('yui3-skin-sam');
+
+      var cityFiltersNode = Y.one('.filter-city');
+
+      cityFiltersNode.plug(Y.BMP.Plugin.CitySelector);
+    },
+
+    _updateCityText: function() {
+      var selectedButton = Y.one('.filter-city input:checked');
+      if (!selectedButton) {
+        return;
+      }
+
+      var cityCode = selectedButton.get('value');
+
+      var label = selectedButton.ancestor('.btn');
+      var cityName = label.get('text');
+
+      if (cityCode == -1) {
+        cityName = 'The United States';
+      }
+
+      Y.all('.location-name').set('text', cityName);
     }
   };
 }, '1.0', {
   requires:[
+    'autocomplete',
+    'autocomplete-filters',
     'base',
     'bmp-button-controller',
     'bmp-model-basic',
+    'bmp-plugin-city-selector',
     'bmp-plugins-toggle-buttons',
     'bmp-widget-animated-number',
-    'bmp-widget-dropdown-nav',
     'event',
     'node',
     'node-pluginhost'

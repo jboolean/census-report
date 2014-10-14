@@ -6,7 +6,18 @@
   .transition(color 0.5s);
 
   &.loading {
-    color: @gray;
+    color: @gray-light;
+
+    .loading-spinner {
+      // float: right;
+      display: inline-block;
+      background-image: url('/images/spinner-16.gif');
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 25%;
+      top: calc(~"50% -" 16px / 2);
+    }
   }
 
   &.load-failed {
@@ -16,4 +27,6 @@
   &.has-errors {
     color: @brand-warning;
   }
+
+
 }

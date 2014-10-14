@@ -19,8 +19,9 @@ class BFAMFAPhD < Sinatra::Application
     username = db_parts[3]
     password = db_parts[4]
     host = db_parts[5]
+    port = db_parts[6]
     db = db_parts[7]
-    set :db, PG::Connection.new(:host =>  host, :dbname => db, :user=> username, :password=> password)
+    set :db, PG::Connection.new(:host =>  host, :dbname => db, :user => username, :password => password, :port => port)
 
     set :typekitId, 'clf5ohy'
 
@@ -60,6 +61,7 @@ class String
   end
 end
 
-# require_relative 'models/init'
+require_relative 'constants'
+require_relative 'models/init'
 require_relative 'helpers/init'
 require_relative 'routes/init'

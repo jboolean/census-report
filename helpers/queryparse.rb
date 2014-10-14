@@ -1,10 +1,10 @@
+require 'pp'
 module QueryParse
-  VALID_COLS = ['relp', 'agep',  'fod1p', 'occp',  'cit', 'sex', 'schl',  
-    'wagp',  'cow', 'ethnicity', 'boro',  'ten', 'grpip', 'pwgtp', 'wgtp', 'grpip_group3', 'occp_artist_class', 'occp_group', 'fod1p_artist']
-  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex', 'occp_artist_class', 'occp_group']
+  COLS_WITH_DEFS = ['occp', 'fod1p', 'boro', 'grpip_group3', 'sex', 'occp_artist_class', 'occp_group', 'city']
 
   def valid_col? (col_name)
-    VALID_COLS.include? (col_name.downcase)
+    # VALID_COLS.include? (col_name.downcase)
+    true
   end
 
   def validate_cols (cols)
@@ -28,13 +28,51 @@ module QueryParse
       _, operator, column = param.split('_', 3)
       validate_cols([column])
 
-      vals = params[param].split(',').map {|s| s.to_i}
+      vals = params[param].split(',')#.map {|s| s.to_i}
 
       filters << {
         :operator => operator.to_sym,
         :column => column,
         :values => vals
       }
+    end
+    filters
+  end
+
+  def deserialize_enum(enum, value)
+    enum.invert[value]
+  end
+
+  def get_facet_selections_from_query_params(prefix='facet')
+    # returns enum keys, 
+    # or raw values when does not correspond to an enum
+    # portal should validate / parse these cases
+
+    # prefix = 'facet'
+    filters = {}
+    facets = settings.facets
+
+    params.each_key do |param|
+      next unless param.start_with? "#{prefix}_"
+      _, raw_facet = param.split('_', 2)
+
+      facet = deserialize_enum(facets, raw_facet)
+
+      if facet.nil?
+        throw "No such facet=\"#{raw_facet}\""
+        next
+      end
+
+      vals = params[param].split(',')
+
+      if settings.facet_values.has_key?(facet)
+        vals.map! do |val| 
+          deserialize_enum(settings.facet_values[facet], val)
+        end
+      end
+
+
+      filters[facet] = vals
     end
     filters
   end
@@ -84,25 +122,6 @@ module QueryParse
     sortSql = sort ? 'ORDER BY sum(PWGTP) DESC' : ''
 
     "#{selectSql} FROM #{table} #{joins.join(' ')} #{whereSql} #{groupbySql} #{sortSql};"
-  end
-
-  def create_whereSql(filters)
-    wheres = []
-    filters.each do |filter|
-      escaped_col = settings.db.quote_ident(filter[:column])
-      case filter[:operator]
-      when :eq, :in
-        valuesAsEscapedStrings = filter[:values].map {|n| settings.db.escape_string(n.to_s)}
-        wheres << "#{escaped_col} in 
-        (#{valuesAsEscapedStrings.join(',')}) "
-      when :between
-        lower_bound = settings.db.escape_string(filter[:values][0].to_s)
-        upper_bound = settings.db.escape_string(filter[:values][1].to_s)
-        wheres << "#{escaped_col} BETWEEN 
-        #{lower_bound} AND #{upper_bound}"
-      end
-    end
-    return wheres.join(' AND ')
   end
 
   def last_col_to_i(data)

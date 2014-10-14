@@ -5,68 +5,52 @@ require 'json'
 class BFAMFAPhD < Sinatra::Application
   THRESHOLD = 200
 
-  get '/api/acs/custom/schooltowork' do
+  get '/api/acs/custom/schooltowork/flow' do
 
+    facetSelections = get_facet_selections_from_query_params
 
-    filters = get_filters_from_query_params
-    groupbys = ['fod1p', 'occp']
-
-    sqlQuery = create_acs_tally_sql_query(groupbys, filters, params[:use_descriptions] == '1', false)
-
-    raw = settings.db.exec(sqlQuery)
-
-    occupationTotals = {}
-
-    raw.each_row do |row|
-      occp = row[1]
-      count = row[2].to_i
-      if occupationTotals[occp].nil?
-        occupationTotals[occp] = count
-      else
-        occupationTotals[occp] += count
-      end
+    cache_result = cache_get('schooltowork/flow', facetSelections)
+    unless cache_result.nil?
+      return cache_result
     end
 
+    portal = IPUMSFullDataPortal.new
 
-    #otherization for uncommon occupations
-    big = []
-    others = {}
+    response = portal.getSchoolToWork(settings.db, facetSelections).to_json
 
-    raw.each_row do |row|
-      count = row[2].to_i
-      fod = row[0]
-      occp = row[1]
-      if occupationTotals[occp] >= THRESHOLD
-        big << [fod, occp, count]
-      else
-        if others[fod].nil?
-          others[fod] = count;
-        else
-          others[fod] += count
-        end
-      end
+    cache_put('schooltowork/flow', facetSelections, response)
+    return response
+
+  end
+
+  get '/api/acs/custom/schooltowork/groups' do
+    facetSelections = get_facet_selections_from_query_params
+
+    cache_result = cache_get('schooltowork/groups', facetSelections)
+    unless cache_result.nil?
+      return cache_result
     end
 
-    otherOccupations = occupationTotals.select do |occp, count|
-      count < THRESHOLD
+    portal = IPUMSFullDataPortal.new
+
+    facetSelections[:artist_by_education] = [:artist];
+    puts facetSelections.inspect
+
+    arrayResult = portal.getTally(settings.db, ['occ_group'], facetSelections, {}, true)
+    arrayResult = last_col_to_i(arrayResult)
+
+    total = 0;
+    arrayResult.each do |row|
+      total += row[-1]
     end
 
-
-
-
-    out = [['Field of Degree', 'Occupation', 'Count']];
-    # out << raw[0]
-    out.concat(big)
-    others.each do |fod, count| 
-      out << [fod, 'Miscellaneous', count]
-    end
-    {
-      :results => out,
-      :fields => ['Field of Degree', 'Occupation', 'Count'], 
-      :query => sqlQuery,
-      :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD',
-      :otherOccupations => otherOccupations.keys
+    response = {
+      :results => arrayResult,
+      :populationSize => total
     }.to_json
+
+    cache_put('schooltowork/groups', facetSelections, response)
+    return response
   end
 
 end

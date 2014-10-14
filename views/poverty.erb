@@ -7,18 +7,23 @@ google.setOnLoadCallback(function() {
     });
 
   });
+
+CITIES_TO_CODES = <%=@cities_to_codes%>;
 </script>
+
+<% facets = settings.facets %>
+<% facet_values = settings.facet_values %>
 
 <div class="page-poverty">
   <div class=""><div class="container">
   
     <!-- <h1>Explore Poverty Rates</h1> -->
-    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in New York City. Filter the data to see poverty rates for different groups.</strong></p>
+    <p class="main-description lead">This shows the <strong>percent of people living below the poverty line*</strong> in <span class="location-name">The United States</span>. Filter the data to see poverty rates for different groups.</strong></p>
 
     <div class="the-numbers">
     <div class="comparison">
       <span class="number-label">National poverty rate</span>
-      <span class="number">14.9%</span>
+      <span class="number">15.2%</span>
     </div>
 
     <div class="user-chosen">
@@ -26,18 +31,19 @@ google.setOnLoadCallback(function() {
       <span class="main-chart-wrapper number"></span>
     </div>
 
-    <div class="comparison">     
-      <span class="number-label">NYC poverty rate</span>
-      <span class="number">20.8%</span>
+    <div class="comparison unfiltered">     
+      <span class="number-label"><span class="location-name">The United States</span> poverty rate</span>
+      <span class="number"></span>
     </div>
     
     <div class="clearfix"></div>
-    <cite>U.S. Census Bureau, American Community Survey Microdata 2010-2012</cite>
+    <cite>U.S. Census Bureau, American Community Survey Microdata 2009-2011, Processed by IPUMS and BFAMFAPhD.</cite>
+
   </div></div></div> <!-- darn bootstrap, it takes 3 wrappers for this thing-->
 
   <div class="bottom-section container">
   <div class="key">
-    <p>*Poverty is defined as making less than $11,702 for one person, $14,657 for a family of two, $17,916 for a family of three, and $23,021 for a family of four in 2011 (not adjusted for inflation).</p>
+    <p>*Poverty is defined as making less than $11,702 for one person, $14,657 for a family of two, $17,916 for a family of three, and $23,021 for a family of four in 2011 (not adjusted for inflation). TODO: UPDATE COPY</p>
   </div>
 
 
@@ -50,17 +56,17 @@ google.setOnLoadCallback(function() {
           </label>
 
            <label class="btn btn-primary">
-            <input type="radio" name="define-artist" value="occp_artist_class"> People who work as artists
+            <input type="radio" name="define-artist" value="occ_artist_class"> Arts graduates
           </label>
 
           <label class="btn btn-primary">
-            <input type="radio" name="define-artist" value="fod1p"> People with an art degree 
+            <input type="radio" name="define-artist" value="artist_degree"> Working artists 
           </label>
         </div>
         <a class="define-artist" href="/artistclasses">How do we define &ldquo;artist&rdquo;?</a>
       </div>
-
-      <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-filter-var="boro">
+<!-- 
+      <div class="filter filter-boro btn-group-vertical" data-toggle="buttons" data-facet-name="boro">
         <label class="btn btn-default active">
           <input type="radio" name="boro" value="-1" checked> All NYC
         </label>
@@ -84,77 +90,90 @@ google.setOnLoadCallback(function() {
         <label class="btn btn-default">
           <input type="radio" name="boro" value="5"> Staten Island
         </label>
-      </div>
+      </div> -->
 
       <div class="clearfix hidden-md hidden-lg"></div>
 
-      <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" data-filter-var="sex">
+      <div class="filter filter-gender btn-group-vertical" data-toggle="buttons" 
+      data-facet-name="<%=facets[:sex]%>">
         <label class="btn btn-default active">
           <input type="radio" name="sex" value="-1" checked> Both
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="sex" value="1"> Male
+          <input type="radio" name="sex" value="<%=facet_values[:sex][:male]%>"> Male
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="sex" value="2"> Female
+          <input type="radio" name="sex" value="<%=facet_values[:sex][:female]%>"> Female
         </label>
       </div>
       
       
-      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-filter-var="ethnicity">
+      <div class="filter filter-ethnicity btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:race_hispan_simple]%>">
         <label class="btn btn-default active">
           <input type="radio" name="ethnicity" value="-1" checked> Any
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="1"> White<sup>*</sup>
+          <input type="radio" name="ethnicity" 
+          value="<%=facet_values[:race_hispan_simple][:white]%>"> White<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="2"> Black<sup>*</sup>
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:black]%>"> Black<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="3"> Asian<sup>*</sup>
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:asian]%>"> Asian<sup>*</sup>
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="ethnicity" value="4"> Hispanic
+          <input type="radio" name="ethnicity" value="<%=facet_values[:race_hispan_simple][:hispanic]%>"> Hispanic
         </label>
         <small><sup>*</sup>non-hispanic</small>
       </div>
 
-      <div class="clearfix hidden-xs"></div>
+      <!-- <div class="clearfix hidden-xs"></div> -->
 
-      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-filter-var="SCHL">
+      <div class="filter filter-schl btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:education]%>">
         <label class="btn btn-default active">
           <input type="radio" name="schl" value="-1" checked> Any
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"> Less than High School
+          <input type="radio" name="schl" value="<%=facet_values[:education][:less_than_high_school]%>"> Less than High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="16"> Completed High School
+          <input type="radio" name="schl" value="<%=facet_values[:education][:completed_high_school]%>"> Completed High School
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="17,18,19,20"> Some College
+          <input type="radio" name="schl" value="<%=facet_values[:education][:some_college]%>"> Some College
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="21"> Bachelor's Degree
+          <input type="radio" name="schl" value="<%=facet_values[:education][:bachelors]%>"> Bachelor's Degree
         </label>
 
         <label class="btn btn-default">
-          <input type="radio" name="schl" value="22,23,24"> Master's or higher
+          <input type="radio" name="schl" value="<%=facet_values[:education][:masters_or_higher]%>"> Master's or higher
         </label>
       </div>
 
+      <div class="filter filter-city btn-group-vertical" data-toggle="buttons" data-facet-name="<%=facets[:city]%>">
+        <label class="btn btn-default active"><input type="radio" name="city" value="-1" checked>All USA</label>
+        <label class="btn btn-default"><input type="radio" name="city" value="4610">New York City</label>
+        <label class="btn btn-default"><input type="radio" name="city" value="3730">Los Angeles, CA</label>
+        <label class="btn btn-default"><input type="radio" name="city" value="1190">Chicago, IL</label>
+        <label class="btn btn-default"><input type="radio" name="city" value="6290">San Francisco, CA</label>
+        <label class="btn btn-default"><input type="radio" name="city" value="6430">Seattle, WA</label>
+        <div class="other btn btn-default"><input type="text" placeholder="Other&hellip;"></div>
+      </div>
+      
     </div>
+
   </div>
 
 </div>

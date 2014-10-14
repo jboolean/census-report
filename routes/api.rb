@@ -42,7 +42,7 @@ class BFAMFAPhD < Sinatra::Application
       :results => arrayResult,
       :populationSize => total,
       :fields => result.fields, 
-      :query => sqlQuery,
+      # :query => sqlQuery,
       :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
     }.to_json
 

@@ -11,9 +11,15 @@ gem "therubyracer"
 
 gem 'uglifier'
 
-gem "thin"
+# gem "thin"
+gem 'unicorn'
 
 gem 'newrelic_rpm'
+
+gem 'digest-murmurhash'
+
+gem 'attic'
+gem 'gibbler'
 
 
 group :development do
@@ -21,5 +27,5 @@ group :development do
 
 end
 group :production do
-  gem 'unicorn'
+  # gem 'unicorn'
 end

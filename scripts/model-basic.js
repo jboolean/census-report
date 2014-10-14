@@ -20,15 +20,35 @@ YUI.add('bmp-model-basic', function(Y) {
       this.publish('load-failed');
       this._filters = {};
       this._partitions = {};
+      this._facets = {};
+      this._partitionfacets = {};
     },
 
-
+    /** @deprecated **/
     setFilter: function(column, values, operator) {
       this._setFilterOrPartition(this._filters, column, values, operator);
     },
 
+
     removeFilter: function(column) {
       delete this._filters[column];
+    },
+
+    setFacet: function(facet, selections) {
+      if (!Y.Lang.isValue(selections)) {
+        this.removeFacet(facet);
+        return;
+      }
+      
+      this._setFacet(this._facets, facet, selections);
+    },
+
+    removeFacet: function(facet) {
+      delete this._facets[facet];
+    },
+
+    setPartitionFacet: function(facet, selections) {
+      this._setFacet(this._partitionfacets, facet, selections);
     },
 
     setPartition: function(column, values, operator) {
@@ -37,14 +57,12 @@ YUI.add('bmp-model-basic', function(Y) {
 
     clearPartition: function() {
       this._partitions = {};
+      this._partitionfacets = {};
     },
 
     _setFilterOrPartition: function(filtersHash, column, values, operator) {
-      if (Y.Lang.isValue(values) && !Y.Lang.isArray(values)) {
-        values = [values];
-      }
 
-      if (!Y.Lang.isArray(values) || values.length === 0) {
+      if (!Y.Lang.isValue(values)) {
         this.removeFilter(column);
         return;
       }
@@ -53,23 +71,40 @@ YUI.add('bmp-model-basic', function(Y) {
         operator = 'in';
       }
 
+      if (
+        operator === 'in' &&
+        Y.Lang.isValue(values) &&
+        !Y.Lang.isArray(values)) {
+
+        values = [values];
+      }
+
+      var value;
+
       filtersHash[column] = {
         operator: operator,
         values: values
       };
     },
 
+    _setFacet: function(facetsHash, facet, selections) {
+      if (!Y.Lang.isArray(selections)) {
+        selections = [selections];
+      }
+
+      facetsHash[facet] = selections;
+    },
+
     _getQueryParams: function() {
-      params = {
+      return Y.merge({
         groupby : this.get('groupby').join(','),
         use_descriptions: this.get('useDescriptions'),
         sort: this.get('sort')
-      };
-
-      params = Y.merge(params, this._createFilterQueryParams(this._filters));
-      params = Y.merge(params, this._createFilterQueryParams(this._partitions, 'partition'));
-
-      return params;
+      },
+      this._createFilterQueryParams(this._filters),
+      this._createFilterQueryParams(this._partitions, 'partition'),
+      this._createFacetQueryParams(this._facets),
+      this._createFacetQueryParams(this._partitionfacets, 'partitionfacet'));
     },
 
     _createFilterQueryParams: function(filters, prefix) {
@@ -79,8 +114,22 @@ YUI.add('bmp-model-basic', function(Y) {
       }
 
       Y.Object.each(filters, function(filter_params, column) {
-        params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = filter_params.values.join(',');
+        var valuesStr = String(Y.Lang.isArray(filter_params.values) ? filter_params.values.join(',') : filter_params.values);
+        params[prefix + '_' + filter_params.operator + '_' + column.toLowerCase()] = valuesStr;
       }, this);
+
+      return params;
+    },
+
+    _createFacetQueryParams: function(facets, prefix) {
+      var params = {};
+      if (!prefix) {
+        prefix = 'facet';
+      }
+
+      Y.Object.each(facets, function(selections, facet) {
+        params[prefix + '_' + facet] = selections.join(',');
+      });
 
       return params;
     },
@@ -99,18 +148,18 @@ YUI.add('bmp-model-basic', function(Y) {
           data: data,
           rawResponse: response,
           populationSize: response.populationSize,
-          dataState: 'loaded',
           errors: []
         });
         this.updateErrors();
+
         this.set('dataState', 'loaded');
+        
         this.fire('loaded');
         return response;
       }, this), Y.bind(function(response) {
         console.error('Data load error');
         this.set('errors', 'Data could not be loaded.');
         this.set('dataState', 'load-failed');
-        this.fire('load-failed');
       },this));
     },
 
@@ -135,7 +184,7 @@ YUI.add('bmp-model-basic', function(Y) {
 
     updateErrors: function() {
       var errors = this.get('errors');
-      var threshold = 2000;
+      var threshold = 3500;
 
 
       var populationLargeEnough = true;

@@ -6,7 +6,6 @@ YUI.add('bmp-page-rentburden', function(Y) {
   Y.namespace('BMP.Page').RentBurden = {
 
     initializePage: function() {
-      // this.renderNav();
       this.renderDefineArtistModal();
 
       // what the 'compare on' switch does
@@ -14,11 +13,11 @@ YUI.add('bmp-page-rentburden', function(Y) {
         switch (partitionType) {
         case 'occp_artist_class':
           dataModel.clearPartition();
-          dataModel.setPartition('occp_artist_class', [1]);
+          dataModel.setPartitionFacet('artist_by_occupation', 'artists');
           break;
         case 'fod1p':
           dataModel.clearPartition();
-          dataModel.setPartition('fod1p_artist', 1);
+          dataModel.setPartitionFacet('artist_by_education', 'artist');
         }
       };
 
@@ -28,7 +27,7 @@ YUI.add('bmp-page-rentburden', function(Y) {
         dataPreparer: Y.BMP.DataPreparers.rentBurden
       });
 
-      var chart = new Y.BMP.Widget.DataSourcedChart({
+      var gchart = new Y.BMP.Widget.GChart({
         chartType: 'ColumnChart',
         options: {
           height: 300,
@@ -38,23 +37,30 @@ YUI.add('bmp-page-rentburden', function(Y) {
           },
           vAxis: {
             baseline: 0,
-            minValue: 0
+            minValue: 0,
+            maxValue: 100
           },
           legend: {
             position: 'top'
           }
-        },
+        }
+      });
+
+      var chart = new Y.BMP.Widget.DataSourcedChart({
+        chart: gchart,
         dataSource: dataModel
       });
+
       chart.render(Y.one('.main-chart-wrapper').empty());
 
       setPartition('occp_artist_class', dataModel);
 
-      dataModel.load();
+      // dataModel.load();
 
       new Y.BMP.ButtonController({
         dataSource: dataModel,
-        buttonContainer: Y.one('.filter-controls')
+        buttonContainer: Y.one('.filter-controls'),
+        load: true
       });
 
       Y.one('.comparison-chooser').delegate('change', function(e) {
@@ -64,24 +70,55 @@ YUI.add('bmp-page-rentburden', function(Y) {
         dataModel.load();
 
       }, 'input');
+
+      this._setupCitySelector();
       
+      dataModel.on('loaded', this._updateCityText, this);
 
-    },
 
-    renderNav: function() {
-      var nav = new Y.BMP.Widget.DropdownNav();
-      nav.render(Y.one('h1').empty());
     },
 
     renderDefineArtistModal: function() {
       // Y.one('#defineArtistModal .modal-body').load('/artistclasses', '.container');
+    },
+
+    _setupCitySelector: function() {
+      Y.one('body').addClass('yui3-skin-sam');
+
+      var cityFiltersNode = Y.one('.filter-city');
+
+      cityFiltersNode.plug(Y.BMP.Plugin.CitySelector);
+    },
+
+    _updateCityText: function() {
+      var selectedButton = Y.one('.filter-city input:checked');
+      if (!selectedButton) {
+        return;
+      }
+
+      var cityCode = selectedButton.get('value');
+
+      var label = selectedButton.ancestor('.btn');
+      var cityName = label.get('text');
+
+      if (cityCode == -1) {
+        cityName = 'The United States';
+      }
+
+      Y.all('.location-name').set('text', cityName);
     }
   };
 }, '1.0', {
   requires:[
-    'bmp-widget-datasourced-chart', 'bmp-model-basic',
-    'bmp-plugins-toggle-buttons', 'node-pluginhost',
-    'bmp-button-controller', 'bmp-data-preparer',
-    'node', 'bmp-widget-dropdown-nav', 'node-load'
+    'bmp-button-controller',
+    'bmp-data-preparer',
+    'bmp-model-basic',
+    'bmp-plugin-city-selector',
+    'bmp-plugins-toggle-buttons',
+    'bmp-widget-datasourced-chart',
+    'bmp-widget-gchart',
+    'node',
+    'node-load',
+    'node-pluginhost'
   ]
 });

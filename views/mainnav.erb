@@ -1,21 +1,40 @@
-
 <div class="nav-container invert">
   <nav class="container ">
     <div class="left">
       <a class="" href="http://bfamfaphd.com" target="_blank"><div class="main-title">BFAMFAPhD</div>
-      <a class="home-link" href="http://bfamfaphd.com" style="visibility: hidden;"><span class="icon glyphicon glyphicon-home"></span>Project Home</a>
+      <a class="home-link" href="http://bfamfaphd.com"><span class="icon glyphicon glyphicon-home"></span>Project Home</a>
     </div></a>
-    <div class="page-chooser">
-      <span class="dropdown-wrapper"></span>
+    <div class="toolbar-nav-wrapper">
+    <div class="toolbar-nav-inner-wrapper">
+      <%
+      def printActive(test_page)
+        test_page == @page ? "active " : ""
+      end %> 
+      <ul class="toolbar-nav">
+        <li class="<%=printActive(:poverty)%>"><a href="/poverty">Poverty Rates</a></li>
+        <li class="<%=printActive(:schooltowork)%>"><a href="/schooltowork">Art Grads &amp; Working Artists</a></li>
+        <li class="<%=printActive(:rentburden)%>"><a href="/rentburden">Explore Rent Burdens</a></li>
+        <li class="<%=printActive(:selfreport)%>"><a href="/selfreport">Explore You</a></li>
+        <li class="<%=printActive(:artistclasses)%>"><a href="/artistclasses">Artists in the US</a></li>
+      </ul>
+    </div>
     </div>
     <div class="right">Census Report</div>
   </nav>
 </div>
 <script>
-  //initialize!
-  YUI().use('event-base', 'event', 'bmp-page-main-nav', function(Y) {
-    Y.on('domready', function() {
-      Y.BMP.Page.MainNav.initializePage();
-    })
-  });
+
+
+
+YUI().use('node-event-delegate', 'node-event-simulate', 'node-style', function(Y) {
+  // Make LI clickable.
+  Y.all('.toolbar-nav li').setStyle('cursor', 'pointer');
+  Y.one('.toolbar-nav').delegate('click', function(e) {
+    var href = e.currentTarget.one('a').getAttribute('href');
+    if (!href) return;
+    window.location = href;
+  }, 'li');
+
+
+});
 </script>

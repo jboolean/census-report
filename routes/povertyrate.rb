@@ -3,31 +3,24 @@ require 'json'
 class BFAMFAPhD < Sinatra::Application
 
   get '/api/acs/custom/povertyrate' do
-    filters = get_filters_from_query_params
 
-    whereSql = create_whereSql(filters)
+    facetSelections = get_facet_selections_from_query_params
 
-    whereSql = 'WHERE ' + whereSql unless whereSql.empty?
-    
-    sqlQuery = "select 
-                sum(PWGTP) as population,
-                ((SUM(CASE WHEN povpip < 100 then pwgtp else 0 end) * 100.0) / 
-                  SUM(CASE WHEN povpip is not null then pwgtp else 0 end)) as poverty_rate
-                from
+    if facetSelections.has_key?(:city)
+      portal = IPUMSFullDataPortal.new
+    else
+      portal = IPUMSPreaggregatedPortal.new
+    end
 
-                (SELECT pwgtp, povpip from acs_3yr_custom 
-                  #{whereSql}) filtered;"
-    sqlResult = settings.db.exec(sqlQuery)
+    cache_result = cache_get('povertyrate', facetSelections)
+    unless cache_result.nil?
+      return cache_result
+    end
 
-    population = sqlResult[0]['population'].to_i
-    povertyRate = sqlResult[0]['poverty_rate'].to_f
+    response = portal.getPovertyRate(settings.db, facetSelections).to_json
 
-    {
-      :populationSize => population,
-      :results => {:povertyRate => povertyRate},
-      # :query => sqlQuery,
-      :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
-    }.to_json
+    cache_put('povertyrate', facetSelections, response)
+    response
   end
 
 end

@@ -25,4 +25,12 @@
        -moz-column-count: 3;
             column-count: 3;
   }
+
+  #controls {
+    .make-row();
+
+    & > div {
+      .make-md-column(6);
+    }
+  }
 }
