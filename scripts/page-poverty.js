@@ -90,6 +90,7 @@ YUI.add('bmp-page-poverty', function(Y) {
       Y.one('.filter-city').delegate('change', function(e) {
         var node = Y.one('.the-numbers .comparison.unfiltered');
 
+        if (e.target.get('type') === 'text') return;
         var cityCode = e.target.get('value');
         if (cityCode == -1) {
           // unfilteredDataModel.removeFacet('city');

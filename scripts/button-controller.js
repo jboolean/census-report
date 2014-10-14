@@ -25,6 +25,7 @@ YUI.add('bmp-button-controller', function(Y) {
     },
 
     _onChange: function(e) {
+      if (e.target.get('type') === 'text') return;
       this._updateFacets(e.target);
       this.get('dataSource').load();
     },

@@ -36,14 +36,14 @@ YUI.add('bmp-plugin-city-selector', function(Y) {
         }
 
         //Clone a button
-        var newButton = cityFiltersNode.one('.btn').cloneNode(true);
-        var radioBtn = cityFiltersNode.one('.btn input').cloneNode();
+        var newButton = cityFiltersNode.one('.btn:not(.active)').cloneNode(true);
+        var radioBtn = cityFiltersNode.one('.btn:not(.active) input').cloneNode();
         newButton.set('text', cityName);
         radioBtn.setAttribute('value', cityCode);
         newButton.prepend(radioBtn);
 
         cityFiltersNode.one('.other').insert(newButton, 'before');
-        radioBtn.simulate('click');
+        radioBtn.getDOMNode().click();
         e.preventDefault();
         otherCityInput.set('value', '');
 
