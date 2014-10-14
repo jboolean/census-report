@@ -22,3 +22,19 @@
     <div class="right">Census Report</div>
   </nav>
 </div>
+<script>
+
+
+
+YUI().use('node-event-delegate', 'node-event-simulate', 'node-style', function(Y) {
+  // Make LI clickable.
+  Y.all('.toolbar-nav li').setStyle('cursor', 'pointer');
+  Y.one('.toolbar-nav').delegate('click', function(e) {
+    var href = e.currentTarget.one('a').getAttribute('href');
+    if (!href) return;
+    window.location = href;
+  }, 'li');
+
+
+});
+</script>
