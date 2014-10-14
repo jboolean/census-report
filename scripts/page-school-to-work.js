@@ -48,7 +48,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 
       var summary = this._summaryWidget = new Y.BMP.Widget.SchoolToWorkSummary({
         dataSource: summaryDataModel,
-        displayedFilterText: 'all people with an arts degree'
+        displayedFilterText: 'all arts graduates in the U.S.'
       });
 
       this.renderFilter();
@@ -108,7 +108,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
 
       var cityName = Y.Lang.isValue(city) ? CODES_TO_CITIES[city] : 'The United States' ;
 
-      var populationDescription = 'people in ' + cityName;
+      var populationDescription = 'arts graduates in ' + cityName;
 
       if (degree !== null){
         populationDescription += ' who reported ' +
@@ -117,7 +117,7 @@ YUI.add('bmp-page-school-to-work', function(Y) {
         this._summaryDataModel.setFacet('degfield', degree);
       } else {
         // no filter actually means filter to all "art" majors (non commercial)
-        populationDescription += ' with an art degree';
+        populationDescription += '';
         this._dataModel.removeFacet('degfield');
         this._summaryDataModel.removeFacet('degfield');
         this._dataModel.setFacet('artist_by_education', 'artist');

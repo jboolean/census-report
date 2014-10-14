@@ -10,7 +10,7 @@ google.setOnLoadCallback(function() {
   });
   <%
 
-  @chosen_cities = ['New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'San Francisco, CA', 'Cleveland, OH'];
+  @chosen_cities = ['New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'San Francisco, CA'];
   @chosen_cities_to_codes = @cities_to_codes.select {|city| @chosen_cities.include?(city)}
 
   %>
