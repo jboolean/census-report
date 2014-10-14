@@ -50,7 +50,7 @@ YUI.add('bmp-widget-d3-sankey', function(Y) {
 
 
       var margin = this.get('margins');
-      var cbWidth = +this.get('contentBox').getComputedStyle('width').match(/[0-9]*/)[0]
+      var cbWidth = +this.get('contentBox').getComputedStyle('width').match(/[0-9]*/)[0];
       var width = cbWidth - margin.left - margin.right;
       var height = (graph.nodes.length * this.get('perNodeAverageHeight') /2) - margin.top - margin.bottom;
 

@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"def",
+				"defs_occ_group2"
+			],
+			[
+				"de",
+				"definition"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
 				"pop",
 				"populationSize"
 			],
@@ -252,10 +288,6 @@
 				"otherOccupations"
 			],
 			[
-				"font",
-				"font-size"
-			],
-			[
 				"mar",
 				"margin-bottom"
 			],
@@ -320,20 +352,12 @@
 				"nav-font-size-base"
 			],
 			[
-				"padd",
-				"padding-base-vertical"
-			],
-			[
 				"font-size",
 				"font-size-h2"
 			],
 			[
 				"margin",
 				"margin-bottom"
-			],
-			[
-				"in",
-				"inline"
 			],
 			[
 				"tex",
@@ -344,16 +368,8 @@
 				"table-cell"
 			],
 			[
-				"padding",
-				"padding-right"
-			],
-			[
 				"bo",
 				"bolder"
-			],
-			[
-				"marg",
-				"margin-top"
 			],
 			[
 				"bac",
@@ -498,48 +514,24 @@
 			[
 				"ren",
 				"renderNav"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"ac",
-				"activeItem"
-			],
-			[
-				"acti",
-				"active-text"
-			],
-			[
-				"Dr",
-				"DropdownNav"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "views/artistclasses.erb",
+			"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/changes.sql",
 			"settings":
 			{
-				"buffer_size": 2865,
+				"buffer_size": 704,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
+			"file": "app.rb",
 			"settings":
 			{
-				"buffer_size": 4723,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/staticdata/artistclasses.json",
-			"settings":
-			{
-				"buffer_size": 1840,
+				"buffer_size": 1419,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,23 +539,15 @@
 			"file": "models/ipums_full_data_portal.rb",
 			"settings":
 			{
-				"buffer_size": 3406,
+				"buffer_size": 3461,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/page-artistclasses.js",
+			"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
 			"settings":
 			{
-				"buffer_size": 2443,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/layout.erb",
-			"settings":
-			{
-				"buffer_size": 2444,
+				"buffer_size": 4568,
 				"line_ending": "Unix"
 			}
 		}
@@ -571,9 +555,37 @@
 	"build_system": "Packages/Twitter Recess/Recess.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 67.0,
 		"selected_items":
 		[
+			[
+				"synsql",
+				"Set Syntax: SQL"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"REIN",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git ad",
+				"Git: Add Current File"
+			],
+			[
+				"synjs",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"git pu",
 				"Git: Push"
@@ -581,10 +593,6 @@
 			[
 				"git com",
 				"Git: Commit"
-			],
-			[
-				"git add",
-				"Git: Add..."
 			],
 			[
 				"error",
@@ -611,28 +619,12 @@
 				"Git: Commit"
 			],
 			[
-				"sort",
-				"Sort Lines"
-			],
-			[
 				"reind",
 				"Indentation: Reindent Lines"
 			],
 			[
-				"git ad",
-				"Git: Add..."
-			],
-			[
 				"gitc",
 				"Git: Commit"
-			],
-			[
-				"synjs",
-				"Set Syntax: JavaScript"
-			],
-			[
-				"synsql",
-				"Set Syntax: SQL"
 			],
 			[
 				"synles",
@@ -645,10 +637,6 @@
 			[
 				"git add c",
 				"Git: Add Current File"
-			],
-			[
-				"rein",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"synru",
@@ -775,7 +763,7 @@
 				"Set Syntax: JavaScript"
 			]
 		],
-		"width": 449.0
+		"width": 593.0
 	},
 	"console":
 	{
@@ -792,42 +780,63 @@
 	},
 	"file_history":
 	[
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/schooltowork.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/full_data.sql",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/ipums_full_data_portal.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/cities.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/preaggregator.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/README.md",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/cache.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/config/unicorn.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/artistclasses.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/artists_per_city_by_degree.txt",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/Gemfile",
+		"/Users/julianboilen/Downloads/UnitTestA.json",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/dependencies.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/mainnav.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/pages.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-selfreport.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-school-to-work.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-rentburden.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-poverty.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/model-basic.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/poverty.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/rentburden.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/staticdata/artistclasses.json",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-schooltowork-summary.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-main-nav.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-main-nav.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/toolbar-nav.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/custom_globals.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/layout.erb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-dropdown-nav.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/global.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-artistclasses.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/census report.sublime-project",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/navs.less",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/debounce.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-datasourced-chart.js",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/selfreport.rb",
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/selfreport.sql",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/schooltowork.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/import command.sql",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-school-to-work.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-datasourced-chart.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-d3-sankey.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-d3-sankey.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-preparer-d3-sankey.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/schooltowork.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-rentburden.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/dependencies.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/data-preparer.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-schooltowork-summary.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/poverty.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/rentburden.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-artistclasses.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-gchart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/artistclasses.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/model-basic.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/ipums_portal.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/pages.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/census report.sublime-project",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-d3-sankeyjs",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-school-to-work.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/app.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-poverty.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/README.md",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/povertyrate.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/models/portal.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/queryparse.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/staticdata/cities_to_codes.json",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/constants.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/cities.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-poverty.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-animated-number.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/rentburden.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/button-controller.js",
@@ -840,22 +849,15 @@
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/preaggregate-groups.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/variables.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/handlebars.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/layout.erb",
 		"/Users/julianboilen/.ssh/known_hosts",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/plugin-toggle-buttons.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/cache.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/selfreport.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/init.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-selfreport.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/init.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/Gemfile",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/staticdata/artistclasses.json",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/preprocess.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-selfreport-list.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/selfreport-text-generators.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/selfreport.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-selfreport.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/mainnav.erb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/helpers/selfreport-helpers.rb",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-selfreport-list.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-artistclasses.less",
@@ -863,14 +865,10 @@
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/config/newrelic.yml",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/main-footer.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/mainfooter.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-main-nav.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/navbar.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/page-rentburden.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/custom_globals.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/widget-dropdown-nav.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/buttons.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/page-main-nav.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widget-dropdown-nav.js",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/grid.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/glyphicons.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts.manifest",
@@ -894,7 +892,6 @@
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/bootstrap/wells.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/widget-selfreport-list.js",
 		"/Users/julianboilen/Dropbox/bfamfaphd-census-report/create-rollups.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/global.less",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles.manifest",
 		"/Users/julianboilen/Documents/jira-planningpoker/model.rb",
 		"/Users/julianboilen/Documents/jira-planningpoker/server.rb",
@@ -910,16 +907,7 @@
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/push database.sh",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/rent burden.sql",
 		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/routes/api_misc.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/test.html",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/test.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/widgets-gchart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/testchart.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/views/test.erb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/test.js",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/styles/test.less",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/test.rb",
-		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/scripts/common.js",
-		"/Users/julianboilen/.bash_profile"
+		"/Users/julianboilen/Documents/bfamfaphd dataviz/app/public/test.html"
 	],
 	"find":
 	{
@@ -940,6 +928,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"acs_usa_ipums_2011",
+			"dropdown",
+			"widget-dropdown-nav",
+			"sqlQuery",
+			"city",
+			"MainNav",
+			"rendernav",
+			"nav",
+			"bmp-widget-dropdown-nav",
+			"MainNav",
+			"nav",
+			"#",
+			"text-align",
+			"table",
+			"color",
+			"DropdownNav",
+			"dropdown",
+			"erb",
+			"mainnav",
+			"setData",
 			"width",
 			"active",
 			"dataModel",
@@ -1047,27 +1055,7 @@
 			"valuesList",
 			"values",
 			"      if (Y.Lang.isValue(values) && !Y.Lang.isArray(values)) {\n        values = [values];\n      }",
-			"load",
-			"Contr",
-			"contr",
-			"occp_artist_class",
-			"ethnicity",
-			"dafault",
-			"pwgtp",
-			"povpip",
-			"appearance",
-			"age",
-			"pp ",
-			"pp",
-			"shadow",
-			"selfre",
-			"null",
-			"out",
-			"Y.Lang.isValue(report.salary_amount)",
-			"Y.Lang.isString(report.occupation)",
-			"border",
-			"%;\n",
-			","
+			"load"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1075,6 +1063,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"ipums_2011",
 			"'",
 			"partition",
 			"data-facet-name",
@@ -1101,23 +1090,23 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/artistclasses.erb",
+					"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/changes.sql",
 					"settings":
 					{
-						"buffer_size": 2865,
+						"buffer_size": 704,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2244,
-								2244
+								337,
+								337
 							]
 						],
 						"settings":
@@ -1322,374 +1311,20 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SQL/SQL.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 425.0,
+						"translation.x": 45.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
+					"file": "app.rb",
 					"settings":
 					{
-						"buffer_size": 4723,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2650,
-								2652
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"curly": true,
-								"es3": true,
-								"gcl": true,
-								"indent": 2.0,
-								"latedef": true,
-								"maxcomplexity": 6.0,
-								"quotmark": "single",
-								"regexdash": true,
-								"trailing": true,
-								"wsh": true,
-								"yui": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "alpha",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 668.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/staticdata/artistclasses.json",
-					"settings":
-					{
-						"buffer_size": 1840,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1646,
-								1646
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"curly": true,
-								"es3": true,
-								"gcl": true,
-								"indent": 2.0,
-								"latedef": true,
-								"maxcomplexity": 6.0,
-								"quotmark": "single",
-								"regexdash": true,
-								"trailing": true,
-								"wsh": true,
-								"yui": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublime_auto_complete": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "alpha",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 164.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "models/ipums_full_data_portal.rb",
-					"settings":
-					{
-						"buffer_size": 3406,
+						"buffer_size": 1419,
 						"regions":
 						{
 						},
@@ -1803,25 +1438,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 845.0,
+						"translation.y": 281.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "scripts/page-artistclasses.js",
+					"buffer": 2,
+					"file": "models/ipums_full_data_portal.rb",
 					"settings":
 					{
-						"buffer_size": 2443,
+						"buffer_size": 3461,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2210,
-								2238
+								2179,
+								2179
 							]
 						],
 						"settings":
@@ -2026,30 +1661,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 796.0,
+						"translation.y": 995.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "views/layout.erb",
+					"buffer": 3,
+					"file": "/Users/julianboilen/Documents/bfamfaphd dataviz/ipums table and import.sql",
 					"settings":
 					{
-						"buffer_size": 2444,
+						"buffer_size": 4568,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								918,
+								918
 							]
 						],
 						"settings":
@@ -2060,6 +1695,109 @@
 								"README",
 								"FIXME"
 							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"csslint_options":
 							{
@@ -2128,6 +1866,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"sublime_auto_complete": true,
 							"sublimelinter": "load-save",
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
@@ -2150,12 +1889,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 395.0,
+						"translation.y": 69.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -2213,24 +1952,116 @@
 		"selected_items":
 		[
 			[
-				"lay",
-				"views/layout.erb"
-			],
-			[
-				"artist",
-				"scripts/page-artistclasses.js"
+				"sc",
+				"views/schooltowork.erb"
 			],
 			[
 				"ipums",
 				"models/ipums_full_data_portal.rb"
 			],
 			[
-				"art",
-				"views/artistclasses.erb"
+				"app",
+				"app.rb"
 			],
 			[
 				"schoo",
-				"routes/schooltowork.rb"
+				"views/schooltowork.erb"
+			],
+			[
+				"artist",
+				"views/artistclasses.erb"
+			],
+			[
+				"uni",
+				"config/unicorn.rb"
+			],
+			[
+				"cache",
+				"helpers/cache.rb"
+			],
+			[
+				"full",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"ip",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"summ",
+				"scripts/widget-schooltowork-summary.js"
+			],
+			[
+				"ipum",
+				"models/ipums_full_data_portal.rb"
+			],
+			[
+				"rentb",
+				"views/rentburden.erb"
+			],
+			[
+				"pagerent",
+				"scripts/page-rentburden.js"
+			],
+			[
+				"pove",
+				"views/poverty.erb"
+			],
+			[
+				"pagepov",
+				"scripts/page-poverty.js"
+			],
+			[
+				"mode",
+				"scripts/model-basic.js"
+			],
+			[
+				"pag",
+				"scripts/page-artistclasses.js"
+			],
+			[
+				"page",
+				"scripts/page-artistclasses.js"
+			],
+			[
+				"drop",
+				"scripts/widget-dropdown-nav.js"
+			],
+			[
+				"manna",
+				"views/mainnav.erb"
+			],
+			[
+				"nav",
+				"styles/page-main-nav.less"
+			],
+			[
+				"dat",
+				"scripts/widget-datasourced-chart.js"
+			],
+			[
+				"datas",
+				"scripts/widget-datasourced-chart.js"
+			],
+			[
+				"self",
+				"routes/selfreport.rb"
+			],
+			[
+				"cach",
+				"helpers/cache.rb"
+			],
+			[
+				"data",
+				"scripts/widget-datasourced-chart.js"
+			],
+			[
+				"lay",
+				"views/layout.erb"
+			],
+			[
+				"art",
+				"views/artistclasses.erb"
 			],
 			[
 				"mo",
@@ -2239,14 +2070,6 @@
 			[
 				"sanke",
 				"styles/widget-d3-sankey.less"
-			],
-			[
-				"summ",
-				"scripts/widget-schooltowork-summary.js"
-			],
-			[
-				"sc",
-				"views/schooltowork.erb"
 			],
 			[
 				"pover",
@@ -2265,16 +2088,8 @@
 				"scripts/widget-d3-sankey.js"
 			],
 			[
-				"rentb",
-				"views/rentburden.erb"
-			],
-			[
 				"port",
 				"models/ipums_full_data_portal.rb"
-			],
-			[
-				"page",
-				"routes/pages.rb"
 			],
 			[
 				"model",
@@ -2293,20 +2108,8 @@
 				"scripts/widget-datasourced-chart.js"
 			],
 			[
-				"mode",
-				"scripts/model-basic.js"
-			],
-			[
-				"pagerent",
-				"scripts/page-rentburden.js"
-			],
-			[
 				"datasour",
 				"scripts/widget-datasourced-chart.js"
-			],
-			[
-				"data",
-				"scripts/data-preparer.js"
 			],
 			[
 				"pageschoo",
@@ -2315,10 +2118,6 @@
 			[
 				"pagret",
 				"scripts/page-rentburden.js"
-			],
-			[
-				"datas",
-				"scripts/widget-datasourced-chart.js"
 			],
 			[
 				"gchart",
@@ -2331,10 +2130,6 @@
 			[
 				"chart",
 				"scripts/widget-datasourced-chart.js"
-			],
-			[
-				"app",
-				"app.rb"
 			],
 			[
 				"schooless",
@@ -2379,10 +2174,6 @@
 			[
 				"summary",
 				"scripts/widget-schooltowork-summary.js"
-			],
-			[
-				"pove",
-				"routes/povertyrate.rb"
 			],
 			[
 				"datasou",
@@ -2441,10 +2232,6 @@
 				"routes/rentburden.rb"
 			],
 			[
-				"pagepov",
-				"scripts/page-poverty.js"
-			],
-			[
 				"api",
 				"routes/api.rb"
 			],
@@ -2463,10 +2250,6 @@
 			[
 				"pagepv",
 				"scripts/page-poverty.js"
-			],
-			[
-				"ip",
-				"models/ipums_full_data_portal.rb"
 			],
 			[
 				"query",
@@ -2523,14 +2306,6 @@
 			[
 				"but",
 				"scripts/button-controller.js"
-			],
-			[
-				"cache",
-				"helpers/cache.rb"
-			],
-			[
-				"self",
-				"routes/selfreport.rb"
 			],
 			[
 				"buttonc",
@@ -2687,42 +2462,6 @@
 			[
 				"arte",
 				"views/artistclasses.erb"
-			],
-			[
-				"que",
-				"helpers/queryparse.rb"
-			],
-			[
-				"povless",
-				"styles/page-poverty.less"
-			],
-			[
-				"renterb",
-				"views/rentburden.erb"
-			],
-			[
-				"artistj",
-				"scripts/page-artistclasses.js"
-			],
-			[
-				"manav",
-				"styles/page-main-nav.less"
-			],
-			[
-				"navless",
-				"styles/bootstrap/navbar.less"
-			],
-			[
-				"povr",
-				"views/poverty.erb"
-			],
-			[
-				"re",
-				"README.md"
-			],
-			[
-				"",
-				"views/rentburden.erb"
 			]
 		],
 		"width": 0.0
