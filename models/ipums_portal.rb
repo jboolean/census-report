@@ -72,7 +72,7 @@ class IPUMSPortal < Portal
       :results => asArray,
       :populationSize => totals[1..-1],
       :fields => sqlResult.fields, 
-      :query => sqlQuery,
+      # :query => sqlQuery,
       :citation => 'American Community Survey 2010-2012, processed by BFAMFAPhD'
     }
   end
