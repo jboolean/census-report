@@ -77,7 +77,7 @@ class IPUMSFullDataPortal < IPUMSPortal
     }
   end
 
-  SCHOOL_TO_WORK_THRESHOLD = 3500
+  SCHOOL_TO_WORK_THRESHOLD = 0
   def getSchoolToWork(db, facets)
 
     #   def getTally(db, groupbys, facets, description_tables, sort)
