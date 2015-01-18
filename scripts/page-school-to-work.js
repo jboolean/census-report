@@ -23,9 +23,22 @@ YUI.add('bmp-page-school-to-work', function(Y) {
     model: null,
     initializePage: function() {
 
+
+      var getRemoveMiscArtistsPreparer = function(wrapped) {
+        return function(response) {
+          var filteredResults = Y.Array.filter(response.results, function(val) {
+            return val[0] != 'Miscellaneous Fine Arts';
+          });
+          response.results = filteredResults;
+          return Y.Lang.isFunction(wrapped) ? wrapped(response) : response;
+        };
+      };
+
+      var preparer = getRemoveMiscArtistsPreparer(Y.BMP.DataPreparers.D3Sankey);
+
       var dataModel = this._dataModel = new Y.BMP.Model.BasicModel({
         endpoint: '/api/acs/custom/schooltowork/flow',
-        dataPreparer: Y.BMP.DataPreparers.D3Sankey
+        dataPreparer: preparer
       });
 
       var summaryDataModel = this._summaryDataModel = new Y.BMP.Model.BasicModel({
